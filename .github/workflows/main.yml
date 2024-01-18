@@ -1,0 +1,31 @@
+name: Train World main merge
+on:
+  push:
+    branches:
+      - main 
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build Vite app
+        run: |
+          npm install
+          npm run build
+          
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+    # Address for the FTP host.
+          server: ftp.adams-train-of-thoughtsbe.webhosting.be
+    # Username for the FTP host.
+          username: adams-train-of-thoughtsbe@adams-train-of-thoughtsbe
+    # Password for the FTP host.
+          password: ${{secrets.FTP_PASSWORD}}
+    # Local directory from which to upload.
+          local-dir: /dist
+          server-dir: /www/train-world
+          
+  
