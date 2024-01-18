@@ -25,7 +25,7 @@ jobs:
     # Password for the FTP host.
           password: ${{secrets.FTP_PASSWORD}}
     # Local directory from which to upload.
-          local-dir: /dist
-          server-dir: /www/train-world
+          local-dir: /dist/
+          server-dir: /www/train-world/
           
   
