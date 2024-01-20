@@ -6,8 +6,8 @@ import { Timeline1Desktop } from "../assets/SVGs/Timeline-1-desktop";
 const Origins = () => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.to("#Cloud-2", {
-      x: -1000,
+
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".timeline",
         pin: true,
@@ -15,6 +15,26 @@ const Origins = () => {
         scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
       },
     });
+
+    tl.to("#Timeline-1_background-3", {
+      x: -2186,
+    });
+
+    tl.to(
+      "#Timeline-1_background-2",
+      {
+        x: -3280,
+      },
+      "<"
+    );
+
+    tl.to(
+      "#Timeline-1_background-1",
+      {
+        x: -4920,
+      },
+      "<"
+    );
   });
 
   return (
