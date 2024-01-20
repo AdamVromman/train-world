@@ -3,6 +3,45 @@
 @tailwind utilities;
 
 
-.main {
-    @apply bg-black;
+
+body {
+    @apply w-screen h-screen overflow-x-hidden overflow-y-auto;
+    @apply bg-white;
+
+    & #root {
+        @apply w-full max-w-full;
+    }
+}
+
+main.main {
+    @apply w-full max-w-full;
+    @apply flex flex-col items-center;
+
+    .content {
+        @apply mx-15 laptop:mx-30;
+        @apply w-full max-w-[1640px];
+        
+
+        & .text {
+            @apply w-full max-w-[1440px];
+            @apply tablet:px-15 laptop:px-30;
+        }
+
+        .chapters {
+            @apply flex flex-col items-center justify-start gap-210;
+
+            .chapter {
+                @apply w-full;
+                @apply flex flex-col items-center;
+
+               
+                
+                .timeline {
+                @apply w-full h-[750px];
+                }
+            }
+
+            
+        }
+    }
 }
