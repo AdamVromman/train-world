@@ -16,9 +16,17 @@ const Origins = () => {
       },
     });
 
-    tl.to("#Timeline-1_background-3", {
-      x: -2186,
+    tl.to("#Timeline-1_tracks", {
+      x: -10000,
     });
+
+    tl.to(
+      "#Timeline-1_background-3",
+      {
+        x: -2186,
+      },
+      "<"
+    );
 
     tl.to(
       "#Timeline-1_background-2",
@@ -46,8 +54,8 @@ const Origins = () => {
       <svg
         className="timeline"
         width="1640"
-        height="750"
-        viewBox="0 0 1640 750"
+        height="1000"
+        viewBox="0 0 1640 1000"
         fill="none"
       >
         <defs>
