@@ -2,18 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@font-face {
+    font-family: marsh-stencil;
+    src: url(./Fonts/marsh-stencil.otf);
+}
 
 body {
     @apply w-screen h-screen overflow-x-hidden overflow-y-auto;
     @apply bg-white;
+    @apply font-brix;
 
     & #root {
         @apply w-full max-w-full;
     }
-}
 
-main.main {
+    p {
+        @apply font-brix text-black text-18 font-400 text-center leading-33;
+    }
+
+    h1 {
+        @apply font-nitti-cameo text-40 text-center;
+    }
+
+    h2 {
+        @apply font-nitti-underlined text-28 text-center;
+    }
+
+    main.main {
     @apply w-full max-w-full;
     @apply flex flex-col items-center;
 
@@ -21,10 +36,13 @@ main.main {
         @apply mx-15 laptop:mx-30;
         @apply w-full max-w-[1640px];
         
+        .hero {
+            @apply flex flex-col items-center;
+        }
 
         & .text {
             @apply w-full max-w-[1440px];
-            @apply tablet:px-15 laptop:px-30;
+            @apply px-15 laptop:px-30;
         }
 
         .chapters {
@@ -45,3 +63,5 @@ main.main {
         }
     }
 }
+}
+

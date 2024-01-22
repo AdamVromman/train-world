@@ -1,3 +1,4 @@
+import Header from "./components/Header";
 import Origins from "./components/Origins";
 
 function App() {
@@ -5,10 +6,10 @@ function App() {
     <>
       <main className="main">
         <div className="content">
-          <header className="hero"></header>
+          <Header />
           <section className="chapters">
             <Origins></Origins>
-            <div className="h-[2000px]"></div>
+            <div className="h-[99999px]"></div>
           </section>
           <footer className="footer"></footer>
         </div>

@@ -35,10 +35,10 @@ export default {
           DEFAULT: "#E5DBC6",
         },
         black: {
-          DEFAULT: "#373737",
+          DEFAULT: "#272727",
         },
         red: {
-          DEFAULT: "#CB352C",
+          DEFAULT: "#DE2216",
         },
         yellow: {
           DEFAULT: "#EEC32D",
@@ -46,6 +46,22 @@ export default {
         teal: {
           DEFAULT: "#B7D8CC",
         },
+      },
+      fontFamily: {
+        brix: "brix-slab, serif",
+        "nitti-underlined": "nitti-typewriter-underlined, sans-serif",
+        "nitti-cameo": "nitti-typewriter-cameo, sans-serif",
+      },
+      fontWeight: {
+        400: "400",
+      },
+      fontSize: {
+        18: "18px",
+        40: "40px",
+        28: "28px",
+      },
+      lineHeight: {
+        33: "33px",
       },
     },
   },

@@ -11,7 +11,7 @@ const Origins = () => {
       scrollTrigger: {
         trigger: ".timeline",
         pin: true,
-        end: "+=10000", // end after scrolling 500px beyond the start
+        end: "+=99999", // end after scrolling 500px beyond the start
         scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
       },
     });
