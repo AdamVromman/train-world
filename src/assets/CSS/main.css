@@ -18,6 +18,11 @@ body {
 
     p {
         @apply font-brix text-black text-18 font-400 text-center leading-33;
+        @apply px-15;
+
+        .p--bold {
+            @apply font-nitti-cameo;
+        }
     }
 
     h1 {
@@ -26,6 +31,7 @@ body {
 
     h2 {
         @apply font-nitti-underlined text-28 text-center;
+        @apply pb-60;
     }
 
     main.main {
@@ -35,6 +41,8 @@ body {
     .content {
         @apply mx-15 laptop:mx-30;
         @apply w-full max-w-[1640px];
+
+        @apply flex flex-col justify-start items-center gap-150;
         
         .hero {
             @apply flex flex-col items-center;
@@ -46,7 +54,7 @@ body {
         }
 
         .chapters {
-            @apply flex flex-col items-center justify-start gap-210;
+            @apply flex flex-col items-center justify-start gap-150;
 
             .chapter {
                 @apply w-full;
@@ -55,7 +63,7 @@ body {
                
                 
                 .timeline {
-                @apply w-full h-[750px];
+                @apply w-full;
                 }
             }
 

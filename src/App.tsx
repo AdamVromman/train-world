@@ -9,7 +9,6 @@ function App() {
           <Header />
           <section className="chapters">
             <Origins></Origins>
-            <div className="h-[99999px]"></div>
           </section>
           <footer className="footer"></footer>
         </div>

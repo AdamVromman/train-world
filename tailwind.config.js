@@ -8,6 +8,7 @@ export default {
         30: "30px",
         60: "60px",
         120: "120px",
+        150: "150px",
         210: "210px",
       },
       margin: {
@@ -15,6 +16,7 @@ export default {
         30: "30px",
         60: "60px",
         120: "120px",
+        150: "150px",
         210: "210px",
       },
       gap: {
@@ -22,6 +24,7 @@ export default {
         30: "30px",
         60: "60px",
         120: "120px",
+        150: "150px",
         210: "210px",
       },
       screens: {
