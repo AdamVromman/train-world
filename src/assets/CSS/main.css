@@ -2,33 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@font-face {
+    font-family: marsh-stencil;
+    src: url(./Fonts/marsh-stencil.otf);
+}
 
 body {
     @apply w-screen h-screen overflow-x-hidden overflow-y-auto;
     @apply bg-white;
+    @apply font-brix;
 
     & #root {
         @apply w-full max-w-full;
     }
-}
 
-main.main {
+    p {
+        @apply font-brix text-black text-18 font-400 text-center leading-33;
+        @apply tablet:max-w-[450px] tablet:text-left;
+
+        .p--bold {
+            @apply font-nitti-cameo;
+        }
+    }
+
+    h1 {
+        @apply font-nitti-cameo text-40 text-center;
+    }
+
+    h2 {
+        @apply font-nitti-underlined text-28 text-center;
+        @apply pb-60;
+    }
+
+    main.main {
     @apply w-full max-w-full;
     @apply flex flex-col items-center;
 
     .content {
         @apply mx-15 laptop:mx-30;
         @apply w-full max-w-[1640px];
+
+        @apply flex flex-col justify-start items-center gap-150;
         
+        .hero {
+            @apply flex flex-col items-center;
+        }
 
         & .text {
             @apply w-full max-w-[1440px];
-            @apply tablet:px-15 laptop:px-30;
+            @apply px-30 laptop:px-30;
         }
 
         .chapters {
-            @apply flex flex-col items-center justify-start gap-210;
+            @apply flex flex-col items-center justify-start gap-150;
 
             .chapter {
                 @apply w-full;
@@ -37,11 +63,45 @@ main.main {
                
                 
                 .timeline {
-                @apply w-full h-[750px];
+                @apply w-full;
                 }
             }
 
             
         }
+
+        .interaction
+        {
+            @apply w-full px-15 max-w-[1440px];
+            
+
+            &--content {
+                @apply bg-teal border-solid border-black border-2;
+                @apply py-60;
+                @apply flex flex-col items-center;
+            }
+
+            &--subtitle {
+                @apply font-brix text-22 font-700 italic text-center;
+                @apply mb-60;
+            }
+
+            .robbers-game {
+
+                @apply flex flex-row flex-wrap gap-30 p-30;
+                @apply w-full;
+                @apply tablet:gap-60 tablet:max-w-[630px] laptop:max-w-[1080px];
+
+                &--silhouette {
+                    @apply bg-black rounded-full;
+                    @apply aspect-square;
+                    @apply tablet:max-w-[150px] laptop:max-w-[210px];
+                    width: calc(33.33% - 20px);
+
+                }
+            }
+        }
     }
 }
+}
+
