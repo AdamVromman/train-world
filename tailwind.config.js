@@ -57,11 +57,13 @@ export default {
       },
       fontWeight: {
         400: "400",
+        700: "700",
       },
       fontSize: {
         18: "18px",
-        40: "40px",
+        22: "22px",
         28: "28px",
+        40: "40px",
       },
       lineHeight: {
         33: "33px",

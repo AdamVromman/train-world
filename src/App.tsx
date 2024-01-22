@@ -2,6 +2,7 @@ import EndOfAnEra from "./components/End-of-an-era";
 import Header from "./components/Header";
 import Origins from "./components/Origins";
 import PostByAPT from "./components/Post-by-APT";
+import RobbersInteraction from "./components/Robbers-interaction";
 import TheTravellingPostMen from "./components/The-travelling-post-men";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <Origins />
             <TheTravellingPostMen />
             <PostByAPT />
+            <RobbersInteraction />
             <EndOfAnEra />
           </section>
           <footer className="footer"></footer>

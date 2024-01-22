@@ -18,7 +18,6 @@ body {
 
     p {
         @apply font-brix text-black text-18 font-400 text-center leading-33;
-        @apply px-15;
 
         .p--bold {
             @apply font-nitti-cameo;
@@ -50,7 +49,7 @@ body {
 
         & .text {
             @apply w-full max-w-[1440px];
-            @apply px-15 laptop:px-30;
+            @apply px-30 laptop:px-30;
         }
 
         .chapters {
@@ -68,6 +67,36 @@ body {
             }
 
             
+        }
+
+        .interaction
+        {
+            @apply w-full px-15;
+            
+
+            &--content {
+                @apply bg-teal border-solid border-black border-2;
+                @apply py-60;
+                @apply flex flex-col items-center;
+            }
+
+            &--subtitle {
+                @apply font-brix text-22 font-700 italic text-center;
+                @apply mb-60;
+            }
+
+            .robbers-game {
+
+                @apply flex flex-row flex-wrap gap-30 p-30;
+                @apply w-full;
+
+                &--silhouette {
+                    @apply bg-black rounded-full;
+                    @apply aspect-square;
+                    width: calc(33.33% - 20px);
+
+                }
+            }
         }
     }
 }
