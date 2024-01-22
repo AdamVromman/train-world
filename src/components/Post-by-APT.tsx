@@ -8,7 +8,7 @@ const PostByAPT = () => {
           and the NMBS agreed to start using{" "}
           <span className="p--bold">Autonomous Post Trains (APT).</span> Instead
           of attaching the post carriage to a passenger train, the post would be
-          transported by special post trains. This way, the post trains could
+          transported by special post trains. This way, the post trains could{" "}
           <span className="p--bold">choose</span> their own routes and{" "}
           <span className="p--bold">timetables.</span>
         </p>

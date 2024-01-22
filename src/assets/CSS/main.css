@@ -18,6 +18,7 @@ body {
 
     p {
         @apply font-brix text-black text-18 font-400 text-center leading-33;
+        @apply tablet:max-w-[450px] tablet:text-left;
 
         .p--bold {
             @apply font-nitti-cameo;
@@ -71,7 +72,7 @@ body {
 
         .interaction
         {
-            @apply w-full px-15;
+            @apply w-full px-15 max-w-[1440px];
             
 
             &--content {
@@ -89,10 +90,12 @@ body {
 
                 @apply flex flex-row flex-wrap gap-30 p-30;
                 @apply w-full;
+                @apply tablet:gap-60 tablet:max-w-[630px] laptop:max-w-[1080px];
 
                 &--silhouette {
                     @apply bg-black rounded-full;
                     @apply aspect-square;
+                    @apply tablet:max-w-[150px] laptop:max-w-[210px];
                     width: calc(33.33% - 20px);
 
                 }
