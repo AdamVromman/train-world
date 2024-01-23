@@ -19,6 +19,7 @@ body {
     p {
         @apply font-brix text-black text-18 font-400 text-center leading-33;
         @apply tablet:max-w-[450px] tablet:text-left;
+        @apply laptop:max-w-[500px];
 
         .p--bold {
             @apply font-nitti-cameo;
@@ -27,11 +28,17 @@ body {
 
     h1 {
         @apply font-nitti-cameo text-40 text-center;
+        @apply mb-60;
+
+        @apply laptop:text-64;
     }
 
     h2 {
         @apply font-nitti-underlined text-28 text-center;
-        @apply pb-60;
+        @apply mb-60;
+
+        @apply laptop:text-36;
+
     }
 
     main.main {
@@ -43,15 +50,43 @@ body {
         @apply w-full max-w-[1640px];
 
         @apply flex flex-col justify-start items-center gap-150;
-        
-        .hero {
-            @apply flex flex-col items-center;
-        }
 
         & .text {
-            @apply w-full max-w-[1440px];
+            @apply w-full max-w-[1280px];
             @apply px-30 laptop:px-30;
+            @apply z-20;
         }
+        
+        .hero {
+            @apply w-full;
+
+            &--text {
+                @apply flex flex-col items-center mt-120;
+                @apply w-full max-w-[1440px];
+
+                @apply laptop:mt-210 laptop:items-end;
+            }
+            
+        }
+
+        .timeline {
+            &__gradient {
+
+                @apply hidden desktop:block;
+                
+                @apply fill-white;
+
+                &.right {
+                    fill: url(#left-to-right);
+                }
+
+                &.left {
+                    fill: url(#right-to-left);
+                }
+            }
+        }
+        
+
 
         .chapters {
             @apply flex flex-col items-center justify-start gap-150;
@@ -60,11 +95,14 @@ body {
                 @apply w-full;
                 @apply flex flex-col items-center;
 
-               
-                
-                .timeline {
-                @apply w-full;
+               & .origins {
+
+                &--timeline {
+                    @apply -mt-120 z-10;
+                    @apply w-full;
+                    
                 }
+               }
             }
 
             
@@ -100,6 +138,12 @@ body {
 
                 }
             }
+        }
+
+        .split-paragraph {
+            @apply flex flex-col justify-between gap-60;
+
+            @apply laptop:flex-row laptop:mx-30 laptop:gap-0;
         }
     }
 }
