@@ -74,7 +74,7 @@ const Timeline = ({ children, id }: Props) => {
   });
 
   return (
-    <div className="w-screen max-w-[1640px]">
+    <div className="w-screen max-w-[1640px] mb-60 laptop:mb-120">
       <svg className={`${id}`} viewBox="0 0 1640 900" fill="none">
         <defs>
           <style>

@@ -23,7 +23,7 @@ const Origins = () => {
             viewBox="0 0 2 227"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="hidden laptop:block"
+            className="split-paragraph--divider"
           >
             <path
               d="M1 2L1 1M0.999991 219L1 20M1 15L1 7M1 224L1 226"
@@ -45,7 +45,10 @@ const Origins = () => {
         </div>
       </div>
       <Timeline id="origins--timeline">{Timeline1Desktop}</Timeline>
-      <div className="text-image">
+      <div className="text text-image">
+        <div className="text-image--image">
+          <img src="./Images/IMAGE.png" />
+        </div>
         <div className="text-image--text">
           <p>
             The use of the post trains{" "}
@@ -58,9 +61,6 @@ const Origins = () => {
             <span className="p--bold">the whole train network</span> for the
             transportation of post.
           </p>
-        </div>
-        <div className="text-image--image">
-          <img src="./Images/IMAGE.png" />
         </div>
       </div>
     </article>

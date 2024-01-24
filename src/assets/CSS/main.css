@@ -24,6 +24,11 @@ body {
         .p--bold {
             @apply font-nitti-cameo;
         }
+
+        &:has(+ p)
+        {
+            @apply mb-60;
+        }
     }
 
     h1 {
@@ -143,7 +148,17 @@ body {
         .split-paragraph {
             @apply flex flex-col justify-between gap-60;
 
-            @apply laptop:flex-row laptop:mx-30 laptop:gap-0;
+            @apply laptop:flex-row laptop:gap-0;
+
+            &--divider {
+                @apply hidden laptop:block;
+            }
+        }
+
+        .text-image {
+            @apply w-full;
+            @apply flex flex-col;
+            @apply laptop:flex-row laptop:justify-between;
         }
     }
 }
