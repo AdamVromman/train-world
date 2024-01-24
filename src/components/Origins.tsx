@@ -1,4 +1,4 @@
-import { Timeline1Desktop } from "../assets/SVGs/Timeline-1-desktop";
+import { OriginsTimeline } from "../assets/SVGs/Origins--timeline";
 import Timeline from "./Timeline";
 
 const Origins = () => {
@@ -44,7 +44,7 @@ const Origins = () => {
           </p>
         </div>
       </div>
-      <Timeline id="origins--timeline">{Timeline1Desktop}</Timeline>
+      <Timeline id="origins--timeline">{OriginsTimeline}</Timeline>
       <div className="text text-image">
         <div className="text-image--image">
           <img src="./Images/IMAGE.png" />

@@ -43,13 +43,13 @@ const Timeline = ({ children, id }: Props) => {
     tl.to(
       `#${id}_tracks`,
       {
-        x: -8540,
+        x: -8360,
       },
       "<"
     );
 
     tl.to(
-      `#${id}_background-3`,
+      `#${id}_background-4`,
       {
         x: -546,
       },
@@ -57,7 +57,7 @@ const Timeline = ({ children, id }: Props) => {
     );
 
     tl.to(
-      `#${id}_background-2`,
+      `#${id}_background-3`,
       {
         x: -1640,
       },
@@ -65,9 +65,17 @@ const Timeline = ({ children, id }: Props) => {
     );
 
     tl.to(
-      `#${id}_background-1`,
+      `#${id}_background-2`,
       {
         x: -3280,
+      },
+      "<"
+    );
+
+    tl.to(
+      `#${id}_background-1`,
+      {
+        x: -4920,
       },
       "<"
     );
@@ -79,11 +87,49 @@ const Timeline = ({ children, id }: Props) => {
         <defs>
           <style>
             {`
-                .cls-1, .cls-2, .cls-3 {
-                    strokeLinecap: round;
-                    strokeLinejoin: round;
-                }
+                      .cls-1 {
+                        stroke: #ff1500;
+                      }
                 
+                      .cls-1, .cls-2, .cls-3 {
+                        stroke-linecap: round;
+                      }
+                
+                      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+                        stroke-linejoin: round;
+                      }
+                
+                      .cls-1, .cls-2, .cls-7, .cls-8, .cls-5, .cls-9 {
+                        fill: #e5dbc6;
+                      }
+                
+                      .cls-2, .cls-3, .cls-4, .cls-7, .cls-8, .cls-10, .cls-5, .cls-6 {
+                        stroke: #de2216;
+                      }
+                
+                      .cls-3, .cls-4, .cls-10, .cls-11 {
+                        fill: none;
+                      }
+                
+                      .cls-7 {
+                        stroke-width: 2px;
+                      }
+                
+                      .cls-7, .cls-8, .cls-10, .cls-11 {
+                        stroke-miterlimit: 10;
+                      }
+                
+                      .cls-11 {
+                        stroke: #cb352c;
+                      }
+                
+                      .cls-6, .cls-12 {
+                        fill: #de2216;
+                      }
+                
+                      .cls-12, .cls-9 {
+                        stroke-width: 0px;
+                      }
             `}
           </style>
           <linearGradient id="left-to-right">

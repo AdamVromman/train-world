@@ -1,3 +1,6 @@
+import { TravellingPostMenTimeline } from "../assets/SVGs/Travelling-post-men--timeline";
+import Timeline from "./Timeline";
+
 const TheTravellingPostMen = () => {
   return (
     <article className="chapter travelling-post-men">
@@ -27,6 +30,9 @@ const TheTravellingPostMen = () => {
           </div>
         </div>
       </div>
+      <Timeline id="travelling-post-men--timeline">
+        {TravellingPostMenTimeline}
+      </Timeline>
       <div className="text">
         <div className="split-paragraph">
           <p>
