@@ -15,6 +15,7 @@ const Timeline = ({ children, id }: Props) => {
       scrollTrigger: {
         trigger: `.${id}`,
         pin: true,
+        start: "center center",
         end: "+=9999",
         scrub: 1,
         markers: {

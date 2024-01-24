@@ -5,11 +5,11 @@ const EndOfAnEra = () => {
         <h2>The end of an era.</h2>
         <p>
           After 1981, travelling post offices{" "}
-          <span className="p--bold">started to retire</span>
-          and by 1984, no mail would be sorted on the trains any more. The APT’s
-          now <span className="p--bold">only transported the mail</span>, and
-          only to 5 stations. But even though the amount of stations decreased,
-          the amount of mail increased. In 1988,{" "}
+          <span className="p--bold">started to retire</span> and by 1984, no
+          mail would be sorted on the trains any more. The APT’s now{" "}
+          <span className="p--bold">only transported the mail</span>, and only
+          to 5 stations. But even though the amount of stations decreased, the
+          amount of mail increased. In 1988,{" "}
           <span className="p--bold">15 new APT’s</span> were made. These new
           trains completed their route 5 times per day, until 1 o clock in the
           morning, and they could transport 86 post containers of mail!

@@ -45,16 +45,24 @@ const Origins = () => {
         </div>
       </div>
       <Timeline id="origins--timeline">{Timeline1Desktop}</Timeline>
-      <p>
-        The use of the post trains <span className="p--bold">kept growing</span>{" "}
-        throughout the 19th century. First, a connection was made between
-        Brussels and Tubeke, which was extended to Bergen only a year later.
-        Then, in 1843, three new lines were added: Bergen - Quievrain, Ghent -
-        Moeskroen and Luik - Verviers. A royal decree in 1850 allowed{" "}
-        <span className="p--bold">the use</span> of almost{" "}
-        <span className="p--bold">the whole train network</span> for the
-        transportation of post.
-      </p>
+      <div className="text-image">
+        <div className="text-image--text">
+          <p>
+            The use of the post trains{" "}
+            <span className="p--bold">kept growing</span> throughout the 19th
+            century. First, a connection was made between Brussels and Tubeke,
+            which was extended to Bergen only a year later. Then, in 1843, three
+            new lines were added: Bergen - Quievrain, Ghent - Moeskroen and Luik
+            - Verviers. A royal decree in 1850 allowed{" "}
+            <span className="p--bold">the use</span> of almost{" "}
+            <span className="p--bold">the whole train network</span> for the
+            transportation of post.
+          </p>
+        </div>
+        <div className="text-image--image">
+          <img src="./Images/IMAGE.png" />
+        </div>
+      </div>
     </article>
   );
 };

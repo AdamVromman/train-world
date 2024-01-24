@@ -1,5 +1,6 @@
 import EndOfAnEra from "./components/End-of-an-era";
 import Header from "./components/Header";
+import LetterInteraction from "./components/Letter-interaction";
 import Origins from "./components/Origins";
 import PostByAPT from "./components/Post-by-APT";
 import RobbersInteraction from "./components/Robbers-interaction";
@@ -17,6 +18,7 @@ function App() {
             <PostByAPT />
             <RobbersInteraction />
             <EndOfAnEra />
+            <LetterInteraction />
           </section>
           <footer className="footer"></footer>
         </div>

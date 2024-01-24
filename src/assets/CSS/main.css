@@ -37,7 +37,7 @@ body {
         @apply font-nitti-underlined text-28 text-center;
         @apply mb-60;
 
-        @apply laptop:text-36;
+        @apply laptop:text-36 laptop:text-left;
 
     }
 
@@ -98,7 +98,7 @@ body {
                & .origins {
 
                 &--timeline {
-                    @apply -mt-120 z-10;
+                    @apply -mt-[10%] z-10;
                     @apply w-full;
                     
                 }
@@ -110,7 +110,7 @@ body {
 
         .interaction
         {
-            @apply w-full px-15 max-w-[1440px];
+            @apply w-full px-15 max-w-[1280px];
             
 
             &--content {
