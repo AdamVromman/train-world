@@ -22,15 +22,15 @@ jobs:
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: npm-
+          path: ~/.yarn
+          key: yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: yarn-
 
       - name: Install dependencies
-        run: npm ci --ignore-scripts
+        run: yarn --ignore-scripts
 
       - name: 🏗️ create production build
-        run: npm run build
+        run: yarn build
 
       # Setup container with private SSH Key (used by rsync)
       - name: 🔑 Load private SSH key
