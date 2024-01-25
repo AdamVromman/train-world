@@ -44,7 +44,7 @@ const Timeline = ({ children, id }: Props) => {
           ease: "power4.out",
           stagger: 0.01,
         },
-        "<"
+        0.5
       );
 
       tl.to(
@@ -60,53 +60,62 @@ const Timeline = ({ children, id }: Props) => {
       );
     }
 
-    tl.to(
-      `#${id}_foreground-1`,
-      {
-        x: -10000,
-      },
-      "<"
-    );
-
-    tl.to(
-      `#${id}_tracks`,
-      {
-        x: -8360,
-      },
-      "<"
-    );
-
-    tl.to(
-      `#${id}_background-4`,
-      {
-        x: -546,
-      },
-      "<"
-    );
-
-    tl.to(
-      `#${id}_background-3`,
+    tl.from(
+      `#${id}_train`,
       {
         x: -1640,
       },
-      "<"
-    );
-
-    tl.to(
-      `#${id}_background-2`,
-      {
-        x: -3280,
-      },
-      "<"
-    );
-
-    tl.to(
-      `#${id}_background-1`,
-      {
-        x: -4920,
-      },
-      "<"
-    );
+      0
+    )
+      .to(
+        `#${id}_foreground-1`,
+        {
+          x: -10000,
+        },
+        ">"
+      )
+      .to(
+        `#${id}_tracks`,
+        {
+          x: -8360,
+        },
+        "<"
+      )
+      .to(
+        `#${id}_background-4`,
+        {
+          x: -546,
+        },
+        "<"
+      )
+      .to(
+        `#${id}_background-3`,
+        {
+          x: -1640,
+        },
+        "<"
+      )
+      .to(
+        `#${id}_background-2`,
+        {
+          x: -3280,
+        },
+        "<"
+      )
+      .to(
+        `#${id}_background-1`,
+        {
+          x: -4920,
+        },
+        "<"
+      )
+      .to(
+        `#${id}_train`,
+        {
+          x: 1640,
+        },
+        ">"
+      );
   });
 
   return (
