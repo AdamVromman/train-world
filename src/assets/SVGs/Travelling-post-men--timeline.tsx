@@ -17133,7 +17133,7 @@ export const TravellingPostMenTimeline = (
         </g>
       </g>
     </g>
-    <g className="gradient-bars">
+    <g className="timeline--gradient-bars">
       <rect
         className="cls-10 fill-white stroke-width-0"
         width="100"

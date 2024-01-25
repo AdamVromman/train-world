@@ -14686,7 +14686,7 @@ export const OriginsTimeline = (
         </g>
       </g>
     </g>
-    <g className="gradient-bars">
+    <g className="timeline--gradient-bars">
       <rect
         className="cls-6 stroke-width-0 fill-white"
         width="100"

@@ -16973,7 +16973,7 @@ export const EndOfAnEraTimeline = (
         </g>
       </g>
     </g>
-    <g className="gradient-bars">
+    <g className="timeline--gradient-bars">
       <rect
         className="cls-10 stroke-width-0 fill-white"
         width="100"

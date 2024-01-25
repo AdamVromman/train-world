@@ -10,7 +10,7 @@
 body {
     @apply w-screen h-screen overflow-x-hidden overflow-y-auto;
     @apply bg-white;
-    @apply font-brix;
+    @apply font-brix text-black;
 
     & #root {
         @apply w-full max-w-full;
@@ -74,7 +74,11 @@ body {
             
         }
 
-        .gradient-bars {
+        .timeline {
+
+            @apply -mt-[10%] z-10;
+
+            &--gradient-bars {
 
                 @apply hidden desktop:block;
                 
@@ -89,6 +93,34 @@ body {
                 }
             }
 
+            &--dates {
+                @apply w-full mt-[5%] laptop:-mt-[1%] z-20 relative;
+
+
+                &--single {
+                    @apply absolute left-[50%] top-[50%];
+                    transform: translate(-50%, -50%);
+
+                    @apply flex flex-col justify-start items-center px-30 py-15;
+                    width: calc(100vw - 30px);
+                    @apply max-w-[450px];
+
+                    @apply bg-black rounded-sm text-white;
+
+                    &--date {
+                        font-family: marsh-stencil;
+                        @apply text-28;
+                    }
+
+                    &--description {
+                        @apply text-white text-center;
+                    }
+                }
+            }
+
+        }
+
+        
         .chapters {
             @apply flex flex-col items-center justify-start gap-150;
             @apply max-w-full;
@@ -96,15 +128,6 @@ body {
             .chapter {
                 @apply w-full;
                 @apply flex flex-col items-center;
-
-               & .origins {
-
-                &--timeline {
-                    @apply -mt-[10%] z-10;
-                    @apply w-full;
-                    
-                }
-               }
             }
 
             

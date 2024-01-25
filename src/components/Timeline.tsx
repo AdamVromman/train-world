@@ -6,9 +6,10 @@ interface Props {
   children: JSX.Element;
   id: string;
   viewWidth: number;
+  points: { date: string; description: string }[];
 }
 
-const Timeline = ({ children, id, viewWidth }: Props) => {
+const Timeline = ({ children, id, viewWidth, points }: Props) => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -17,7 +18,7 @@ const Timeline = ({ children, id, viewWidth }: Props) => {
         trigger: `.${id}`,
         pin: true,
         start: "center center",
-        end: "+=3000",
+        end: "+=20000",
         scrub: 1,
       },
     });
@@ -115,22 +116,45 @@ const Timeline = ({ children, id, viewWidth }: Props) => {
         },
         ">"
       );
+
+    tl.from(
+      `.${id}-date`,
+      {
+        x: 1640,
+        stagger: 0.1,
+        duration: 0.1,
+        ease: "sine.in",
+        snap: { x: { values: [0], radius: 500 } },
+      },
+      0.4
+    ).to(
+      `.${id}-date`,
+      {
+        x: -1640,
+        stagger: 0.1,
+        duration: 0.1,
+        ease: "sine.out",
+        snap: { x: { values: [0], radius: 100 } },
+      },
+      0.5
+    );
   });
 
   return (
-    <div className="w-screen max-w-[1640px] mb-60 laptop:mb-120">
-      <svg
-        className={`${id} stroke-2 laptop:stroke-1`}
-        viewBox={`${viewWidth > 400 ? "0" : "375"} 0 ${
-          viewWidth > 400 ? "1640" : "750"
-        } 750`}
-        fill="none"
-        strokeLinejoin="round"
-        strokeLinecap="round"
-      >
-        <defs>
-          <style>
-            {`
+    <div className="timeline w-screen max-w-[1640px] mb-60 laptop:mb-120">
+      <div className={`${id} w-full`}>
+        <svg
+          className="stroke-2 tablet:stroke-1"
+          viewBox={`${viewWidth > 400 ? "0" : "375"} 0 ${
+            viewWidth > 400 ? "1640" : "750"
+          } 750`}
+          fill="none"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        >
+          <defs>
+            <style>
+              {`
               .stroke-width-2 {
                 stroke-width: 2;
               }
@@ -147,22 +171,40 @@ const Timeline = ({ children, id, viewWidth }: Props) => {
                 stroke-width: 6;
               }
             `}
-          </style>
-          <linearGradient id="left-to-right">
-            <stop offset="0%" stopColor="#E5DBC6" stopOpacity={100} />
-            <stop offset="10%" stopColor="#E5DBC6" stopOpacity={100} />
-            <stop offset="45%" stopColor="#E5DBC6" stopOpacity={50} />
-            <stop offset="100%" stopColor="#E5DBC6" stopOpacity={0} />
-          </linearGradient>
-          <linearGradient id="right-to-left">
-            <stop offset="0%" stopColor="#E5DBC6" stopOpacity={0} />
-            <stop offset="45%" stopColor="#E5DBC6" stopOpacity={50} />
-            <stop offset="90%" stopColor="#E5DBC6" stopOpacity={100} />
-            <stop offset="100%" stopColor="#E5DBC6" stopOpacity={100} />
-          </linearGradient>
-        </defs>
-        {children}
-      </svg>
+            </style>
+            <linearGradient id="left-to-right">
+              <stop offset="0%" stopColor="#E5DBC6" stopOpacity={100} />
+              <stop offset="10%" stopColor="#E5DBC6" stopOpacity={100} />
+              <stop offset="45%" stopColor="#E5DBC6" stopOpacity={50} />
+              <stop offset="100%" stopColor="#E5DBC6" stopOpacity={0} />
+            </linearGradient>
+            <linearGradient id="right-to-left">
+              <stop offset="0%" stopColor="#E5DBC6" stopOpacity={0} />
+              <stop offset="45%" stopColor="#E5DBC6" stopOpacity={50} />
+              <stop offset="90%" stopColor="#E5DBC6" stopOpacity={100} />
+              <stop offset="100%" stopColor="#E5DBC6" stopOpacity={100} />
+            </linearGradient>
+          </defs>
+          {children}
+        </svg>
+        <div className="timeline--dates">
+          {points.map((point, index) => {
+            return (
+              <div
+                className={`${id}-date timeline--dates--single`}
+                key={`${id}__${index}`}
+              >
+                <span className="timeline--dates--single--date">
+                  {point.date}
+                </span>
+                <p className="timeline--dates--single--description">
+                  {point.description}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };
