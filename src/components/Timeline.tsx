@@ -43,21 +43,25 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
         `.${id}_jumping`,
         {
           y: -15,
-          duration: 0.05,
+          duration: 0.5,
           ease: "power4.out",
-          stagger: 0.01,
+          stagger: 0.1,
+          repeat: 1,
+          repeatDelay: 2,
         },
-        0.5
+        1
       );
 
       tl.to(
         `.${id}_jumping`,
         {
           y: 0,
-          duration: 0.05,
+          duration: 0.5,
           ease: "power4.in",
-          stagger: 0.01,
-          delay: 0.05,
+          stagger: 0.1,
+          delay: 0.5,
+          repeat: 1,
+          repeatDelay: 2,
         },
         "<"
       );
