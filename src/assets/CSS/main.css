@@ -84,7 +84,7 @@ body {
                     fill: url(#left-to-right);
                 }
 
-                &rect:last-child {
+                & rect:last-child {
                     fill: url(#right-to-left);
                 }
             }
