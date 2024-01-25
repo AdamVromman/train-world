@@ -16973,7 +16973,7 @@ export const EndOfAnEraTimeline = (
         </g>
       </g>
     </g>
-    <g id="end-of-an-era--timeline_sticky">
+    <g className="gradient-bars">
       <rect
         className="cls-10 stroke-width-0 fill-white"
         width="100"

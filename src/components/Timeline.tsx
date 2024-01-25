@@ -27,10 +27,38 @@ const Timeline = ({ children, id }: Props) => {
         },
       },
     });
-    tl.to(`.${id}_wheel`, {
-      rotation: 99999,
-      transformOrigin: "50% 50%",
-    });
+
+    if (id === "origins--timeline") {
+      tl.to(`.${id}_wheel`, {
+        rotation: 99999,
+        transformOrigin: "50% 50%",
+      });
+    }
+
+    if (id === "travelling-post-men--timeline") {
+      tl.to(
+        `.${id}_jumping`,
+        {
+          y: -15,
+          duration: 0.05,
+          ease: "power4.out",
+          stagger: 0.01,
+        },
+        "<"
+      );
+
+      tl.to(
+        `.${id}_jumping`,
+        {
+          y: 0,
+          duration: 0.05,
+          ease: "power4.in",
+          stagger: 0.01,
+          delay: 0.05,
+        },
+        "<"
+      );
+    }
 
     tl.to(
       `#${id}_foreground-1`,

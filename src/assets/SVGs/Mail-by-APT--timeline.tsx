@@ -27078,7 +27078,7 @@ export const MailByAPTTimeline = (
         </g>
       </g>
     </g>
-    <g id="mail-by-APT--timeline_sticky">
+    <g className="gradient-bars">
       <rect
         className="cls-12 stroke-width-0 fill-white"
         width="100"

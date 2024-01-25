@@ -74,25 +74,20 @@ body {
             
         }
 
-        .timeline {
-            &__gradient {
+        .gradient-bars {
 
                 @apply hidden desktop:block;
                 
                 @apply fill-white;
 
-                &.right {
+                & rect:first-child {
                     fill: url(#left-to-right);
                 }
 
-                &.left {
+                & rect:last-child {
                     fill: url(#right-to-left);
                 }
             }
-
-        }
-        
-
 
         .chapters {
             @apply flex flex-col items-center justify-start gap-150;
