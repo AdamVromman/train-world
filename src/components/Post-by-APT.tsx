@@ -1,7 +1,11 @@
 import { MailByAPTTimeline } from "../assets/SVGs/Mail-by-APT--timeline";
 import Timeline from "./Timeline";
 
-const PostByAPT = () => {
+interface Props {
+  viewWidth: number;
+}
+
+const PostByAPT = ({ viewWidth }: Props) => {
   return (
     <article className="chapter post-by-APT">
       <div className="text">
@@ -40,7 +44,9 @@ const PostByAPT = () => {
             the other. This made the job much safer.
           </p>
         </div>
-        <Timeline id="mail-by-APT--timeline">{MailByAPTTimeline}</Timeline>
+        <Timeline viewWidth={viewWidth} id="mail-by-APT--timeline">
+          {MailByAPTTimeline}
+        </Timeline>
         <div className="text-image">
           <div className="text-image--text">
             <p>

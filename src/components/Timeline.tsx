@@ -5,9 +5,10 @@ import { useGSAP } from "@gsap/react";
 interface Props {
   children: JSX.Element;
   id: string;
+  viewWidth: number;
 }
 
-const Timeline = ({ children, id }: Props) => {
+const Timeline = ({ children, id, viewWidth }: Props) => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -18,13 +19,6 @@ const Timeline = ({ children, id }: Props) => {
         start: "center center",
         end: "+=3000",
         scrub: 1,
-        markers: {
-          startColor: "white",
-          endColor: "white",
-          fontSize: "18px",
-          fontWeight: "bold",
-          indent: 20,
-        },
       },
     });
 
@@ -126,8 +120,10 @@ const Timeline = ({ children, id }: Props) => {
   return (
     <div className="w-screen max-w-[1640px] mb-60 laptop:mb-120">
       <svg
-        className={`${id}`}
-        viewBox="0 0 1640 900"
+        className={`${id} stroke-2 laptop:stroke-1`}
+        viewBox={`${viewWidth > 400 ? "0" : "375"} 0 ${
+          viewWidth > 400 ? "1640" : "750"
+        } 750`}
         fill="none"
         strokeLinejoin="round"
         strokeLinecap="round"

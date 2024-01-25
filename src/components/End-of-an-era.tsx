@@ -1,7 +1,11 @@
 import { EndOfAnEraTimeline } from "../assets/SVGs/End-of-an-era--timeline";
 import Timeline from "./Timeline";
 
-const EndOfAnEra = () => {
+interface Props {
+  viewWidth: number;
+}
+
+const EndOfAnEra = ({ viewWidth }: Props) => {
   return (
     <article className="chapter end-of-and-era">
       <div className="text">
@@ -36,7 +40,9 @@ const EndOfAnEra = () => {
             <img src="./Images/IMAGE.png" />
           </div>
         </div>
-        <Timeline id="end-of-an-era--timeline">{EndOfAnEraTimeline}</Timeline>
+        <Timeline viewWidth={viewWidth} id="end-of-an-era--timeline">
+          {EndOfAnEraTimeline}
+        </Timeline>
       </div>
     </article>
   );

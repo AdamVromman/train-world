@@ -1,7 +1,11 @@
 import { TravellingPostMenTimeline } from "../assets/SVGs/Travelling-post-men--timeline";
 import Timeline from "./Timeline";
 
-const TheTravellingPostMen = () => {
+interface Props {
+  viewWidth: number;
+}
+
+const TheTravellingPostMen = ({ viewWidth }: Props) => {
   return (
     <article className="chapter travelling-post-men">
       <div className="text">
@@ -30,7 +34,7 @@ const TheTravellingPostMen = () => {
           </div>
         </div>
       </div>
-      <Timeline id="travelling-post-men--timeline">
+      <Timeline viewWidth={viewWidth} id="travelling-post-men--timeline">
         {TravellingPostMenTimeline}
       </Timeline>
       <div className="text">

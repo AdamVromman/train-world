@@ -1,7 +1,11 @@
 import { OriginsTimeline } from "../assets/SVGs/Origins--timeline";
 import Timeline from "./Timeline";
 
-const Origins = () => {
+interface Props {
+  viewWidth: number;
+}
+
+const Origins = ({ viewWidth }: Props) => {
   return (
     <article className="chapter origins">
       <div className="text">
@@ -44,7 +48,9 @@ const Origins = () => {
           </p>
         </div>
       </div>
-      <Timeline id="origins--timeline">{OriginsTimeline}</Timeline>
+      <Timeline viewWidth={viewWidth} id="origins--timeline">
+        {OriginsTimeline}
+      </Timeline>
       <div className="text text-image">
         <div className="text-image--image">
           <img src="./Images/IMAGE.png" />
