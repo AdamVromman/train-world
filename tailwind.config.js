@@ -48,6 +48,7 @@ export default {
         },
         teal: {
           DEFAULT: "#B7D8CC",
+          dark: "#81B2A0",
         },
       },
       fontFamily: {
