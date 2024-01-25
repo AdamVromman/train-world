@@ -10,7 +10,7 @@
 body {
     @apply w-screen h-screen overflow-x-hidden overflow-y-auto;
     @apply bg-white;
-    @apply font-brix;
+    @apply font-brix text-black;
 
     & #root {
         @apply w-full max-w-full;
@@ -51,7 +51,7 @@ body {
     @apply flex flex-col items-center;
 
     .content {
-        @apply mx-15 laptop:mx-30;
+        @apply mx-0 laptop:mx-30;
         @apply w-full max-w-[1640px];
 
         @apply flex flex-col justify-start items-center gap-150;
@@ -75,40 +75,59 @@ body {
         }
 
         .timeline {
-            &__gradient {
+
+            @apply -mt-[10%] z-10;
+
+            &--gradient-bars {
 
                 @apply hidden desktop:block;
                 
                 @apply fill-white;
 
-                &.right {
+                & rect:first-child {
                     fill: url(#left-to-right);
                 }
 
-                &.left {
+                & rect:last-child {
                     fill: url(#right-to-left);
                 }
             }
 
+            &--dates {
+                @apply w-full mt-[5%] laptop:-mt-[1%] z-20 relative;
+
+
+                &--single {
+                    @apply absolute left-[50%] top-[50%];
+                    transform: translate(-50%, -50%);
+
+                    @apply flex flex-col justify-start items-center px-30 py-15;
+                    width: calc(100vw - 30px);
+                    @apply max-w-[450px];
+
+                    @apply bg-black rounded-sm text-white;
+
+                    &--date {
+                        font-family: marsh-stencil;
+                        @apply text-28;
+                    }
+
+                    &--description {
+                        @apply text-white text-center;
+                    }
+                }
+            }
+
         }
+
         
-
-
         .chapters {
             @apply flex flex-col items-center justify-start gap-150;
+            @apply max-w-full;
 
             .chapter {
                 @apply w-full;
                 @apply flex flex-col items-center;
-
-               & .origins {
-
-                &--timeline {
-                    @apply -mt-[10%] z-10;
-                    @apply w-full;
-                    
-                }
-               }
             }
 
             

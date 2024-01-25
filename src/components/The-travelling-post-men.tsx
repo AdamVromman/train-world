@@ -1,7 +1,43 @@
 import { TravellingPostMenTimeline } from "../assets/SVGs/Travelling-post-men--timeline";
 import Timeline from "./Timeline";
 
-const TheTravellingPostMen = () => {
+interface Props {
+  viewWidth: number;
+}
+
+const POINTS = [
+  {
+    date: "1835",
+    description: "The first trains arrive in Belgium, straight from England.",
+  },
+  {
+    date: "07.12.1837",
+    description: "A decree allows partnership between the trains and the mail.",
+  },
+  {
+    date: "06.01.1838",
+    description: "The English use the first moving post office in the world.",
+  },
+  {
+    date: "15.09.1840",
+    description:
+      "The very first post route in Belgium, between Brussels and Antwerp, is opened",
+  },
+  {
+    date: "01.12.1841",
+    description: "A new post route! Brussel-Tubeke this time.",
+  },
+  {
+    date: "1842",
+    description: "Brussel-Tubeke now goes all the way to Bergen.",
+  },
+  {
+    date: "1843",
+    description: "Three new routes get added to the Belgian post-railway",
+  },
+];
+
+const TheTravellingPostMen = ({ viewWidth }: Props) => {
   return (
     <article className="chapter travelling-post-men">
       <div className="text">
@@ -30,7 +66,11 @@ const TheTravellingPostMen = () => {
           </div>
         </div>
       </div>
-      <Timeline id="travelling-post-men--timeline">
+      <Timeline
+        points={POINTS}
+        viewWidth={viewWidth}
+        id="travelling-post-men--timeline"
+      >
         {TravellingPostMenTimeline}
       </Timeline>
       <div className="text">
