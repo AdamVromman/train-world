@@ -29,10 +29,15 @@ const Timeline = ({ children, id }: Props) => {
     });
 
     if (id === "origins--timeline") {
-      tl.to(`.${id}_wheel`, {
-        rotation: 99999,
-        transformOrigin: "50% 50%",
-      });
+      tl.to(
+        `.${id}_wheel`,
+        {
+          rotation: 3600,
+          transformOrigin: "50% 50%",
+          duration: 1.2,
+        },
+        0
+      );
     }
 
     if (id === "travelling-post-men--timeline") {
