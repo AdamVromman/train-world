@@ -7,33 +7,36 @@ interface Props {
 
 const POINTS = [
   {
-    date: "1835",
-    description: "The first trains arrive in Belgium, straight from England.",
+    date: "1849",
+    description: "The prepaid stamp makes people send a lot more post.",
   },
   {
-    date: "07.12.1837",
-    description: "A decree allows partnership between the trains and the mail.",
-  },
-  {
-    date: "06.01.1838",
-    description: "The English use the first moving post office in the world.",
-  },
-  {
-    date: "15.09.1840",
+    date: "30.01.1850",
     description:
-      "The very first post route in Belgium, between Brussels and Antwerp, is opened",
+      "A Royal decree allows the Post to use the nearly whole railway system.",
   },
   {
-    date: "01.12.1841",
-    description: "A new post route! Brussel-Tubeke this time.",
+    date: "10.04.1850",
+    description: "From now on all stations need to be fitted with a mailbox.",
   },
   {
-    date: "1842",
-    description: "Brussel-Tubeke now goes all the way to Bergen.",
+    date: "01.06.1852",
+    description:
+      "Due to popularity, all stations also get a kiosk that sells stamps.",
   },
   {
-    date: "1843",
-    description: "Three new routes get added to the Belgian post-railway",
+    date: "01.07.1852",
+    description:
+      "The first use of the word 'rijdend postkantoor' (moving postoffice)",
+  },
+  {
+    date: "15.12.1895",
+    description:
+      "Instead of naming a route after train line, they get their own name.",
+  },
+  {
+    date: "1934",
+    description: "In total, 48 post offices are riding around Belgium.",
   },
 ];
 
