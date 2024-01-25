@@ -1,3 +1,6 @@
+import { EndOfAnEraTimeline } from "../assets/SVGs/End-of-an-era--timeline";
+import Timeline from "./Timeline";
+
 const EndOfAnEra = () => {
   return (
     <article className="chapter end-of-and-era">
@@ -33,6 +36,7 @@ const EndOfAnEra = () => {
             <img src="./Images/IMAGE.png" />
           </div>
         </div>
+        <Timeline id="end-of-an-era--timeline">{EndOfAnEraTimeline}</Timeline>
       </div>
     </article>
   );

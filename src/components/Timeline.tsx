@@ -16,7 +16,7 @@ const Timeline = ({ children, id }: Props) => {
         trigger: `.${id}`,
         pin: true,
         start: "center center",
-        end: "+=9999",
+        end: "+=3000",
         scrub: 1,
         markers: {
           startColor: "white",
@@ -103,6 +103,10 @@ const Timeline = ({ children, id }: Props) => {
 
               .stroke-width-0 {
                 stroke-width: 0;
+              }
+
+              .stroke-width-6 {
+                stroke-width: 6;
               }
             `}
           </style>
