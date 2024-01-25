@@ -83,53 +83,27 @@ const Timeline = ({ children, id }: Props) => {
 
   return (
     <div className="w-screen max-w-[1640px] mb-60 laptop:mb-120">
-      <svg className={`${id}`} viewBox="0 0 1640 900" fill="none">
+      <svg
+        className={`${id}`}
+        viewBox="0 0 1640 900"
+        fill="none"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      >
         <defs>
           <style>
             {`
-                      .cls-1 {
-                        stroke: #ff1500;
-                      }
-                
-                      .cls-1, .cls-2, .cls-3 {
-                        stroke-linecap: round;
-                      }
-                
-                      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
-                        stroke-linejoin: round;
-                      }
-                
-                      .cls-1, .cls-2, .cls-7, .cls-8, .cls-5, .cls-9 {
-                        fill: #e5dbc6;
-                      }
-                
-                      .cls-2, .cls-3, .cls-4, .cls-7, .cls-8, .cls-10, .cls-5, .cls-6 {
-                        stroke: #de2216;
-                      }
-                
-                      .cls-3, .cls-4, .cls-10, .cls-11 {
-                        fill: none;
-                      }
-                
-                      .cls-7 {
-                        stroke-width: 2px;
-                      }
-                
-                      .cls-7, .cls-8, .cls-10, .cls-11 {
-                        stroke-miterlimit: 10;
-                      }
-                
-                      .cls-11 {
-                        stroke: #cb352c;
-                      }
-                
-                      .cls-6, .cls-12 {
-                        fill: #de2216;
-                      }
-                
-                      .cls-12, .cls-9 {
-                        stroke-width: 0px;
-                      }
+              .stroke-width-2 {
+                stroke-width: 2;
+              }
+
+               .stroke-miter-limit-10 {
+                stroke-miterlimit: 10;
+              }
+
+              .stroke-width-0 {
+                stroke-width: 0;
+              }
             `}
           </style>
           <linearGradient id="left-to-right">
