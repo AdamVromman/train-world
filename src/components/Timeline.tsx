@@ -18,10 +18,12 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
         trigger: `.${id}`,
         pin: true,
         start: "center center",
-        end: "+=20000",
+        end: "+=10000",
         scrub: 1,
       },
     });
+
+    tl.duration(7);
 
     if (id === "origins--timeline") {
       tl.to(
@@ -29,7 +31,8 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
         {
           rotation: 3600,
           transformOrigin: "50% 50%",
-          duration: 1.2,
+          duration: 7,
+          ease: "none",
         },
         0
       );
@@ -40,21 +43,25 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
         `.${id}_jumping`,
         {
           y: -15,
-          duration: 0.05,
+          duration: 0.5,
           ease: "power4.out",
-          stagger: 0.01,
+          stagger: 0.1,
+          repeat: 1,
+          repeatDelay: 2,
         },
-        0.5
+        1
       );
 
       tl.to(
         `.${id}_jumping`,
         {
           y: 0,
-          duration: 0.05,
+          duration: 0.5,
           ease: "power4.in",
-          stagger: 0.01,
-          delay: 0.05,
+          stagger: 0.1,
+          delay: 0.5,
+          repeat: 1,
+          repeatDelay: 2,
         },
         "<"
       );
@@ -64,6 +71,8 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
       `#${id}_train`,
       {
         x: -1640,
+        duration: 1,
+        ease: "none",
       },
       0
     )
@@ -71,6 +80,8 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
         `#${id}_foreground-1`,
         {
           x: -10000,
+          duration: 5,
+          ease: "none",
         },
         ">"
       )
@@ -78,6 +89,8 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
         `#${id}_tracks`,
         {
           x: -8360,
+          duration: 5,
+          ease: "none",
         },
         "<"
       )
@@ -85,6 +98,8 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
         `#${id}_background-4`,
         {
           x: -546,
+          duration: 5,
+          ease: "none",
         },
         "<"
       )
@@ -92,6 +107,8 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
         `#${id}_background-3`,
         {
           x: -1640,
+          duration: 5,
+          ease: "none",
         },
         "<"
       )
@@ -99,6 +116,8 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
         `#${id}_background-2`,
         {
           x: -3280,
+          duration: 5,
+          ease: "none",
         },
         "<"
       )
@@ -106,6 +125,8 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
         `#${id}_background-1`,
         {
           x: -4920,
+          duration: 5,
+          ease: "none",
         },
         "<"
       )
@@ -113,6 +134,7 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
         `#${id}_train`,
         {
           x: 1640,
+          duration: 1,
         },
         ">"
       );
@@ -121,22 +143,22 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
       `.${id}-date`,
       {
         x: 1640,
-        stagger: 0.1,
-        duration: 0.1,
+        stagger: 5 / points.length,
+        duration: 5 / points.length,
         ease: "sine.in",
-        snap: { x: { values: [0], radius: 500 } },
+        snap: { x: { values: [0], radius: 50 } },
       },
-      0.4
+      1
     ).to(
       `.${id}-date`,
       {
         x: -1640,
-        stagger: 0.1,
-        duration: 0.1,
+        stagger: 5 / points.length,
+        duration: 5 / points.length,
         ease: "sine.out",
-        snap: { x: { values: [0], radius: 100 } },
+        snap: { x: { values: [0], radius: 50 } },
       },
-      0.5
+      2
     );
   });
 

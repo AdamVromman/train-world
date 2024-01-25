@@ -7,33 +7,36 @@ interface Props {
 
 const POINTS = [
   {
-    date: "1835",
-    description: "The first trains arrive in Belgium, straight from England.",
+    date: "20.11.1959",
+    description: "The NMBS and the Post start talks about creating APTs.",
   },
   {
-    date: "07.12.1837",
-    description: "A decree allows partnership between the trains and the mail.",
+    date: "1967",
+    description: "The Post modifies 8 AM34s in the workshop in Mechelen.",
   },
   {
-    date: "06.01.1838",
-    description: "The English use the first moving post office in the world.",
-  },
-  {
-    date: "15.09.1840",
+    date: "05.03.1968",
     description:
-      "The very first post route in Belgium, between Brussels and Antwerp, is opened",
+      "An inaugural ride between Brussels and Luxembourg takes place.",
   },
   {
-    date: "01.12.1841",
-    description: "A new post route! Brussel-Tubeke this time.",
+    date: "23.04.1968",
+    description: "The line Brussels-Luxembourg officially uses APTs now.",
   },
   {
-    date: "1842",
-    description: "Brussel-Tubeke now goes all the way to Bergen.",
+    date: "02.09.1968",
+    description:
+      "APTs start being used on the line between Brussels and Oostend.",
   },
   {
-    date: "1843",
-    description: "Three new routes get added to the Belgian post-railway",
+    date: "05.1971",
+    description:
+      "The travelling postoffice between Brussels and Antwerp is discontinued.",
+  },
+  {
+    date: "1972",
+    description:
+      "One year later, another travelling postoffice is discontinued: Brussels-Ghent.",
   },
 ];
 

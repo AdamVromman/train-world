@@ -66,10 +66,11 @@ body {
             @apply w-full;
 
             &--text {
+                @apply relative z-20;
                 @apply flex flex-col items-center mt-120;
                 @apply w-full max-w-[1440px];
 
-                @apply laptop:mt-210 laptop:items-end;
+                @apply laptop:mt-120 laptop:items-end;
             }
             
         }
