@@ -37,6 +37,9 @@ const Header = () => {
 
   return (
     <header className="hero">
+      <div className="absolute z-20 m-15">
+        <img className="w-[50px] laptop:w-[100px]" src="/Images/logo.png" />
+      </div>
       <div className="hero--text text">
         <h1 className="mb-30 text-red">At your posts, folks!</h1>
         <h2 className="mb-120">Traversing history on Belgiums postal trains</h2>
