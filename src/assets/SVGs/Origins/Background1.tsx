@@ -1,4 +1,4 @@
-const Background1 = () => (
+export const Background1 = (
   <g id="origins--timeline_background-1">
     <g>
       <path
@@ -2183,5 +2183,3 @@ const Background1 = () => (
     </g>
   </g>
 );
-
-export default Background1;

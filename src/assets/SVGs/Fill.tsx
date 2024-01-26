@@ -1,4 +1,4 @@
-const Fill = () => (
+export const Fill = (
   <rect
     id="timeline-fill"
     className="cls-6 stroke-width-0 fill-white"
@@ -7,5 +7,3 @@ const Fill = () => (
     height="750"
   />
 );
-
-export default Fill;

@@ -1,8 +1,8 @@
-import { lazy } from "react";
-
-const Clouds = lazy(() => import("./Clouds"));
-const Mountains = lazy(() => import("./Mountains"));
-const Tracks = lazy(() => import("./Tracks"));
+import { GradientBars } from "../GradientBars";
+import { Clouds } from "./Clouds";
+import { Mountains } from "./Mountains";
+import { Tracks } from "./Tracks";
+import { Train } from "./Train";
 
 export const Hero = (
   <>
@@ -15,7 +15,7 @@ export const Hero = (
     {Clouds}
     {Mountains}
     {Tracks}
-    {/* {Train} */}
+    {Train}
     <g className="timeline--gradient-bars">
       <rect
         className="cls-6 stroke-width-0 fill-white"

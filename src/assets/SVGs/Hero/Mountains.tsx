@@ -1,4 +1,4 @@
-const Mountains = () => (
+export const Mountains = (
   <>
     <g id="hero_mountains">
       <g>
@@ -44,5 +44,3 @@ const Mountains = () => (
     </g>
   </>
 );
-
-export default Mountains;

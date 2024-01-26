@@ -1,4 +1,4 @@
-const Train = () => (
+export const Train = (
   <g id="end-of-an-era--timeline_train">
     <g>
       <g id="Wheels">
@@ -2620,5 +2620,3 @@ const Train = () => (
     </g>
   </g>
 );
-
-export default Train;

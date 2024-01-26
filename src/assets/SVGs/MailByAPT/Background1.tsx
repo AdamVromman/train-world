@@ -1,4 +1,4 @@
-const Background1 = () => (
+export const Background1 = (
   <g id="mail-by-APT--timeline_background-1">
     <g id="tree-medium">
       <path
@@ -607,5 +607,3 @@ const Background1 = () => (
     </g>
   </g>
 );
-
-export default Background1;
