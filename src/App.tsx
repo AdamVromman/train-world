@@ -28,7 +28,7 @@ function App() {
       <Suspense fallback={<Loading />}>
         <main className="main">
           <div className="content">
-            <Header />
+            <Header viewWidth={viewWidth} />
             <section className="chapters">
               <Origins viewWidth={viewWidth} />
 

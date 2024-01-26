@@ -63,13 +63,16 @@ body {
         }
         
         .hero {
-            @apply w-full;
+            @apply w-full relative;
 
             &--text {
-                @apply flex flex-col items-center mt-120;
+                @apply relative left-0 top-0  z-20;
+                @apply flex flex-col items-center -mt-[300px];
                 @apply w-full max-w-[1440px];
 
-                @apply laptop:mt-120 laptop:items-end;
+                @apply laptop:absolute;
+                @apply laptop:mt-60 laptop:items-end;
+                @apply desktop:mt-120;
             }
             
         }
