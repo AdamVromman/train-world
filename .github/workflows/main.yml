@@ -23,7 +23,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.cache/yarn
-          key: yarn-${{ hashFiles('package-lock') }}
+          key: yarn-${{ hashFiles('package.json') }}
 
       - name: Install dependencies
         run: yarn --ignore-scripts
