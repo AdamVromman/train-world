@@ -1,5 +1,5 @@
 import { Player } from "@lottiefiles/react-lottie-player";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const RobbersInteraction = () => {
   const [selectedCircles, setSelectedCircles] = useState<boolean[]>([
@@ -45,13 +45,6 @@ const RobbersInteraction = () => {
         drawnPlayer.play();
       }
     }
-  };
-
-  const getMap = (players: React.MutableRefObject<Map<string, Player>>) => {
-    if (!players.current) {
-      players.current = new Map();
-    }
-    return players.current;
   };
 
   return (
