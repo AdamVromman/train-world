@@ -1,4 +1,4 @@
-const Train = () => (
+export const Train = (
   <g id="origins--timeline_train">
     <g className="origins--timeline_wheel">
       <path
@@ -1901,5 +1901,3 @@ const Train = () => (
     </g>
   </g>
 );
-
-export default Train;

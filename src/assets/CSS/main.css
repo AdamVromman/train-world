@@ -79,7 +79,7 @@ body {
 
         .timeline {
 
-            @apply -mt-[10%] z-10 relative overflow-x-hidden;
+            @apply -mt-[10%] z-10 relative overflow-x-hidden overflow-y-clip;
 
             &--gradient-bars {
 
