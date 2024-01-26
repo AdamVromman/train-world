@@ -6,7 +6,8 @@ import { Background2 } from "./Background2";
 import { Background3 } from "./Background3";
 import { Background4 } from "./Background4";
 import { Foreground1 } from "./Foreground1";
-import { Train } from "./Train";
+import { TrainLeft } from "./Train-left";
+import { TrainRight } from "./Train-right";
 
 export const MailByAPTTimeline = (
   <>
@@ -16,7 +17,10 @@ export const MailByAPTTimeline = (
     {Background2}
     {Background1}
     <Tracks id="mail-by-APT--timeline" />
-    {Train}
+    <g id="mail-by-APT--timeline_train">
+      {TrainLeft}
+      {TrainRight}
+    </g>
     {Foreground1}
     {GradientBars}
   </>
