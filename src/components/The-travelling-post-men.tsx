@@ -1,4 +1,4 @@
-import { TravellingPostMenTimeline } from "../assets/SVGs/Travelling-post-men--timeline";
+import { TravellingPostMenTimeline } from "../assets/SVGs/TravellingPostMen/Travelling-post-men--timeline";
 import Timeline from "./Timeline";
 
 interface Props {

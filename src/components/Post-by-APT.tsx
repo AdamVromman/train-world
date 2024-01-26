@@ -1,4 +1,4 @@
-import { MailByAPTTimeline } from "../assets/SVGs/Mail-by-APT--timeline";
+import { MailByAPTTimeline } from "../assets/SVGs/MailByAPT/Mail-by-APT--timeline";
 import Timeline from "./Timeline";
 
 interface Props {

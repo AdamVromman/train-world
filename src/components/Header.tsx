@@ -1,6 +1,6 @@
 import { gsap } from "gsap/gsap-core";
 import { useGSAP } from "@gsap/react";
-import { Hero } from "../assets/SVGs/Hero";
+import { Hero } from "../assets/SVGs/Hero/Hero";
 
 const Header = () => {
   useGSAP(() => {

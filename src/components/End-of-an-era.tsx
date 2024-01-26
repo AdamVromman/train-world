@@ -1,4 +1,4 @@
-import { EndOfAnEraTimeline } from "../assets/SVGs/End-of-an-era--timeline";
+import { EndOfAnEraTimeline } from "../assets/SVGs/EndOfAnEra/End-of-an-era--timeline";
 import Timeline from "./Timeline";
 
 interface Props {
