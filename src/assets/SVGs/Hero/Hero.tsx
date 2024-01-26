@@ -3,7 +3,6 @@ import { lazy } from "react";
 const Clouds = lazy(() => import("./Clouds"));
 const Mountains = lazy(() => import("./Mountains"));
 const Tracks = lazy(() => import("./Tracks"));
-const Train = lazy(() => import("./Train"));
 
 export const Hero = (
   <>
@@ -16,7 +15,7 @@ export const Hero = (
     {Clouds}
     {Mountains}
     {Tracks}
-    {Train}
+    {/* {Train} */}
     <g className="timeline--gradient-bars">
       <rect
         className="cls-6 stroke-width-0 fill-white"
