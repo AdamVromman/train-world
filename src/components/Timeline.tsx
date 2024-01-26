@@ -12,6 +12,21 @@ interface Props {
 }
 
 const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
+  const getViewportWidth = () => {
+    switch (id) {
+      case "origins--timeline":
+        return 440;
+      case "travelling-post-men--timeline":
+        return 750;
+      case "mail-by-APT--timeline":
+        return 800;
+      case "end-of-an-era--timeline":
+        return 820;
+      default:
+        return 500;
+    }
+  };
+
   const largeTrainDisplacement =
     id === "mail-by-APT--timeline" || id === "end-of-an-era--timeline"
       ? 1200
@@ -175,7 +190,7 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
       <div className={`${id} w-full`}>
         <svg
           className="stroke-2 tablet:stroke-1"
-          viewBox={`${viewWidth > 400 ? "0" : "375"} 0 ${
+          viewBox={`${viewWidth > 400 ? "0" : `${getViewportWidth()}`} 0 ${
             viewWidth > 400 ? "1640" : "750"
           } 750`}
           fill="none"
