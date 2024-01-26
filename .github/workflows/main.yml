@@ -22,7 +22,7 @@ jobs:
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
-          path: ~/node_modules
+          path: ~/.cache/yarn
           key: yarn-${{ hashFiles('yarn.lock') }}
 
       - name: Install dependencies
