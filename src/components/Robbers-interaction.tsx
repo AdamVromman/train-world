@@ -1,4 +1,59 @@
+import { Player } from "@lottiefiles/react-lottie-player";
+import { useEffect, useRef, useState } from "react";
+
 const RobbersInteraction = () => {
+  const [selectedCircles, setSelectedCircles] = useState<boolean[]>([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+
+  const drawnCircles = useRef<Array<Player>>([]);
+  const erasedCircles = useRef<Array<Player>>([]);
+
+  const handleClick = (id: number) => {
+    const selected = selectedCircles[id];
+    let drawnPlayer;
+    let erasedPlayer;
+    if (drawnCircles.current) {
+      drawnPlayer = drawnCircles.current[id];
+    }
+    if (erasedCircles.current) {
+      erasedPlayer = erasedCircles.current[id];
+    }
+
+    const temp = selectedCircles.slice(0);
+    temp[id] = !selected;
+
+    setSelectedCircles(temp);
+
+    if (drawnPlayer && erasedPlayer) {
+      if (selected) {
+        erasedPlayer.setSeeker(0);
+        erasedPlayer.play();
+      } else {
+        drawnPlayer.setSeeker(0);
+        drawnPlayer.play();
+      }
+    }
+  };
+
+  const getMap = (players: React.MutableRefObject<Map<string, Player>>) => {
+    if (!players.current) {
+      players.current = new Map();
+    }
+    return players.current;
+  };
+
   return (
     <div className="interaction">
       <div className="interaction--content">
@@ -20,20 +75,41 @@ const RobbersInteraction = () => {
           </span>
         </div>
         <ul className="robbers-game">
-          <li className="robbers-game--silhouette">
-            <button></button>
-          </li>
-          <li className="robbers-game--silhouette"></li>
-          <li className="robbers-game--silhouette"></li>
-          <li className="robbers-game--silhouette"></li>
-          <li className="robbers-game--silhouette"></li>
-          <li className="robbers-game--silhouette"></li>
-          <li className="robbers-game--silhouette"></li>
-          <li className="robbers-game--silhouette"></li>
-          <li className="robbers-game--silhouette"></li>
-          <li className="robbers-game--silhouette"></li>
-          <li className="robbers-game--silhouette"></li>
-          <li className="robbers-game--silhouette"></li>
+          {selectedCircles.map((selected, index) => {
+            return (
+              <button
+                key={index}
+                onClick={() => handleClick(index)}
+                className="robbers-game--silhouette"
+              >
+                <Player
+                  ref={(p) => {
+                    if (erasedCircles.current && p) {
+                      erasedCircles.current[index] = p;
+                    }
+                  }}
+                  className={`w-full h-full top-0 left-0 absolute ${
+                    selected ? "hidden" : "block"
+                  }`}
+                  autoplay
+                  src="./Lottie/circle-erased.json"
+                  keepLastFrame
+                />
+                <Player
+                  ref={(p) => {
+                    if (drawnCircles.current && p) {
+                      drawnCircles.current[index] = p;
+                    }
+                  }}
+                  className={`w-full h-full top-0 left-0 absolute ${
+                    selected ? "block" : "hidden"
+                  }`}
+                  src="./Lottie/circle-drawn.json"
+                  keepLastFrame
+                />
+              </button>
+            );
+          })}
         </ul>
       </div>
     </div>

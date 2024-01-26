@@ -156,7 +156,7 @@ body {
                 @apply tablet:gap-60 tablet:max-w-[630px] laptop:max-w-[1080px];
 
                 &--silhouette {
-                    @apply bg-black rounded-full;
+                    @apply bg-black rounded-full relative;
                     @apply aspect-square;
                     @apply tablet:max-w-[150px] laptop:max-w-[210px];
                     width: calc(33.33% - 20px);
