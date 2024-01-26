@@ -1,4 +1,4 @@
-export const TrainLeft = (
+const TrainLeft = () => (
   <g>
     <g id="Wheels-2" data-name="Wheels">
       <g>
@@ -10469,3 +10469,5 @@ export const TrainLeft = (
     </g>
   </g>
 );
+
+export default TrainLeft;

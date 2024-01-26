@@ -1,4 +1,4 @@
-export const Background2 = (
+const Background2 = () => (
   <g id="mail-by-APT--timeline_background-2">
     <path
       className="cls-14 stroke-red fill-none stroke-miter-limit-10"
@@ -1211,3 +1211,5 @@ export const Background2 = (
     </g>
   </g>
 );
+
+export default Background2;

@@ -1,4 +1,4 @@
-export const Background1 = (
+const Background1 = () => (
   <g id="travelling-post-men--timeline_background-1">
     <g id="rocks_large" data-name="rocks large">
       <path
@@ -1553,3 +1553,5 @@ export const Background1 = (
     </g>
   </g>
 );
+
+export default Background1;

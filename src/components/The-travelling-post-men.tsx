@@ -40,6 +40,39 @@ const POINTS = [
   },
 ];
 
+const STARS = [
+  {
+    x: 20,
+    y: 20,
+    text: "They lit lamps to be able to work and a big fire to keep warm.",
+  },
+  {
+    x: 30,
+    y: 30,
+    text: "The trains carried the most urgent cargo. But sometimes also the weirdest. Things like instruments, machinery and even live animals.",
+  },
+  {
+    x: 40,
+    y: 40,
+    text: "Every station, they received the huge bags with unsorted post.",
+  },
+  {
+    x: 50,
+    y: 50,
+    text: "One carriage had enough space for 10 people to work at the same time. Of course, when you add the 300–400 bags of unsorted post, it got a bit crowded!",
+  },
+  {
+    x: 60,
+    y: 60,
+    text: "Using stamps to mark where the letter came from.",
+  },
+  {
+    x: 70,
+    y: 70,
+    text: "Putting the post in the little boxes.",
+  },
+];
+
 const TheTravellingPostMen = ({ viewWidth }: Props) => {
   return (
     <article className="chapter travelling-post-men">
@@ -70,6 +103,7 @@ const TheTravellingPostMen = ({ viewWidth }: Props) => {
         </div>
       </div>
       <Timeline
+        stars={STARS}
         points={POINTS}
         viewWidth={viewWidth}
         id="travelling-post-men--timeline"

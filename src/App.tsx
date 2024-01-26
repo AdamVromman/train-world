@@ -2,7 +2,8 @@ import { useState, useEffect, lazy, Suspense } from "react";
 import LetterInteraction from "./components/Letter-interaction";
 import RobbersInteraction from "./components/Robbers-interaction";
 import Loading from "./components/Loading";
-import Header from "./components/Header";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function App() {
   const [viewWidth, setViewWidth] = useState(0);
@@ -14,6 +15,8 @@ function App() {
   const PostByAPT = lazy(() => import("./components/Post-by-APT"));
   const EndOfAnEra = lazy(() => import("./components/End-of-an-era"));
 
+  const Header = lazy(() => import("./components/Header"));
+
   useEffect(() => {
     if (window) {
       window.addEventListener("resize", () => {
@@ -23,12 +26,16 @@ function App() {
     }
   }, [viewWidth]);
 
+  useGSAP(() => {
+    ScrollTrigger.config({ limitCallbacks: true });
+  });
+
   return (
     <>
       <Suspense fallback={<Loading />}>
         <main className="main">
           <div className="content">
-            <Header />
+            <Header viewWidth={viewWidth} />
             <section className="chapters">
               <Origins viewWidth={viewWidth} />
 

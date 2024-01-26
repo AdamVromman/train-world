@@ -2,7 +2,11 @@ import { gsap } from "gsap/gsap-core";
 import { useGSAP } from "@gsap/react";
 import { Hero } from "../assets/SVGs/Hero/Hero";
 
-const Header = () => {
+interface Props {
+  viewWidth: number;
+}
+
+const Header = ({ viewWidth }: Props) => {
   useGSAP(() => {
     const tl = gsap.timeline();
     tl.to("#hero_mountains", {
@@ -44,14 +48,18 @@ const Header = () => {
         <svg
           id="hero"
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1640 1000"
+          viewBox={`${viewWidth > 768 ? "0" : "375"} 0 ${
+            viewWidth > 768 ? "1640" : "900"
+          } 1000`}
         >
           {Hero}
         </svg>
       </div>
-      <div className="absolute left-0 top-0 hero--text text z-20">
-        <h1 className="mb-30 text-red">At your posts, folks!</h1>
-        <h2 className="mb-120">Traversing history on Belgiums postal trains</h2>
+      <div className=" hero--text text">
+        <h1 className="mb-120 laptop:mb-30 text-red">At your posts, folks!</h1>
+        <h2 className="mb-30 laptop:mb-120">
+          Traversing history on Belgiums postal trains
+        </h2>
         <p className="laptop:text-right">
           Discover the magical history of the travelling post men and the postal
           trains of Belgium. Their history is written down, illustrated and

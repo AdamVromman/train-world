@@ -1,4 +1,4 @@
-export const Foreground1 = (
+const Foreground1 = () => (
   <g id="end-of-an-era--timeline_foreground-1">
     <g>
       <path
@@ -733,3 +733,5 @@ export const Foreground1 = (
     </g>
   </g>
 );
+
+export default Foreground1;
