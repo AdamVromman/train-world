@@ -1,4 +1,4 @@
-export const Background3 = (
+const Background3 = () => (
   <g id="mail-by-APT--timeline_background-3">
     <g>
       <g id="tree-tiny">
@@ -5573,3 +5573,5 @@ export const Background3 = (
     </g>
   </g>
 );
+
+export default Background3;

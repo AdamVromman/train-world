@@ -1,4 +1,4 @@
-export const TrainRight = (
+const TrainRight = () => (
   <g>
     <g id="Wheels">
       <g>
@@ -10764,3 +10764,5 @@ export const TrainRight = (
     </g>
   </g>
 );
+
+export default TrainRight;

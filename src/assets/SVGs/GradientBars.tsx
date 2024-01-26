@@ -1,4 +1,4 @@
-export const GradientBars = (
+const GradientBars = () => (
   <g className="timeline--gradient-bars">
     <rect
       className="cls-6 stroke-width-0 fill-white"
@@ -13,3 +13,5 @@ export const GradientBars = (
     />
   </g>
 );
+
+export default GradientBars;
