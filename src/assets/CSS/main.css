@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: marsh-stencil;
-    src: url(./Fonts/marsh-stencil.otf);
+    src: url(/Fonts/marsh-stencil.otf);
 }
 
 body {
