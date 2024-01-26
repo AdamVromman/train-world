@@ -1,4 +1,4 @@
-export const Tracks = (
+const Tracks = () => (
   <>
     {" "}
     <g id="hero_tracks">
@@ -2237,3 +2237,5 @@ export const Tracks = (
     </g>
   </>
 );
+
+export default Tracks;

@@ -1,4 +1,4 @@
-export const Train = (
+const Train = () => (
   <>
     <g id="hero_train">
       <g>
@@ -21359,3 +21359,5 @@ export const Train = (
     </g>
   </>
 );
+
+export default Train;
