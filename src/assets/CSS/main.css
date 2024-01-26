@@ -76,7 +76,7 @@ body {
 
         .timeline {
 
-            @apply -mt-[10%] z-10;
+            @apply -mt-[10%] z-10 relative;
 
             &--gradient-bars {
 
@@ -91,6 +91,10 @@ body {
                 & rect:last-child {
                     fill: url(#right-to-left);
                 }
+            }
+
+            &--stars {
+                @apply w-full h-full absolute left-0 top-0 z-20;
             }
 
             &--dates {

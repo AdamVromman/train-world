@@ -1,15 +1,17 @@
 import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 interface Props {
   children: JSX.Element;
   id: string;
   viewWidth: number;
   points: { date: string; description: string }[];
+  stars?: { x: number; y: number; text: string }[];
 }
 
-const Timeline = ({ children, id, viewWidth, points }: Props) => {
+const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
   const largeTrainDisplacement =
     id === "mail-by-APT--timeline" || id === "end-of-an-era--timeline"
       ? 1200
@@ -215,6 +217,25 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
           </defs>
           {children}
         </svg>
+        {stars && (
+          <div className="timeline--stars">
+            {stars.map((star) => {
+              return (
+                <button
+                  className="absolute"
+                  style={{ top: `${star.y}%`, left: `${star.x}%` }}
+                >
+                  <Player
+                    className="w-[45px]"
+                    autoplay
+                    loop
+                    src="./Lottie/star.json"
+                  />
+                </button>
+              );
+            })}
+          </div>
+        )}
         <div className="timeline--dates">
           {points.map((point, index) => {
             return (
