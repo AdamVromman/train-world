@@ -1,4 +1,4 @@
-export const Clouds = (
+const Clouds = () => (
   <>
     <g id="hero_clouds">
       <g id="hero_clouds-2">
@@ -6220,3 +6220,5 @@ export const Clouds = (
     </g>
   </>
 );
+
+export default Clouds;

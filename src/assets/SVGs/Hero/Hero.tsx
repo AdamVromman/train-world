@@ -1,8 +1,9 @@
-import { GradientBars } from "../GradientBars";
-import { Clouds } from "./Clouds";
-import { Mountains } from "./Mountains";
-import { Tracks } from "./Tracks";
-import { Train } from "./Train";
+import { lazy } from "react";
+
+const Clouds = lazy(() => import("./Clouds"));
+const Mountains = lazy(() => import("./Mountains"));
+const Tracks = lazy(() => import("./Tracks"));
+const Train = lazy(() => import("./Train"));
 
 export const Hero = (
   <>
