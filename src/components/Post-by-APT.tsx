@@ -1,4 +1,4 @@
-import { MailByAPTTimeline } from "../assets/SVGs/Mail-by-APT--timeline";
+import { MailByAPTTimeline } from "../assets/SVGs/MailByAPT/Mail-by-APT--timeline";
 import Timeline from "./Timeline";
 
 interface Props {
@@ -79,13 +79,15 @@ const PostByAPT = ({ viewWidth }: Props) => {
             the other. This made the job much safer.
           </p>
         </div>
-        <Timeline
-          points={POINTS}
-          viewWidth={viewWidth}
-          id="mail-by-APT--timeline"
-        >
-          {MailByAPTTimeline}
-        </Timeline>
+      </div>
+      <Timeline
+        points={POINTS}
+        viewWidth={viewWidth}
+        id="mail-by-APT--timeline"
+      >
+        {MailByAPTTimeline}
+      </Timeline>
+      <div className="text">
         <div className="text-image">
           <div className="text-image--text">
             <p>

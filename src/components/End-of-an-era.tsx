@@ -1,4 +1,4 @@
-import { EndOfAnEraTimeline } from "../assets/SVGs/End-of-an-era--timeline";
+import { EndOfAnEraTimeline } from "../assets/SVGs/EndOfAnEra/End-of-an-era--timeline";
 import Timeline from "./Timeline";
 
 interface Props {
@@ -75,14 +75,14 @@ const EndOfAnEra = ({ viewWidth }: Props) => {
             <img src="./Images/IMAGE.png" />
           </div>
         </div>
-        <Timeline
-          points={POINTS}
-          viewWidth={viewWidth}
-          id="end-of-an-era--timeline"
-        >
-          {EndOfAnEraTimeline}
-        </Timeline>
       </div>
+      <Timeline
+        points={POINTS}
+        viewWidth={viewWidth}
+        id="end-of-an-era--timeline"
+      >
+        {EndOfAnEraTimeline}
+      </Timeline>
     </article>
   );
 };

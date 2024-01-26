@@ -66,7 +66,6 @@ body {
             @apply w-full;
 
             &--text {
-                @apply relative z-20;
                 @apply flex flex-col items-center mt-120;
                 @apply w-full max-w-[1440px];
 
@@ -183,5 +182,13 @@ body {
         }
     }
 }
+
+    .loading-screen {
+        @apply absolute left-0 top-0 right-0 bottom-0;
+        @apply bg-red text-white;
+
+        @apply flex flex-col justify-center items-center;
+    }
+
 }
 

@@ -10,6 +10,11 @@ interface Props {
 }
 
 const Timeline = ({ children, id, viewWidth, points }: Props) => {
+  const largeTrainDisplacement =
+    id === "mail-by-APT--timeline" || id === "end-of-an-era--timeline"
+      ? 1200
+      : 0;
+
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -67,19 +72,20 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
       );
     }
 
-    tl.from(
+    tl.fromTo(
       `#${id}_train`,
       {
-        x: -1640,
+        x: -1640 - largeTrainDisplacement,
         duration: 1,
         ease: "none",
       },
+      { x: -largeTrainDisplacement },
       0
     )
       .to(
         `#${id}_foreground-1`,
         {
-          x: -10000,
+          x: -8360,
           duration: 5,
           ease: "none",
         },
@@ -88,7 +94,7 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
       .to(
         `#${id}_tracks`,
         {
-          x: -8360,
+          x: -6720,
           duration: 5,
           ease: "none",
         },
@@ -133,7 +139,7 @@ const Timeline = ({ children, id, viewWidth, points }: Props) => {
       .to(
         `#${id}_train`,
         {
-          x: 1640,
+          x: 1640 + largeTrainDisplacement,
           duration: 1,
         },
         ">"

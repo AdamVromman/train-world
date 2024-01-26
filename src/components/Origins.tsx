@@ -1,4 +1,4 @@
-import { OriginsTimeline } from "../assets/SVGs/Origins--timeline";
+import { OriginsTimeline } from "../assets/SVGs/Origins/Origins--timeline";
 import Timeline from "./Timeline";
 
 interface Props {
