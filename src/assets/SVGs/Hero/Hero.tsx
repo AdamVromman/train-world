@@ -1,4 +1,3 @@
-import { GradientBars } from "../GradientBars";
 import { Clouds } from "./Clouds";
 import { Mountains } from "./Mountains";
 import { Tracks } from "./Tracks";
