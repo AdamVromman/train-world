@@ -6,6 +6,7 @@ const Loading = () => {
         autoplay
         src="./Lottie/loading.json"
       ></Player> */}
+      loading
     </div>
   );
 };

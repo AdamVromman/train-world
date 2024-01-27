@@ -2,7 +2,9 @@ export const Newspaper = (
   <svg
     id="Layer_1"
     data-name="Layer 1"
-    xmlns="http://www.w3.org/2000/svg"
+    cls-12
+    fill-red
+    stroke-width-0
     viewBox="0 0 1440 2061.0075"
   >
     <defs>

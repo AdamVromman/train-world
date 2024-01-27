@@ -49,54 +49,60 @@ const RobbersInteraction = () => {
   };
 
   return (
-    <div className="interaction overflow-x-clip">
-      <div className="relative  rotate-2 translate-x-[3%]">
-        <svg
-          id="Layer_1_copy"
-          data-name="Layer 1 copy"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 1600"
-        >
+    <div className="interaction">
+      <div className="relative">
+        <svg viewBox="0 0 1440 1360" className="rotate-6 w-full">
           <Newspaper />
         </svg>
         <div className="robbers-game">
-          {selectedCircles.map((selected, index) => {
-            return (
-              <button
-                key={index}
-                onClick={() => handleClick(index)}
-                className="robbers-game--silhouette"
-              >
-                <div className="w-[65%] aspect-square relative bg-black rounded-full">
-                  <Player
-                    ref={(p) => {
-                      if (erasedCircles.current && p) {
-                        erasedCircles.current[index] = p;
-                      }
-                    }}
-                    className={`w-full h-full top-0 left-0 absolute ${
-                      selected ? "hidden" : "block"
-                    }`}
-                    autoplay
-                    src="./Lottie/circle-erased.json"
-                    keepLastFrame
-                  />
-                  <Player
-                    ref={(p) => {
-                      if (drawnCircles.current && p) {
-                        drawnCircles.current[index] = p;
-                      }
-                    }}
-                    className={`w-full h-full top-0 left-0 absolute ${
-                      selected ? "block" : "hidden"
-                    }`}
-                    src="./Lottie/circle-drawn.json"
-                    keepLastFrame
-                  />
-                </div>
-              </button>
-            );
-          })}
+          <div className="robbers-game--text">
+            <h3>12 gangs are potential suspects.</h3>
+            <p>
+              Although the police were not able to apprehend the culprits, they
+              were able to collect photographs of 12 potential gangs that might
+              be involved. Further investigation should determine which of these
+              groups committed the deed.
+            </p>
+          </div>
+          <div className="robbers-game--suspects">
+            {selectedCircles.map((selected, index) => {
+              return (
+                <button
+                  key={index}
+                  onClick={() => handleClick(index)}
+                  className="robbers-game--suspects--silhouette"
+                >
+                  <div className="w-[65%] aspect-square relative bg-black rounded-full">
+                    <Player
+                      ref={(p) => {
+                        if (erasedCircles.current && p) {
+                          erasedCircles.current[index] = p;
+                        }
+                      }}
+                      className={`w-full h-full top-0 left-0 absolute ${
+                        selected ? "hidden" : "block"
+                      }`}
+                      autoplay
+                      src="./Lottie/circle-erased.json"
+                      keepLastFrame
+                    />
+                    <Player
+                      ref={(p) => {
+                        if (drawnCircles.current && p) {
+                          drawnCircles.current[index] = p;
+                        }
+                      }}
+                      className={`w-full h-full top-0 left-0 absolute ${
+                        selected ? "block" : "hidden"
+                      }`}
+                      src="./Lottie/circle-drawn.json"
+                      keepLastFrame
+                    />
+                  </div>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

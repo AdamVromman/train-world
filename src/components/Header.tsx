@@ -47,7 +47,6 @@ const Header = ({ viewWidth }: Props) => {
       <div className="w-full relative z-10">
         <svg
           id="hero"
-          xmlns="http://www.w3.org/2000/svg"
           viewBox={`${viewWidth > 768 ? "0" : "375"} 0 ${
             viewWidth > 768 ? "1640" : "900"
           } 1000`}
