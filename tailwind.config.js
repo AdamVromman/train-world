@@ -36,6 +36,7 @@ export default {
       colors: {
         white: {
           DEFAULT: "#E5DBC6",
+          light: "#E5E1DC",
         },
         black: {
           DEFAULT: "#272727",

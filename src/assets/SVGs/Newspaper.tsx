@@ -1,10 +1,5 @@
-export const Newspaper = (
-  <svg
-    id="Layer_1_copy"
-    data-name="Layer 1 copy"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 1440 2150"
-  >
+export const Newspaper = () => (
+  <>
     <defs>
       <style>
         {`
@@ -22,7 +17,7 @@ export const Newspaper = (
   
         .newspaper-4 {
           fill: #e5e1dc;
-          stroke: #373737;
+          // stroke: #373737;
         }
   
         .newspaper-4, .newspaper-5 {
@@ -161,7 +156,7 @@ export const Newspaper = (
       className="newspaper-4"
       y="-.2164"
       width="1440"
-      height="2150"
+      height="1600"
     />
     <g id="newspaper--article-3">
       <rect
@@ -176,13 +171,14 @@ export const Newspaper = (
           12 groups of suspects photographed.
         </tspan>
       </text>
-      <rect
+      {/* <rect
+        id="newspaper--suspects"
         className="newspaper-14"
         x="29.8086"
         y="1621.359"
         width="1380"
         height="498.641"
-      />
+      /> */}
       <text className="newspaper-7" transform="translate(30 1510.9493)">
         <tspan x="0" y="0">
           Although the police were not able to apprehend the culprits, they{" "}
@@ -403,7 +399,7 @@ export const Newspaper = (
         <tspan className="newspaper-17" x="61.0539" y="21.5996">
           o
         </tspan>
-        <tspan x="68.6854" y="21.5996" xml:space="preserve">
+        <tspan x="68.6854" y="21.5996" xmlSpace="preserve">
           f{" "}
         </tspan>
         <tspan className="newspaper-29" x="79.8616" y="21.5996">
@@ -783,5 +779,5 @@ export const Newspaper = (
         height="15"
       />
     </g>
-  </svg>
+  </>
 );

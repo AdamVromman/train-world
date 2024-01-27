@@ -49,27 +49,17 @@ const RobbersInteraction = () => {
   };
 
   return (
-    <div className="interaction">
-      {Newspaper}
-      <div className="interaction--content">
-        <div className="text">
-          <h2>Trainrobbers!</h2>
-          <p className="mb-30">
-            In 1985, one of the postal trains was robbed. The robbers got away
-            with diamonds and 30 million Belgian Franks (1 million Euros)! Now
-            we need your help to figure out who did it!
-          </p>
-          <p className="mb-60">
-            We have 12 groups of suspects, but we don't have any good pictures
-            of them, just silhouettetes. Look for clues and tell us who
-            definitely did not do it.
-          </p>
-          <span className="interaction--subtitle">
-            Select 9 silhouettetes that did definitely NOT rob the train. Look
-            for teal clues throughout the story!
-          </span>
-        </div>
-        <ul className="robbers-game">
+    <div className="interaction overflow-x-clip">
+      <div className="relative  rotate-2 translate-x-[3%]">
+        <svg
+          id="Layer_1_copy"
+          data-name="Layer 1 copy"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 1600"
+        >
+          <Newspaper />
+        </svg>
+        <div className="robbers-game">
           {selectedCircles.map((selected, index) => {
             return (
               <button
@@ -77,35 +67,37 @@ const RobbersInteraction = () => {
                 onClick={() => handleClick(index)}
                 className="robbers-game--silhouette"
               >
-                <Player
-                  ref={(p) => {
-                    if (erasedCircles.current && p) {
-                      erasedCircles.current[index] = p;
-                    }
-                  }}
-                  className={`w-full h-full top-0 left-0 absolute ${
-                    selected ? "hidden" : "block"
-                  }`}
-                  autoplay
-                  src="./Lottie/circle-erased.json"
-                  keepLastFrame
-                />
-                <Player
-                  ref={(p) => {
-                    if (drawnCircles.current && p) {
-                      drawnCircles.current[index] = p;
-                    }
-                  }}
-                  className={`w-full h-full top-0 left-0 absolute ${
-                    selected ? "block" : "hidden"
-                  }`}
-                  src="./Lottie/circle-drawn.json"
-                  keepLastFrame
-                />
+                <div className="w-[65%] aspect-square relative bg-black rounded-full">
+                  <Player
+                    ref={(p) => {
+                      if (erasedCircles.current && p) {
+                        erasedCircles.current[index] = p;
+                      }
+                    }}
+                    className={`w-full h-full top-0 left-0 absolute ${
+                      selected ? "hidden" : "block"
+                    }`}
+                    autoplay
+                    src="./Lottie/circle-erased.json"
+                    keepLastFrame
+                  />
+                  <Player
+                    ref={(p) => {
+                      if (drawnCircles.current && p) {
+                        drawnCircles.current[index] = p;
+                      }
+                    }}
+                    className={`w-full h-full top-0 left-0 absolute ${
+                      selected ? "block" : "hidden"
+                    }`}
+                    src="./Lottie/circle-drawn.json"
+                    keepLastFrame
+                  />
+                </div>
               </button>
             );
           })}
-        </ul>
+        </div>
       </div>
     </div>
   );
