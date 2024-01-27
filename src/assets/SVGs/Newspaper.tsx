@@ -1185,7 +1185,7 @@ export const Newspaper = () => (
         <tspan className="newspaper-72" x="61.05" y="21.6">
           o
         </tspan>
-        <tspan x="68.69" y="21.6" xml:space="preserve">
+        <tspan x="68.69" y="21.6" xmlSpace="preserve">
           f{" "}
         </tspan>
         <tspan className="newspaper-167" x="79.86" y="21.6">
@@ -4274,7 +4274,7 @@ export const Newspaper = () => (
         <tspan x="201.11" y="38.4">
           mind
         </tspan>
-        <tspan className="newspaper-123" x="237" y="38.4" xml:space="preserve">
+        <tspan className="newspaper-123" x="237" y="38.4" xmlSpace="preserve">
           {" "}
           f
         </tspan>
