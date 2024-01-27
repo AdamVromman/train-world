@@ -54,6 +54,7 @@ export default {
       },
       fontFamily: {
         brix: "brix-slab, serif",
+        "brix-cond": "brix-slab-condensed, serif",
         "nitti-underlined": "nitti-typewriter-underlined, sans-serif",
         "nitti-cameo": "nitti-typewriter-cameo, sans-serif",
       },
@@ -62,6 +63,7 @@ export default {
         700: "700",
       },
       fontSize: {
+        14: "14px",
         18: "18px",
         22: "22px",
         28: "28px",

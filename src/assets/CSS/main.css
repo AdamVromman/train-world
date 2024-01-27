@@ -142,7 +142,7 @@ body {
 
         .interaction
         {
-            @apply w-full px-15 max-w-[1280px];
+            @apply w-full px-15 max-w-[960px];
             
 
             &--content {
@@ -158,10 +158,40 @@ body {
 
             .robbers-game {
 
-                @apply flex flex-row flex-wrap;
+                @apply flex flex-col;
                 @apply w-full bg-white-light;
+                @apply relative z-20 -mt-60;
+                @apply border-[0.2px] border-black;
+                @apply -rotate-3;
 
-                &--silhouette {
+                @apply tablet:-mt-120 laptop:-mt-210;
+                @apply tablet:border-[0.5px] laptop:border-[1px];
+                
+
+                &--text {
+                    @apply p-15;
+
+                    h3 {
+                        @apply font-brix-cond font-black text-28;
+                        @apply leading-none;
+                        @apply mb-15;
+                    }
+
+                    p {
+                        @apply max-w-[300px];
+                        @apply leading-tight text-14;
+                        @apply text-left;
+                    }
+                }
+
+                &--suspects {
+                    @apply flex flex-row flex-wrap;
+                    @apply m-15;
+
+                    @apply border-[0.2px] border-black;
+                    @apply tablet:border-[0.5px] laptop:border-[1px];
+
+                    &--silhouette {
                     @apply aspect-square;
                     @apply w-1/2;
                     @apply tablet:w-1/3;
@@ -169,6 +199,9 @@ body {
                     @apply flex justify-center items-center;
 
                 }
+                }
+
+                
             }
         }
 

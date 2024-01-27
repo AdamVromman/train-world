@@ -17,7 +17,7 @@ export const Newspaper = () => (
   
         .newspaper-4 {
           fill: #e5e1dc;
-          // stroke: #373737;
+          stroke: #373737;
         }
   
         .newspaper-4, .newspaper-5 {
@@ -156,44 +156,8 @@ export const Newspaper = () => (
       className="newspaper-4"
       y="-.2164"
       width="1440"
-      height="1600"
+      height="1360"
     />
-    <g id="newspaper--article-3">
-      <rect
-        className="newspaper-14"
-        x="30"
-        y="1373.4162"
-        width="1380"
-        height="7.5"
-      />
-      <text className="newspaper-15" transform="translate(30 1463.6178)">
-        <tspan x="0" y="0">
-          12 groups of suspects photographed.
-        </tspan>
-      </text>
-      {/* <rect
-        id="newspaper--suspects"
-        className="newspaper-14"
-        x="29.8086"
-        y="1621.359"
-        width="1380"
-        height="498.641"
-      /> */}
-      <text className="newspaper-7" transform="translate(30 1510.9493)">
-        <tspan x="0" y="0">
-          Although the police were not able to apprehend the culprits, they{" "}
-        </tspan>
-        <tspan x="0" y="19.2002">
-          were able to collect photographs of 12 potential gangs that might{" "}
-        </tspan>
-        <tspan x="0" y="38.4004">
-          be involved. Further investigation should determine which of{" "}
-        </tspan>
-        <tspan x="0" y="57.6006">
-          these groups committed the dead.
-        </tspan>
-      </text>
-    </g>
     <g id="newspaper--article-2">
       <rect
         className="newspaper-6"

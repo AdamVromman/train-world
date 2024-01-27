@@ -124,7 +124,6 @@ const TheTravellingPostMen = ({ viewWidth }: Props) => {
             width="2"
             viewBox="0 0 2 168"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
             className="split-paragraph--divider"
           >
             <path
