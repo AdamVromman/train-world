@@ -1,5 +1,6 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useRef, useState } from "react";
+import { Newspaper } from "../assets/SVGs/Newspaper";
 
 const RobbersInteraction = () => {
   const [selectedCircles, setSelectedCircles] = useState<boolean[]>([
@@ -49,6 +50,7 @@ const RobbersInteraction = () => {
 
   return (
     <div className="interaction">
+      {Newspaper}
       <div className="interaction--content">
         <div className="text">
           <h2>Trainrobbers!</h2>
