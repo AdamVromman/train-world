@@ -99,7 +99,11 @@ const LetterInteraction = () => {
   });
 
   return (
-    <div className="w-full flex justify-center relative">
+    <div
+      className={`w-full flex justify-center relative ${
+        letterSend ? "mb-120" : ""
+      }`}
+    >
       <div
         className={`absolute w-full ${
           letterSend ? "h-fit" : "h-full"

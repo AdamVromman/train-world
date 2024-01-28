@@ -79,7 +79,7 @@ body {
 
         .timeline {
 
-            @apply -mt-[10%] z-10 relative overflow-x-hidden overflow-y-clip;
+            @apply -mt-[10%] z-10 overflow-x-hidden overflow-y-clip;
 
             &--gradient-bars {
 
@@ -101,27 +101,43 @@ body {
                 @apply opacity-0;
             }
 
+            &--info {
+                background: url('/SVGs/info.svg') center center;
+                @apply bg-no-repeat bg-contain;
+                @apply w-[90%] max-w-[400px];
+                aspect-ratio: 321/177;
+                @apply flex justify-center items-center text-center;
+                @apply p-30 laptop:px-60;
+                @apply text-white text-18 font-bold italic;
+                @apply -translate-y-[50%] laptop:-translate-y-[0];
+            }
+
             &--dates {
-                @apply w-full mt-[5%] laptop:-mt-[1%] z-20 relative;
+                @apply fixed w-full -bottom-[120px] laptop:-bottom-[15px] z-20;
 
 
                 &--single {
-                    @apply absolute left-[50%] top-[50%];
-                    transform: translate(-50%, -50%);
+                    @apply absolute left-[50%] bottom-0;
+                    transform: translateX(-50%);
 
-                    @apply flex flex-col justify-start items-center px-30 py-15;
+                    @apply flex flex-col justify-start items-center px-30 py-15 laptop:py-30;
+                    @apply gap-15;
                     width: calc(100vw - 30px);
                     @apply max-w-[450px];
 
-                    @apply bg-black rounded-sm text-white;
+                    @apply bg-white-light rounded-sm;
+                    @apply border-black border-2;
+
+                    @apply outline outline-[1px] outline-black outline-offset-[-10px];
 
                     &--date {
                         font-family: marsh-stencil;
                         @apply text-28;
+                        @apply text-white-light bg-black pt-[5px] px-15 laptop:px-30 -mx-[0.5px];
                     }
 
                     &--description {
-                        @apply text-white text-center;
+                        @apply text-black text-center text-22;
                     }
                 }
             }
@@ -362,6 +378,16 @@ body {
             @apply laptop:flex-row laptop:justify-between;
         }
     }
+
+    .footer
+    {
+        @apply bg-red w-full pt-[650px];
+        background: url('/SVGs/footer--background.svg') center top;
+        @apply bg-no-repeat bg-cover;
+        @apply text-white;
+        @apply max-w-[1640px];
+        @apply flex flex-col items-center
+    }
 }
 
     .loading-screen {
@@ -370,6 +396,8 @@ body {
 
         @apply flex flex-col justify-center items-center;
     }
+
+
 
 }
 

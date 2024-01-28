@@ -1,6 +1,6 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useEffect, useRef, useState } from "react";
-import { Newspaper } from "../assets/SVGs/Newspaper";
+import Newspaper from "../assets/SVGs/Newspaper.svg?react";
 
 const RobbersInteraction = () => {
   const [saved, setSaved] = useState(false);
@@ -94,12 +94,12 @@ const RobbersInteraction = () => {
                   onClick={() => handleClick(index)}
                   className="robbers-game--suspects--silhouette"
                   style={{
-                    backgroundImage: `url(${`/Images/suspects/suspect-${
+                    backgroundImage: `url(${`./Images/suspects/suspect-${
                       index + 1
                     }.png`})`,
                   }}
                 >
-                  <div className="w-[65%] aspect-square relative z-30 rounded-full">
+                  <div className="w-[75%] aspect-square relative z-30 rounded-full">
                     <Player
                       ref={(p) => {
                         if (erasedCircles.current && p) {

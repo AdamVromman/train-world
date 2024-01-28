@@ -44,7 +44,38 @@ function App() {
               <EndOfAnEra viewWidth={viewWidth} />
               <LetterInteraction />
             </section>
-            <footer className="footer"></footer>
+            <footer className="footer">
+              <div className="text">
+                <h2>Liked what you heard?</h2>
+                <div className="split-paragraph">
+                  <p>
+                    The Postal Trains is just one of the many stories of Train
+                    world! Every month a new story is put in the spotlight. Next
+                    months story: The Orient express.
+                  </p>
+                  <svg
+                    width="2"
+                    viewBox="0 0 2 115"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L1 13L1 18M1 113.022L1 32M1 23L1 27"
+                      stroke="#E5DBC6"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+
+                  <p>
+                    Do you want to see a real postal train? Maybe walk around in
+                    one and discover how the travelling post men worked? All
+                    this, and much more, awaits you in Train World!
+                  </p>
+                </div>
+              </div>
+            </footer>
           </div>
         </main>
         <nav></nav>

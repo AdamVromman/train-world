@@ -1,9 +1,13 @@
+/// <reference types="vite-plugin-svgr/client" />
+
 import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useEffect, useRef, useState } from "react";
 import React from "react";
+import DateLeft from "../assets/SVGs/date-left.svg?react";
+import DateRight from "../assets/SVGs/date-right.svg?react";
 
 interface Props {
   children: JSX.Element;
@@ -319,7 +323,7 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
                   </button>
                   {infoOpen[index] && (
                     <div className="fixed w-screen flex justify-center items-center">
-                      {star.text}
+                      <div className="timeline--info">{star.text}</div>
                     </div>
                   )}
                 </React.Fragment>
@@ -334,9 +338,14 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
                 className={`${id}-date timeline--dates--single`}
                 key={`${id}__${index}`}
               >
-                <span className="timeline--dates--single--date">
-                  {point.date}
-                </span>
+                <div className="flex flex-row">
+                  <DateRight />
+                  <span className="timeline--dates--single--date">
+                    {point.date}
+                  </span>
+                  <DateLeft />
+                </div>
+
                 <p className="timeline--dates--single--description">
                   {point.description}
                 </p>

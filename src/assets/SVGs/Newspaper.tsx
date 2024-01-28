@@ -238,7 +238,7 @@ export const Newspaper = () => (
 
       .newspaper-60 {
         fill: #e5e1dc;
-        stroke: #373737;
+        stroke: #272727;
         stroke-linecap: round;
         stroke-linejoin: round;
       }
