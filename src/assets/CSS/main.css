@@ -143,6 +143,7 @@ body {
         .interaction
         {
             @apply w-full px-15 max-w-[960px];
+            @apply overflow-x-clip laptop:overflow-x-visible;
             
 
             &--content {
@@ -152,8 +153,7 @@ body {
             }
 
             &--subtitle {
-                @apply font-brix text-22 font-700 italic text-center;
-                @apply mb-60;
+                @apply font-brix text-22 font-700;
             }
 
             .robbers-game {
@@ -202,6 +202,74 @@ body {
                 }
                 }
 
+                
+            }
+
+            .letter-interaction {
+
+                &--part {
+                    @apply w-full bg-red;
+                    @apply p-30;
+                    @apply flex flex-col justify-center items-start gap-30;
+                    @apply h-[500px] tablet:h-[350px] laptop:h-[450px];
+
+                    h2 {
+                       @apply mb-15;
+                    }
+
+                    p {
+                        @apply max-w-[750px];
+                        @apply mb-0;
+                    }
+
+                    &--textarea {
+                        @apply bg-white-light;
+                        @apply h-full w-full;
+
+                        @apply p-15 laptop:p-30;
+
+                        background: url('/SVGs/letter-textarea-1.svg') center center;
+
+                        @screen phone {
+                            background: url('/SVGs/letter-textarea-2.svg') center center;
+                        }
+
+                        @screen tablet {
+                            background: url('/SVGs/letter-textarea-3.svg') center center;
+                        }
+
+                        @apply bg-no-repeat bg-cover;
+
+                        &.small {
+                            
+                        }
+                    }
+
+                    &.part-1 {
+                        @apply relative z-30;
+                        background: url('/SVGs/letter-background-1.svg') center center;
+                        @apply bg-no-repeat bg-cover;
+                        @apply -skew-x-3;
+                        @apply items-center;
+                    }
+
+                    &.part-2 {
+                        @apply relative z-20;
+                        background: url('/SVGs/letter-background-2.svg') center center;
+                        @apply bg-no-repeat bg-cover;
+                        @apply -mt-[3px] laptop:-mt-[2px];
+                        @apply skew-x-3 laptop:skew-x-6 laptop:translate-x-3;
+                        @apply phone:p-60;
+                    }
+
+                    &.part-3 {
+                        @apply relative z-10;
+                        background: url('/SVGs/letter-background-3.svg') center center;
+                        @apply bg-no-repeat bg-cover;
+                        @apply -mt-[3px] laptop:-mt-[2px];
+                        @apply -skew-x-3 laptop:-skew-x-1 laptop:translate-x-8;
+                    }
+                }
                 
             }
         }

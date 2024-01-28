@@ -234,9 +234,10 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
         </svg>
         {stars && (
           <div className="timeline--stars">
-            {stars.map((star) => {
+            {stars.map((star, index) => {
               return (
                 <button
+                  key={index}
                   className="absolute"
                   style={{ top: `${star.y}%`, left: `${star.x}%` }}
                 >
