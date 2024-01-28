@@ -71,8 +71,13 @@ const RobbersInteraction = () => {
                   key={index}
                   onClick={() => handleClick(index)}
                   className="robbers-game--suspects--silhouette"
+                  style={{
+                    backgroundImage: `url(${`/Images/suspects/suspect-${
+                      index + 1
+                    }.png`})`,
+                  }}
                 >
-                  <div className="w-[65%] aspect-square relative bg-black rounded-full">
+                  <div className="w-[65%] aspect-square relative z-30 rounded-full">
                     <Player
                       ref={(p) => {
                         if (erasedCircles.current && p) {
