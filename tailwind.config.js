@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       padding: {
+        7: "7.5px",
         15: "15px",
         30: "30px",
         60: "60px",

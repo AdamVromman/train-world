@@ -260,6 +260,19 @@ body {
                         }
                     }
 
+                    &--submit {
+                        @apply flex flex-col gap-15;
+
+                        &__code {
+                            @apply bg-white-light;
+                            @apply border-[1.5px] border-black rounded-full;
+                            @apply p-7 px-15;
+                            @apply text-center;
+                        }
+                    }
+
+                    
+
                     &.part-1 {
                         @apply relative z-30;
                         @apply items-center;
@@ -300,13 +313,12 @@ body {
                         transform-origin: 50% 0px;
                         
                         @apply -mt-[3px] laptop:-mt-[2px];
-                        /* @apply -skew-x-3 laptop:-skew-x-1 laptop:translate-x-8; */
+
                         transform: rotateX(-0deg) translateX(13px) skewX(-3deg);
 
                         @screen laptop {
                         
-                        transform: rotateX(-0deg) translateX(35px) skewX(-3deg);
-
+                            transform: rotateX(-0deg) translateX(35px) skewX(-3deg);
                         }
 
                         
