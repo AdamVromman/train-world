@@ -2,6 +2,7 @@ import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Player } from "@lottiefiles/react-lottie-player";
+import { useEffect, useRef, useState } from "react";
 
 interface Props {
   children: JSX.Element;
@@ -18,6 +19,33 @@ interface Props {
 }
 
 const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
+  const magnifiers = useRef<Array<Player>>([]);
+
+  const playRandomAnimation = () => {
+    if (stars) {
+      const random = Math.floor(Math.random() * stars?.length);
+      const magnifier = magnifiers.current[random];
+      if (magnifier) {
+        magnifier.setSeeker(0);
+        magnifier.play();
+      }
+    } else {
+      clearInterval(interval);
+    }
+  };
+
+  const [interval] = useState(setInterval(playRandomAnimation, 7000));
+
+  const [infoOpen, setInfoOpen] = useState<Array<boolean>>([]);
+
+  useEffect(() => {
+    if (stars) {
+      setInfoOpen(stars.map(() => false));
+    } else {
+      clearInterval(interval);
+    }
+  }, []);
+
   const getViewportWidth = () => {
     switch (id) {
       case "origins--timeline":
@@ -47,7 +75,8 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
         pin: true,
         start: "center center",
         end: "+=10000",
-        scrub: 1,
+
+        scrub: 2,
       },
     });
 
@@ -248,18 +277,47 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
               const x = viewWidth > 500 ? star.xDesktop : star.xPhone;
               const y = viewWidth > 500 ? star.yDesktop : star.yPhone;
               return (
-                <button
-                  key={index}
-                  className="absolute"
-                  style={{ top: `${y}%`, left: `${x}%` }}
-                >
-                  <Player
-                    className="w-[75px]"
-                    hover
-                    keepLastFrame
-                    src="./Lottie/magnifier.json"
-                  />
-                </button>
+                <>
+                  <button
+                    key={index}
+                    className="absolute"
+                    style={{ top: `${y}%`, left: `${x}%` }}
+                    onClick={() => {
+                      const isOpen = infoOpen[index];
+                      const array = infoOpen.slice(0, 0);
+                      setInfoOpen(stars.map(() => false));
+                      if (!isOpen) {
+                        array[index] = true;
+                        setInfoOpen(array);
+                      }
+
+                      if (magnifiers.current) {
+                        if (infoOpen[index]) {
+                          magnifiers.current[index].play();
+                        } else {
+                          magnifiers.current[index].pause();
+                        }
+                      }
+                    }}
+                  >
+                    <Player
+                      ref={(p) => {
+                        if (magnifiers.current && p) {
+                          magnifiers.current[index] = p;
+                        }
+                      }}
+                      className="w-[75px]"
+                      hover={!infoOpen[index]}
+                      keepLastFrame
+                      src="./Lottie/magnifier.json"
+                    />
+                  </button>
+                  {infoOpen[index] && (
+                    <div className="fixed w-screen flex justify-center items-center">
+                      {star.text}
+                    </div>
+                  )}
+                </>
               );
             })}
           </div>
