@@ -12,7 +12,7 @@ export const Newspaper = (
         {`
       .cls-4 {
         fill: #e5e1dc;
-        stroke: #373737;
+        stroke: #272727;
       }
 
       .cls-4, .cls-5, .cls-6 {

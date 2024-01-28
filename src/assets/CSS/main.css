@@ -79,7 +79,7 @@ body {
 
         .timeline {
 
-            @apply -mt-[10%] z-10 relative overflow-x-hidden overflow-y-clip;
+            @apply -mt-[10%] z-10 overflow-x-hidden overflow-y-clip;
 
             &--gradient-bars {
 
@@ -102,26 +102,31 @@ body {
             }
 
             &--dates {
-                @apply w-full mt-[5%] laptop:-mt-[1%] z-20 relative;
+                @apply fixed w-full -bottom-[120px] laptop:-bottom-[15px] z-20;
 
 
                 &--single {
-                    @apply absolute left-[50%] top-[50%];
-                    transform: translate(-50%, -50%);
+                    @apply absolute left-[50%] bottom-0;
+                    transform: translateX(-50%);
 
-                    @apply flex flex-col justify-start items-center px-30 py-15;
+                    @apply flex flex-col justify-start items-center px-30 py-15 laptop:py-30;
+                    @apply gap-15;
                     width: calc(100vw - 30px);
                     @apply max-w-[450px];
 
-                    @apply bg-black rounded-sm text-white;
+                    @apply bg-white-light rounded-sm;
+                    @apply border-black border-2;
+
+                    @apply outline outline-[1px] outline-black outline-offset-[-10px];
 
                     &--date {
                         font-family: marsh-stencil;
                         @apply text-28;
+                        @apply text-white-light bg-black pt-[5px] px-15 laptop:px-30 -mx-[0.5px];
                     }
 
                     &--description {
-                        @apply text-white text-center;
+                        @apply text-black text-center text-22;
                     }
                 }
             }

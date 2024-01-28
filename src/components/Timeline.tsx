@@ -4,6 +4,8 @@ import { useGSAP } from "@gsap/react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useEffect, useRef, useState } from "react";
 import React from "react";
+import DateLeft from "../assets/SVGs/date-left.svg?react";
+import DateRight from "../assets/SVGs/date-right.svg?react";
 
 interface Props {
   children: JSX.Element;
@@ -334,9 +336,14 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
                 className={`${id}-date timeline--dates--single`}
                 key={`${id}__${index}`}
               >
-                <span className="timeline--dates--single--date">
-                  {point.date}
-                </span>
+                <div className="flex flex-row">
+                  <DateRight />
+                  <span className="timeline--dates--single--date">
+                    {point.date}
+                  </span>
+                  <DateLeft />
+                </div>
+
                 <p className="timeline--dates--single--description">
                   {point.description}
                 </p>

@@ -1,6 +1,6 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useEffect, useRef, useState } from "react";
-import { Newspaper } from "../assets/SVGs/Newspaper";
+import Newspaper from "../assets/SVGs/Newspaper.svg?react";
 
 const RobbersInteraction = () => {
   const [saved, setSaved] = useState(false);
@@ -94,7 +94,7 @@ const RobbersInteraction = () => {
                   onClick={() => handleClick(index)}
                   className="robbers-game--suspects--silhouette"
                   style={{
-                    backgroundImage: `url(${`/Images/suspects/suspect-${
+                    backgroundImage: `url(${`./Images/suspects/suspect-${
                       index + 1
                     }.png`})`,
                   }}
