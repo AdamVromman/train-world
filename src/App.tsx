@@ -37,15 +37,11 @@ function App() {
           <div className="content">
             <Header viewWidth={viewWidth} />
             <section className="chapters">
-              <RobbersInteraction />
               <Origins viewWidth={viewWidth} />
-
               <TheTravellingPostMen viewWidth={viewWidth} />
-
+              <RobbersInteraction />
               <PostByAPT viewWidth={viewWidth} />
-
               <EndOfAnEra viewWidth={viewWidth} />
-
               <LetterInteraction />
             </section>
             <footer className="footer"></footer>

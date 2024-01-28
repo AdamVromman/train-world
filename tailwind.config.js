@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       padding: {
+        7: "7.5px",
         15: "15px",
         30: "30px",
         60: "60px",
@@ -28,6 +29,7 @@ export default {
         210: "210px",
       },
       screens: {
+        max: "1640px",
         desktop: "1440px",
         laptop: "1024px",
         tablet: "768px",

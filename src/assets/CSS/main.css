@@ -54,7 +54,7 @@ body {
         @apply mx-0 laptop:mx-30;
         @apply w-full max-w-[1640px];
 
-        @apply flex flex-col justify-start items-center gap-150;
+        @apply flex flex-col justify-start items-center;
 
         & .text {
             @apply w-full max-w-[1280px];
@@ -83,7 +83,7 @@ body {
 
             &--gradient-bars {
 
-                @apply hidden desktop:block;
+                @apply hidden max:block;
                 
                 @apply fill-white;
 
@@ -98,6 +98,7 @@ body {
 
             &--stars {
                 @apply w-full h-full absolute left-0 top-0 z-20;
+                @apply opacity-0;
             }
 
             &--dates {
@@ -143,6 +144,18 @@ body {
         .interaction
         {
             @apply w-full px-15 max-w-[960px];
+            @apply overflow-x-clip laptop:overflow-x-visible;
+
+            &--submit {
+                        @apply flex flex-col gap-15;
+
+                        &__code {
+                            @apply bg-white-light;
+                            @apply border-[1.5px] border-black rounded-full;
+                            @apply p-7 px-15;
+                            @apply text-center;
+                        }
+                    }
             
 
             &--content {
@@ -152,8 +165,7 @@ body {
             }
 
             &--subtitle {
-                @apply font-brix text-22 font-700 italic text-center;
-                @apply mb-60;
+                @apply font-brix text-22 font-700;
             }
 
             .robbers-game {
@@ -198,10 +210,138 @@ body {
                     @apply phone:w-1/3;
                     @apply laptop:w-1/4;
                     @apply flex justify-center items-center;
+                    @apply bg-contain;
+                                        @apply border-[0.2px] border-black;
+                    @apply tablet:border-[0.5px] laptop:border-[1px];
 
                 }
+
+                
                 }
 
+                &--submit {
+                    @apply p-15 laptop:p-30;
+                    @apply flex flex-col gap-15;
+                    @apply max-w-full laptop:max-w-[50%]
+                }
+
+                
+            }
+
+            .letter-interaction {
+
+                @apply relative;
+
+                &--part {
+                    @apply w-full;
+                    @apply h-[500px] tablet:h-[350px] laptop:h-[450px];
+                    perspective: 40px;
+                    @apply relative;
+
+                    &--content, &--back {
+                        @apply absolute;
+                        @apply flex flex-col justify-center items-start gap-30;
+                         @apply p-30;
+                         @apply w-full h-full;
+                         
+                         backface-visibility: hidden;
+                    }
+
+                    &--back {
+                        transform: rotateY(180deg);
+                    }
+
+                    h2 {
+                       @apply mb-15;
+                    }
+
+                    p {
+                        @apply max-w-[750px];
+                        @apply mb-0;
+                    }
+
+                    &--textarea {
+                        @apply bg-white-light;
+                        @apply h-full w-full;
+
+                        @apply p-15 laptop:p-30;
+
+                        background: url('/SVGs/letter-textarea-1.svg') center center;
+
+                        @screen phone {
+                            background: url('/SVGs/letter-textarea-2.svg') center center;
+                        }
+
+                        @screen tablet {
+                            background: url('/SVGs/letter-textarea-3.svg') center center;
+                        }
+
+                        @apply bg-no-repeat bg-cover;
+
+                        &.small {
+                            
+                        }
+                    }
+
+
+                    
+
+                    &.part-1 {
+                        @apply relative z-30;
+                        @apply items-center;
+                        transform-style: preserve-3d;
+                        transform-origin: 0px 100%;
+
+                        transform: rotateX(-0deg) translateX(-13px) skewX(-3deg);
+
+                        @screen laptop {
+
+                            transform: rotateX(-0deg) translateX(-10px) skewX(-3deg);
+
+                        }
+
+                        .letter-interaction--part--content, .letter-interaction--part--back {
+                            background: url('/SVGs/letter-background-1.svg') center center;
+                            @apply bg-no-repeat bg-cover;
+                        }
+                    }
+
+                    &.part-2 {
+                        @apply relative z-20;
+                       
+                        @apply -mt-[3px] laptop:-mt-[2px];
+                        @apply skew-x-3 laptop:translate-x-3 laptop:skew-x-6;
+                        
+
+                        .letter-interaction--part--content {
+                            @apply phone:p-60;
+                             background: url('/SVGs/letter-background-2.svg') center center;
+                            @apply bg-no-repeat bg-cover;
+                        }
+                    }
+
+                    &.part-3 {
+                        @apply relative z-10;
+                        transform-style: preserve-3d;
+                        transform-origin: 50% 0px;
+                        
+                        @apply -mt-[3px] laptop:-mt-[2px];
+
+                        transform: rotateX(-0deg) translateX(13px) skewX(-3deg);
+
+                        @screen laptop {
+                        
+                            transform: rotateX(-0deg) translateX(35px) skewX(-3deg);
+                        }
+
+                        
+
+                        .letter-interaction--part--content, .letter-interaction--part--back {
+                            background: url('/SVGs/letter-background-3.svg') center center;
+                        @apply bg-no-repeat bg-cover;
+                        }
+                    }
+                }
                 
             }
         }

@@ -2,20 +2,61 @@ import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Player } from "@lottiefiles/react-lottie-player";
+import { useEffect, useRef, useState } from "react";
+import React from "react";
 
 interface Props {
   children: JSX.Element;
   id: string;
   viewWidth: number;
   points: { date: string; description: string }[];
-  stars?: { x: number; y: number; text: string }[];
+  stars?: {
+    xDesktop: number;
+    yDesktop: number;
+    xPhone: number;
+    yPhone: number;
+    text: string;
+  }[];
 }
 
 const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
+  const magnifiers = useRef<Array<Player>>([]);
+
+  const playRandomAnimation = () => {
+    if (stars) {
+      const random = Math.floor(Math.random() * stars?.length);
+      const magnifier = magnifiers.current[random];
+      if (magnifier) {
+        magnifier.setSeeker(0);
+        magnifier.play();
+      }
+    } else {
+      clearInterval(intervalID);
+    }
+  };
+
+  const [intervalID, setIntervalID] = useState(-1);
+
+  const [infoOpen, setInfoOpen] = useState<Array<boolean>>([]);
+
+  useEffect(() => {
+    if (stars) {
+      setInfoOpen(stars.map(() => false));
+      if (intervalID === -1) {
+        setIntervalID(setInterval(playRandomAnimation, 7000));
+      }
+    } else {
+      clearInterval(intervalID);
+    }
+    return () => {
+      clearInterval(intervalID);
+    };
+  }, []);
+
   const getViewportWidth = () => {
     switch (id) {
       case "origins--timeline":
-        return 440;
+        return 500;
       case "travelling-post-men--timeline":
         return 750;
       case "mail-by-APT--timeline":
@@ -41,7 +82,7 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
         pin: true,
         start: "center center",
         end: "+=10000",
-        scrub: 1,
+        scrub: 2,
       },
     });
 
@@ -183,6 +224,10 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
       },
       2
     );
+    if (stars) {
+      tl.to(`#${id}--stars`, { alpha: 1 }, 0.5);
+      tl.to(`#${id}--stars`, { alpha: 0 }, "-=2");
+    }
   });
 
   return (
@@ -190,8 +235,8 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
       <div className={`${id} w-full`}>
         <svg
           className="stroke-2 tablet:stroke-1"
-          viewBox={`${viewWidth > 400 ? "0" : `${getViewportWidth()}`} 0 ${
-            viewWidth > 400 ? "1640" : "750"
+          viewBox={`${viewWidth > 500 ? "0" : `${getViewportWidth()}`} 0 ${
+            viewWidth > 500 ? "1640" : "750"
           } 750`}
           fill="none"
           strokeLinejoin="round"
@@ -233,20 +278,51 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
           {children}
         </svg>
         {stars && (
-          <div className="timeline--stars">
-            {stars.map((star) => {
+          <div id={`${id}--stars`} className="timeline--stars">
+            {stars.map((star, index) => {
+              const x = viewWidth > 500 ? star.xDesktop : star.xPhone;
+              const y = viewWidth > 500 ? star.yDesktop : star.yPhone;
               return (
-                <button
-                  className="absolute"
-                  style={{ top: `${star.y}%`, left: `${star.x}%` }}
-                >
-                  <Player
-                    className="w-[45px]"
-                    autoplay
-                    loop
-                    src="./Lottie/star.json"
-                  />
-                </button>
+                <React.Fragment key={index}>
+                  <button
+                    className="absolute"
+                    style={{ top: `${y}%`, left: `${x}%` }}
+                    onClick={() => {
+                      const isOpen = infoOpen[index];
+                      const array = infoOpen.slice(0, 0);
+                      setInfoOpen(stars.map(() => false));
+                      if (!isOpen) {
+                        array[index] = true;
+                        setInfoOpen(array);
+                      }
+
+                      if (magnifiers.current) {
+                        if (infoOpen[index]) {
+                          magnifiers.current[index].play();
+                        } else {
+                          magnifiers.current[index].pause();
+                        }
+                      }
+                    }}
+                  >
+                    <Player
+                      ref={(p) => {
+                        if (magnifiers.current && p) {
+                          magnifiers.current[index] = p;
+                        }
+                      }}
+                      className="w-[50px] laptop:w-[75px]"
+                      hover={!infoOpen[index]}
+                      keepLastFrame
+                      src="./Lottie/magnifier.json"
+                    />
+                  </button>
+                  {infoOpen[index] && (
+                    <div className="fixed w-screen flex justify-center items-center">
+                      {star.text}
+                    </div>
+                  )}
+                </React.Fragment>
               );
             })}
           </div>
