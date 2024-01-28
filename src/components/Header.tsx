@@ -55,15 +55,13 @@ const Header = ({ viewWidth }: Props) => {
         </svg>
       </div>
       <div className=" hero--text text">
-        <h1 className="mb-120 laptop:mb-30 text-red">At your posts, folks!</h1>
+        <h1 className="mb-120 laptop:mb-30 text-red">To my dearest...</h1>
         <h2 className="mb-30 laptop:mb-120">
-          Traversing history on Belgiums postal trains
+          A love-letter to our postal trains
         </h2>
-        <p className="laptop:text-right">
-          Discover the magical history of the travelling post men and the postal
-          trains of Belgium. Their history is written down, illustrated and
-          transformed into fun games, all for you! What are you still waiting
-          for?!
+        <p className="laptop:text-right font-nitti-cameo text-28 leading-normal max-w-[600px]">
+          Discover the magic of the travelling post men and the postal trains of
+          Belgium. Their history is written down and illustrated just for you.
         </p>
       </div>
     </header>

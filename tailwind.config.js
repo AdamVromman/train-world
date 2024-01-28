@@ -29,6 +29,7 @@ export default {
         210: "210px",
       },
       screens: {
+        max: "1640px",
         desktop: "1440px",
         laptop: "1024px",
         tablet: "768px",

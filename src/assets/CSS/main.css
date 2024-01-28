@@ -54,7 +54,7 @@ body {
         @apply mx-0 laptop:mx-30;
         @apply w-full max-w-[1640px];
 
-        @apply flex flex-col justify-start items-center gap-150;
+        @apply flex flex-col justify-start items-center;
 
         & .text {
             @apply w-full max-w-[1280px];
@@ -83,7 +83,7 @@ body {
 
             &--gradient-bars {
 
-                @apply hidden desktop:block;
+                @apply hidden max:block;
                 
                 @apply fill-white;
 
@@ -98,6 +98,7 @@ body {
 
             &--stars {
                 @apply w-full h-full absolute left-0 top-0 z-20;
+                @apply opacity-0;
             }
 
             &--dates {

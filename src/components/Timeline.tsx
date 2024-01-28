@@ -8,14 +8,20 @@ interface Props {
   id: string;
   viewWidth: number;
   points: { date: string; description: string }[];
-  stars?: { x: number; y: number; text: string }[];
+  stars?: {
+    xDesktop: number;
+    yDesktop: number;
+    xPhone: number;
+    yPhone: number;
+    text: string;
+  }[];
 }
 
 const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
   const getViewportWidth = () => {
     switch (id) {
       case "origins--timeline":
-        return 440;
+        return 500;
       case "travelling-post-men--timeline":
         return 750;
       case "mail-by-APT--timeline":
@@ -183,6 +189,10 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
       },
       2
     );
+    if (stars) {
+      tl.to(`#${id}--stars`, { alpha: 1 }, 0.5);
+      tl.to(`#${id}--stars`, { alpha: 0 }, "-=2");
+    }
   });
 
   return (
@@ -190,8 +200,8 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
       <div className={`${id} w-full`}>
         <svg
           className="stroke-2 tablet:stroke-1"
-          viewBox={`${viewWidth > 400 ? "0" : `${getViewportWidth()}`} 0 ${
-            viewWidth > 400 ? "1640" : "750"
+          viewBox={`${viewWidth > 500 ? "0" : `${getViewportWidth()}`} 0 ${
+            viewWidth > 500 ? "1640" : "750"
           } 750`}
           fill="none"
           strokeLinejoin="round"
@@ -233,19 +243,21 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
           {children}
         </svg>
         {stars && (
-          <div className="timeline--stars">
+          <div id={`${id}--stars`} className="timeline--stars">
             {stars.map((star, index) => {
+              const x = viewWidth > 500 ? star.xDesktop : star.xPhone;
+              const y = viewWidth > 500 ? star.yDesktop : star.yPhone;
               return (
                 <button
                   key={index}
                   className="absolute"
-                  style={{ top: `${star.y}%`, left: `${star.x}%` }}
+                  style={{ top: `${y}%`, left: `${x}%` }}
                 >
                   <Player
-                    className="w-[45px]"
-                    autoplay
-                    loop
-                    src="./Lottie/star.json"
+                    className="w-[75px]"
+                    hover
+                    keepLastFrame
+                    src="./Lottie/magnifier.json"
                   />
                 </button>
               );
