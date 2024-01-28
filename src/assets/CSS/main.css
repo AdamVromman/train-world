@@ -378,6 +378,16 @@ body {
             @apply laptop:flex-row laptop:justify-between;
         }
     }
+
+    .footer
+    {
+        @apply bg-red w-full pt-[650px];
+        background: url('/SVGs/footer--background.svg') center top;
+        @apply bg-no-repeat bg-cover;
+        @apply text-white;
+        @apply max-w-[1640px];
+        @apply flex flex-col items-center
+    }
 }
 
     .loading-screen {
@@ -386,6 +396,8 @@ body {
 
         @apply flex flex-col justify-center items-center;
     }
+
+
 
 }
 
