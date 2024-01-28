@@ -99,7 +99,7 @@ const RobbersInteraction = () => {
                     }.png`})`,
                   }}
                 >
-                  <div className="w-[65%] aspect-square relative z-30 rounded-full">
+                  <div className="w-[75%] aspect-square relative z-30 rounded-full">
                     <Player
                       ref={(p) => {
                         if (erasedCircles.current && p) {

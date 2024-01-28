@@ -1,3 +1,5 @@
+/// <reference types="vite-plugin-svgr/client" />
+
 import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -321,7 +323,7 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
                   </button>
                   {infoOpen[index] && (
                     <div className="fixed w-screen flex justify-center items-center">
-                      {star.text}
+                      <div className="timeline--info">{star.text}</div>
                     </div>
                   )}
                 </React.Fragment>

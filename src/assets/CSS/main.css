@@ -101,6 +101,17 @@ body {
                 @apply opacity-0;
             }
 
+            &--info {
+                background: url('/SVGs/info.svg') center center;
+                @apply bg-no-repeat bg-contain;
+                @apply w-[90%] max-w-[400px];
+                aspect-ratio: 321/177;
+                @apply flex justify-center items-center text-center;
+                @apply p-30 laptop:px-60;
+                @apply text-white text-18 font-bold italic;
+                @apply -translate-y-[50%] laptop:-translate-y-[0];
+            }
+
             &--dates {
                 @apply fixed w-full -bottom-[120px] laptop:-bottom-[15px] z-20;
 
