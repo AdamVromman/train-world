@@ -3,6 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useEffect, useRef, useState } from "react";
+import React from "react";
 
 interface Props {
   children: JSX.Element;
@@ -30,20 +31,26 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
         magnifier.play();
       }
     } else {
-      clearInterval(interval);
+      clearInterval(intervalID);
     }
   };
 
-  const [interval] = useState(setInterval(playRandomAnimation, 7000));
+  const [intervalID, setIntervalID] = useState(-1);
 
   const [infoOpen, setInfoOpen] = useState<Array<boolean>>([]);
 
   useEffect(() => {
     if (stars) {
       setInfoOpen(stars.map(() => false));
+      if (intervalID === -1) {
+        setIntervalID(setInterval(playRandomAnimation, 7000));
+      }
     } else {
-      clearInterval(interval);
+      clearInterval(intervalID);
     }
+    return () => {
+      clearInterval(intervalID);
+    };
   }, []);
 
   const getViewportWidth = () => {
@@ -75,7 +82,6 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
         pin: true,
         start: "center center",
         end: "+=10000",
-
         scrub: 2,
       },
     });
@@ -277,9 +283,8 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
               const x = viewWidth > 500 ? star.xDesktop : star.xPhone;
               const y = viewWidth > 500 ? star.yDesktop : star.yPhone;
               return (
-                <>
+                <React.Fragment key={index}>
                   <button
-                    key={index}
                     className="absolute"
                     style={{ top: `${y}%`, left: `${x}%` }}
                     onClick={() => {
@@ -306,7 +311,7 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
                           magnifiers.current[index] = p;
                         }
                       }}
-                      className="w-[75px]"
+                      className="w-[50px] laptop:w-[75px]"
                       hover={!infoOpen[index]}
                       keepLastFrame
                       src="./Lottie/magnifier.json"
@@ -317,7 +322,7 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
                       {star.text}
                     </div>
                   )}
-                </>
+                </React.Fragment>
               );
             })}
           </div>
