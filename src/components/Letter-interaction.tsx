@@ -160,13 +160,13 @@ const LetterInteraction = () => {
                   maxLength={400}
                   className="letter-interaction--part--textarea small"
                 ></textarea>
-                <div className="letter-interaction--part--submit">
+                <div className="interaction--submit">
                   <span className="interaction--subtitle">
                     Fill in the code of their ticket.
                   </span>
                   <input
                     placeholder="EXAMPLE: 123-456-789"
-                    className="letter-interaction--part--submit__code"
+                    className="interaction--submit__code"
                     type="text"
                   />
                   <button onClick={onClick}>Send your letter</button>

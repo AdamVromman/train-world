@@ -145,6 +145,17 @@ body {
         {
             @apply w-full px-15 max-w-[960px];
             @apply overflow-x-clip laptop:overflow-x-visible;
+
+            &--submit {
+                        @apply flex flex-col gap-15;
+
+                        &__code {
+                            @apply bg-white-light;
+                            @apply border-[1.5px] border-black rounded-full;
+                            @apply p-7 px-15;
+                            @apply text-center;
+                        }
+                    }
             
 
             &--content {
@@ -200,8 +211,18 @@ body {
                     @apply laptop:w-1/4;
                     @apply flex justify-center items-center;
                     @apply bg-contain;
+                                        @apply border-[0.2px] border-black;
+                    @apply tablet:border-[0.5px] laptop:border-[1px];
 
                 }
+
+                
+                }
+
+                &--submit {
+                    @apply p-15 laptop:p-30;
+                    @apply flex flex-col gap-15;
+                    @apply max-w-full laptop:max-w-[50%]
                 }
 
                 
@@ -262,16 +283,6 @@ body {
                         }
                     }
 
-                    &--submit {
-                        @apply flex flex-col gap-15;
-
-                        &__code {
-                            @apply bg-white-light;
-                            @apply border-[1.5px] border-black rounded-full;
-                            @apply p-7 px-15;
-                            @apply text-center;
-                        }
-                    }
 
                     
 

@@ -1,8 +1,9 @@
 import { Player } from "@lottiefiles/react-lottie-player";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Newspaper } from "../assets/SVGs/Newspaper";
 
 const RobbersInteraction = () => {
+  const [saved, setSaved] = useState(false);
   const [selectedCircles, setSelectedCircles] = useState<boolean[]>([
     false,
     false,
@@ -48,6 +49,27 @@ const RobbersInteraction = () => {
     }
   };
 
+  const getAmountSelected = () =>
+    selectedCircles
+      .map((s): number => (s ? 1 : 0))
+      .reduce((prev, next) => {
+        return prev + next;
+      }, 0);
+
+  const saveSuspects = () => {
+    localStorage.setItem("robbers", JSON.stringify(selectedCircles));
+    setSaved(true);
+  };
+
+  useEffect(() => {
+    const robbersJSON = localStorage.getItem("robbers");
+    if (robbersJSON) {
+      const robbers = JSON.parse(robbersJSON) as boolean[];
+      setSelectedCircles(robbers);
+      setSaved(true);
+    }
+  }, []);
+
   return (
     <div className="interaction">
       <div className="relative">
@@ -92,6 +114,7 @@ const RobbersInteraction = () => {
                       keepLastFrame
                     />
                     <Player
+                      autoplay
                       ref={(p) => {
                         if (drawnCircles.current && p) {
                           drawnCircles.current[index] = p;
@@ -108,6 +131,57 @@ const RobbersInteraction = () => {
               );
             })}
           </div>
+          {getAmountSelected() === 3 && (
+            <div className="robbers-game--submit">
+              {saved ? (
+                <>
+                  {" "}
+                  <span className="interaction--subtitle">
+                    Your suspects has been recorded!
+                  </span>
+                  <button
+                    onClick={() => {
+                      setSaved(false);
+                      setSelectedCircles([
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                      ]);
+                      localStorage.removeItem("robbers");
+                    }}
+                  >
+                    Clear suspects
+                  </button>
+                </>
+              ) : (
+                <>
+                  <span>These are your three suspects?</span>
+                  <span>Very well</span>
+                  <span className="interaction--subtitle">
+                    Fill in the code on your ticket.
+                  </span>
+                  <input
+                    placeholder="EXAMPLE: 123-456-789"
+                    className="interaction--submit__code"
+                    type="text"
+                  />
+                  <span className="interaction--subtitle">
+                    Save your suspects and find the remaining clue in the museum
+                  </span>
+                  <button onClick={saveSuspects}>Save suspects</button>
+                </>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>
