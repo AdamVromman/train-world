@@ -46,7 +46,11 @@ const Header = ({ viewWidth }: Props) => {
   return (
     <header id="start" className="hero">
       <div className="absolute z-20 m-15">
-        <img className="w-[50px] laptop:w-[100px]" src="./Images/logo.png" />
+        <picture>
+          <source media="(min-width:1024px)" srcSet="./Images/logo-500.avif" />
+          <source srcSet="./Images/logo-250.avif" />
+          <img className="w-[50px] laptop:w-[100px]" src="./Images/logo.avif" />
+        </picture>
       </div>
       <div className="w-full relative z-10">
         <svg

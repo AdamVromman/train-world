@@ -41,7 +41,7 @@ function App() {
             <section className="chapters">
               <Origins viewWidth={viewWidth} />
               <TheTravellingPostMen viewWidth={viewWidth} />
-              <RobbersInteraction />
+              <RobbersInteraction viewWidth={viewWidth} />
               <PostByAPT viewWidth={viewWidth} />
               <EndOfAnEra viewWidth={viewWidth} />
               <LetterInteraction />

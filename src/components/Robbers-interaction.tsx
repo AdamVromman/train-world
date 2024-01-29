@@ -2,7 +2,11 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import { useEffect, useRef, useState } from "react";
 import Newspaper from "../assets/SVGs/Newspaper.svg?react";
 
-const RobbersInteraction = () => {
+interface Props {
+  viewWidth: number;
+}
+
+const RobbersInteraction = ({ viewWidth }: Props) => {
   const [saved, setSaved] = useState(false);
   const [selectedCircles, setSelectedCircles] = useState<boolean[]>([
     false,
@@ -112,7 +116,7 @@ const RobbersInteraction = () => {
                   style={{
                     backgroundImage: `url(${`./Images/suspects/suspect-${
                       index + 1
-                    }.png`})`,
+                    }-${viewWidth < 400 ? "200" : "300"}.avif`})`,
                   }}
                 >
                   <div className="w-[75%] aspect-square relative z-30 rounded-full">
