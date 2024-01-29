@@ -64,6 +64,7 @@ body {
         
         .hero {
             @apply w-full relative;
+            @apply mb-120 laptop:mb-0;
 
             &--text {
                 @apply relative left-0 top-0  z-20;
@@ -110,6 +111,7 @@ body {
                 @apply p-30 laptop:px-60;
                 @apply text-white text-18 font-bold italic;
                 @apply -translate-y-[50%] laptop:-translate-y-[0];
+                @apply drop-shadow-main;
             }
 
             &--dates {
@@ -119,6 +121,7 @@ body {
                 &--single {
                     @apply absolute left-[50%] bottom-0;
                     transform: translateX(-50%);
+                    @apply drop-shadow-main;
 
                     @apply flex flex-col justify-start items-center px-30 py-15 laptop:py-30;
                     @apply gap-15;
@@ -247,12 +250,14 @@ body {
             .letter-interaction {
 
                 @apply relative;
+                
 
                 &--part {
                     @apply w-full;
                     @apply h-[500px] tablet:h-[350px] laptop:h-[450px];
                     perspective: 40px;
                     @apply relative;
+                    @apply drop-shadow-main;
 
                     &--content, &--back {
                         @apply absolute;
@@ -307,6 +312,7 @@ body {
                         @apply items-center;
                         transform-style: preserve-3d;
                         transform-origin: 0px 100%;
+                        @apply drop-shadow-noBottom;
 
                         transform: rotateX(-0deg) translateX(-13px) skewX(-3deg);
 
@@ -324,7 +330,7 @@ body {
 
                     &.part-2 {
                         @apply relative z-20;
-                       
+                       @apply drop-shadow-noBottom;
                         @apply -mt-[3px] laptop:-mt-[2px];
                         @apply skew-x-3 laptop:translate-x-3 laptop:skew-x-6;
                         
@@ -362,22 +368,10 @@ body {
             }
         }
 
-        .split-paragraph {
-            @apply flex flex-col justify-between gap-60;
-
-            @apply laptop:flex-row laptop:gap-0;
-
-            &--divider {
-                @apply hidden laptop:block;
-            }
-        }
-
-        .text-image {
-            @apply w-full;
-            @apply flex flex-col;
-            @apply laptop:flex-row laptop:justify-between;
-        }
+        
     }
+
+
 
     .footer
     {
@@ -400,6 +394,66 @@ body {
 
 
 }
+
+.text-image {
+            @apply w-full;
+            @apply flex flex-col;
+            @apply laptop:flex-row laptop:justify-between;
+        }
+
+.split-paragraph {
+            @apply flex flex-col justify-between gap-60;
+
+            @apply laptop:flex-row laptop:gap-0;
+
+            &--divider {
+                @apply hidden laptop:block;
+            }
+
+        &.red {
+            @apply bg-red;
+            @apply p-15 laptop:p-30;
+            @apply border-white border-double border-4 relative;
+            @apply drop-shadow-main;
+
+            p {
+               @apply text-white;
+            }
+
+            & .split-paragraph--divider {
+                @apply stroke-white;
+            }
+
+            & .split-paragraph-circle {
+                @apply w-[15px] h-[15px];
+                @apply laptop:w-[20px] laptop:h-[20px];
+                @apply bg-white;
+                @apply absolute;
+                &:nth-child(1)
+                {
+                    @apply left-0 top-0;
+                    @apply rounded-br-full;
+                }
+                &:nth-child(2)
+                {
+                    @apply right-0 top-0;
+                    @apply rounded-bl-full;
+                }
+                &:nth-child(3)
+                {
+                    @apply right-0 bottom-0;
+                    @apply rounded-tl-full;
+                }
+                &:nth-child(4)
+                {
+                    @apply left-0 bottom-0;
+                    @apply rounded-tr-full;
+                }
+
+            }
+        }
+
+        }
 
 .button {
 

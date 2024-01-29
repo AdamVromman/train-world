@@ -84,6 +84,10 @@ export default {
       lineHeight: {
         33: "33px",
       },
+      dropShadow: {
+        main: "0 10px 5px rgba(0, 0, 0, 0.15)",
+        noBottom: "0 -5px 5px rgba(0, 0, 0, 0.15)",
+      },
     },
   },
   plugins: [],

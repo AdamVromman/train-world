@@ -55,11 +55,11 @@ const Header = ({ viewWidth }: Props) => {
         </svg>
       </div>
       <div className=" hero--text text">
-        <h1 className="mb-120 laptop:mb-30 text-red">To my dearest...</h1>
+        <h1 className="mb-120 laptop:mb-30 text-red">To my dearest..</h1>
         <h2 className="mb-30 laptop:mb-120">
-          A love-letter to our postal trains
+          A love-letter to our postal trains.
         </h2>
-        <p className="laptop:text-right font-nitti-cameo text-28 leading-normal max-w-[600px]">
+        <p className=" laptop:text-right font-brix laptop:font-nitti-cameo text-22 font-bold laptop:font-normal laptop:text-28 leading-normal max-w-[600px]">
           Discover the magic of the travelling post men and the postal trains of
           Belgium. Their history is written down and illustrated just for you.
         </p>

@@ -84,7 +84,7 @@ const Origins = ({ viewWidth }: Props) => {
       </Timeline>
       <div className="text text-image">
         <div className="text-image--image">
-          <img src="./Images/IMAGE.png" />
+          <img src="./Images/image-test.png" />
         </div>
         <div className="text-image--text">
           <p>

@@ -73,10 +73,13 @@ const RobbersInteraction = () => {
   return (
     <div className="interaction">
       <div className="relative">
-        <svg viewBox="0 0 1440 1360" className="rotate-6 w-full">
+        <svg
+          viewBox="0 0 1440 1360"
+          className="rotate-6 w-full drop-shadow-main"
+        >
           <Newspaper />
         </svg>
-        <div className="robbers-game">
+        <div className="robbers-game drop-shadow-main">
           <div className="robbers-game--text">
             <h3>12 gangs are potential suspects.</h3>
             <p>

@@ -123,7 +123,11 @@ const TheTravellingPostMen = ({ viewWidth }: Props) => {
         {TravellingPostMenTimeline}
       </Timeline>
       <div className="text">
-        <div className="split-paragraph">
+        <div className="split-paragraph red">
+          <div className="split-paragraph-circle"></div>
+          <div className="split-paragraph-circle"></div>
+          <div className="split-paragraph-circle"></div>
+          <div className="split-paragraph-circle"></div>
           <p>
             It wasn’t easy to be a travelling postman. During the day, the post
             trains stood still. But once the sun set and the train arrived at
@@ -140,7 +144,6 @@ const TheTravellingPostMen = ({ viewWidth }: Props) => {
           >
             <path
               d="M1 1.47754V2.9913M1 166.478V117M1 10V3M1 15V112"
-              stroke="#272727"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
