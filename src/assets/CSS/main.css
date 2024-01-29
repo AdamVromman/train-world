@@ -381,12 +381,12 @@ body {
 
     .footer
     {
-        @apply bg-red w-full pt-[650px];
+        @apply bg-red w-full pt-[650px] pb-120;
         background: url('/SVGs/footer--background.svg') center top;
         @apply bg-no-repeat bg-cover;
         @apply text-white;
         @apply max-w-[1640px];
-        @apply flex flex-col items-center
+        @apply flex flex-col items-center;
     }
 }
 
@@ -399,5 +399,85 @@ body {
 
 
 
+}
+
+.button {
+
+    @apply rounded-[30px];
+    @apply min-h-[57px];
+
+    &--content {
+        @apply flex flex-row justify-center items-center;
+        @apply min-h-[57px] h-full;
+
+
+        &--text {
+        @apply h-full;
+        @apply flex flex-col justify-center text-center;
+        @apply font-bold text-28;
+        @apply py-15;
+
+        }
+
+        &--center {
+            @apply h-full;
+            @apply flex flex-col justify-between;
+            @apply -mx-1;
+            @apply min-h-[57px];
+
+            &__border {
+                @apply w-full h-[4.4px];
+                 background: url('/SVGs/button--horizontal.svg') center top;
+                @apply bg-no-repeat bg-cover;
+            }
+        }
+    }
+
+    &--background {
+        @apply h-full;
+        @apply min-h-full;
+        @apply flex flex-col items-center;
+    }
+
+    &--corner {
+        @apply w-[75px] h-[28.5px] min-h-[28.5px] bg-yellow;
+        
+
+        &.left-top {
+            background: url('/SVGs/button--left-top.svg') center top;
+            @apply bg-no-repeat bg-cover;
+        }
+
+        &.right-top {
+            background: url('/SVGs/button--right-top.svg') center top;
+            @apply bg-no-repeat bg-cover;
+        }
+
+        &.right-bottom {
+            background: url('/SVGs/button--right-bottom.svg') center top;
+            @apply bg-no-repeat bg-cover;
+        }
+
+        &.left-bottom {
+            background: url('/SVGs/button--left-bottom.svg') center top;
+            @apply bg-no-repeat bg-cover;
+        }
+    }
+
+    &--center {
+        @apply grow w-full;
+        @apply flex justify-center items-center;
+        @apply -my-1;
+
+        &.left {
+            background: url('/SVGs/button--vertical-left.svg') center top;
+            @apply bg-no-repeat bg-cover;
+        }
+
+        &.right {
+            background: url('/SVGs/button--vertical-right.svg') center top;
+            @apply bg-no-repeat bg-cover;
+        }
+    }
 }
 

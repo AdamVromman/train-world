@@ -1,6 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{html,tsx}"],
+  safelist: [
+    {
+      pattern: /bg(-[a-z]+-?[a-z]*)*/,
+    },
+    {
+      pattern: /text(-[a-z]+-?[a-z]*)*/,
+    },
+  ],
   theme: {
     extend: {
       padding: {
