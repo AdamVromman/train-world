@@ -18,7 +18,6 @@ const LetterInteraction = () => {
     localStorage.removeItem("letter");
     setLetterSend(false);
     gsap.to(window, {
-      autoKill: true,
       scrollTo: { y: "#letter-part-2", offsetY: 100 },
     });
   });
@@ -29,7 +28,6 @@ const LetterInteraction = () => {
     const tl = gsap.timeline();
 
     tl.to(window, {
-      autoKill: true,
       scrollTo: { y: "#letter-part-2", offsetY: 100 },
     })
       .to(

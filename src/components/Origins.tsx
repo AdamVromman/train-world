@@ -88,7 +88,7 @@ const Origins = ({ viewWidth }: Props) => {
       <div className="text text-image">
         <div className="text-image--image">
           <img
-            className="blended-image w-[70%] -my-[100px] translate-x-[100px]"
+            className="blended-image laptop:w-[70%] -my-[100px] laptop:translate-x-[100px]"
             src="./Images/image-4.png"
           />
         </div>

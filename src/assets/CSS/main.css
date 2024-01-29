@@ -598,13 +598,15 @@ body {
     .nav {
         @apply fixed z-50 bottom-0 left-0;
         
-        @apply p-[7.5px] laptop:p-15 laptop:py-[7.5px];
-        @apply w-screen overflow-x-scroll laptop:overflow-x-auto;
-        @apply flex-nowrap laptop:flex-wrap;
+        @apply py-[7.5px];
+        @apply w-screen;
         @apply bg-white border-solid border-t-[1px] border-black;
+        @apply laptop:flex laptop:flex-row laptop:justify-center;
 
         &--timeline {
         @apply flex flex-row items-center laptop:gap-15;
+        @apply flex-nowrap laptop:flex-wrap;
+        @apply mx-15;
 
         & a {
             @apply bg-red px-30 laptop:px-15;
@@ -644,8 +646,8 @@ body {
             @apply bg-black;
             @apply border-double border-5 border-white;
             @apply rounded-full min-w-[50px] min-h-[50px];
-            @apply mr-15;
             @apply text-white font-bold text-22;
+            @apply ml-15;
         }
     }
 

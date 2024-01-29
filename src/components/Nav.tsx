@@ -1,7 +1,7 @@
 const Nav = () => {
   return (
     <nav id="nav" className="nav">
-      <div className="max-w-[1640px] flex flex-row justify-between">
+      <div className="w-full max-w-full overflow-x-auto flex flex-row justify-between">
         <button className="nav--language">EN</button>
         <div className="nav--timeline">
           <a href="#start">Start</a>
