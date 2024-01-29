@@ -41,7 +41,6 @@ const Origins = ({ viewWidth }: Props) => {
   return (
     <article id="origins" className="chapter origins">
       <div className="text">
-        <h2>Origins.</h2>
         <div className="split-paragraph background black">
           <div className="split-paragraph-circle"></div>
           <div className="split-paragraph-circle"></div>
