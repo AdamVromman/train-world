@@ -117,7 +117,7 @@ const TheTravellingPostMen = ({ viewWidth }: Props) => {
             <picture>
               <source
                 media="(min-width:1024px)"
-                srcSet="../Images/travelling-post-men-1600.avif"
+                srcSet="./Images/travelling-post-men-1600.avif"
               />
               <source srcSet="./Images/travelling-post-men-500.avif" />
               <img
