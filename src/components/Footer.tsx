@@ -8,8 +8,10 @@ const Footer = () => {
         <div className="split-paragraph">
           <p className="text-white">
             The Postal Trains is just one of the many stories of Train world!
-            Every month a new story is put in the spotlight. Next months story:
-            The Orient express.
+            <span className="p--bold">Every month a new story</span> is put in
+            the spotlight. Next months story:
+            <br />
+            <span className="p--bold">The Orient express.</span>
           </p>
           <svg
             width="2"
@@ -26,42 +28,61 @@ const Footer = () => {
               strokeLinejoin="round"
             />
           </svg>
-
+          <div className="flex laptop:hidden flex-col laptop:flex-row gap-15 justify-center items-center">
+            <Button
+              link="https://www.trainworld.be/en/the-museum"
+              textcolor="black"
+              text="Discover the museum"
+              color="white"
+              backgroundColor="red"
+            ></Button>
+            <Button
+              link="https://www.trainworld.be/en/collections/stories/in-the-beginning"
+              textcolor="black"
+              text="Read last months story"
+              color="white"
+              backgroundColor="red"
+            ></Button>
+          </div>
           <p className="text-white">
             Do you want to see a real postal train? Maybe walk around in one and
             discover how the travelling post men worked? All this, and much
-            more, awaits you in Train World!
+            more, awaits you in <span className="p--bold">Train World!</span>
           </p>
         </div>
-        <div className="flex flex-col gap-15 laptop:flex-row w-full justify-center items-center my-60">
-          <Button
-            link="https://www.trainworld.be/en/the-museum"
-            textcolor="black"
-            text="Discover the museum"
-            color="white"
-            backgroundColor="red"
-          ></Button>
-          <Button
-            link="https://www.trainworld.be/en/practical-information"
-            textcolor="black"
-            text="Plan your trip"
-            color="white"
-            backgroundColor="red"
-          ></Button>
-          <Button
-            link="https://webshoptrainworld.recreatex.be/Exhibitions/Overview?language=en"
-            textcolor="white"
-            text="Buy Tickets"
-            color="black"
-            backgroundColor="red"
-          ></Button>
-          <Button
-            link="https://www.trainworld.be/en/collections/stories/in-the-beginning"
-            textcolor="black"
-            text="Read last months story"
-            color="white"
-            backgroundColor="red"
-          ></Button>
+        <div className="flex flex-col gap-15 laptop:gap-0 laptop:flex-row justify-center laptop:justify-between w-full  items-center my-30 mb-0 laptop:mt-15">
+          <div className="hidden laptop:flex flex-col laptop:flex-row gap-15 justify-center items-center">
+            <Button
+              link="https://www.trainworld.be/en/the-museum"
+              textcolor="black"
+              text="Discover the museum"
+              color="white"
+              backgroundColor="red"
+            ></Button>
+            <Button
+              link="https://www.trainworld.be/en/collections/stories/in-the-beginning"
+              textcolor="black"
+              text="Read last months story"
+              color="white"
+              backgroundColor="red"
+            ></Button>
+          </div>
+          <div className="flex flex-col laptop:flex-row gap-15 justify-center items-center">
+            <Button
+              link="https://www.trainworld.be/en/practical-information"
+              textcolor="black"
+              text="Plan your trip"
+              color="white"
+              backgroundColor="red"
+            ></Button>
+            <Button
+              link="https://webshoptrainworld.recreatex.be/Exhibitions/Overview?language=en"
+              textcolor="white"
+              text="Buy Tickets"
+              color="black"
+              backgroundColor="red"
+            ></Button>
+          </div>
         </div>
       </div>
     </footer>

@@ -105,8 +105,8 @@ const PostByAPT = ({ viewWidth }: Props) => {
             into 8 two-cart post trains in the workshop in Mechelen. By having
             two carts, the travelling post men could{" "}
             <span className="p--bold">keep the post in</span> one cart and{" "}
-            <span className="p--bold">sort the post in</span>
-            the other. This made the job much safer.
+            <span className="p--bold">sort the post in</span> the other. This
+            made the job much safer.
           </p>
         </div>
       </div>
