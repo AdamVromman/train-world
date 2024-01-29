@@ -82,23 +82,25 @@ const RobbersInteraction = () => {
         <div className="robbers-game drop-shadow-main">
           <div className="robbers-game--text">
             <h3>12 gangs still potential suspects.</h3>
-            <p>
-              Although the police were not able to apprehend the culprits, they
-              were able to collect photographs of 12 potential gangs that might
-              be involved. Further investigation should determine which of these
-              groups committed the deed.
-            </p>
-            <p>
-              Now it's your turn! Look around for{" "}
-              <span className="font-bold text-teal-dark">clues</span> and choose
-              the 3 gangs that you suspect the most. After that, you will be
-              able to{" "}
-              <span className="p--bold">fill in the code on your ticket</span>{" "}
-              and save your suspects. Once you are in the museum, you can{" "}
-              <span className="p--bold">
-                find the final clue and unmask the robbers!
-              </span>
-            </p>
+            <div className="flex flex-col gap-30 laptop:flex-row">
+              <p className="mb-15">
+                Although the police were not able to apprehend the culprits,
+                they were able to collect photographs of 12 potential gangs that
+                might be involved. Further investigation should determine which
+                of these groups committed the deed.
+              </p>
+              <p>
+                Now it's your turn! Look around for{" "}
+                <span className="font-bold text-teal-dark">clues</span> and
+                choose the 3 gangs that you suspect the most. After that, you
+                will be able to{" "}
+                <span className="p--bold">fill in the code on your ticket</span>{" "}
+                and save your suspects. Once you are in the museum, you can{" "}
+                <span className="p--bold">
+                  find the final clue and unmask the robbers!
+                </span>
+              </p>
+            </div>
           </div>
           <div className="robbers-game--suspects">
             {selectedCircles.map((selected, index) => {
@@ -195,11 +197,10 @@ const RobbersInteraction = () => {
                         type="text"
                       />
                     </div>
-
-                    <div className="w-full flex flex-col items-center gap-[7.5px]">
+                    <div className="w-full flex flex-col items-center gap-[7.5px] laptop:mt-15">
                       <span className="interaction--subtitle">
                         Save your suspects and find the remaining clue in the
-                        museum
+                        museum.
                       </span>
                       <button
                         className="interaction--submit__button"
