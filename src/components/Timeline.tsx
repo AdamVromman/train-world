@@ -340,7 +340,7 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
                     />
                   </button>
                   {infoOpen[index] && (
-                    <div className="fixed w-screen flex justify-center items-center">
+                    <div className="fixed w-full flex justify-center items-center">
                       <div className="timeline--info">{star.text}</div>
                     </div>
                   )}
