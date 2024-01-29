@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { gsap } from "gsap/gsap-core";
 import { useEffect, useState } from "react";
+import Button from "./Button";
 
 const LetterInteraction = () => {
   const [letterSend, setLetterSend] = useState(false);
@@ -105,10 +106,16 @@ const LetterInteraction = () => {
       <div
         className={`absolute w-full ${
           letterSend ? "h-fit" : "h-full"
-        } flex flex-col justify-center items-center`}
+        } flex flex-col justify-center items-center gap-30`}
       >
-        <span>Letter send!</span>
-        <button onClick={onClickAnotherLetter}>Send another letter</button>
+        <span className="text-28 font-bold italic">Letter send!</span>
+        <Button
+          backgroundColor="white"
+          color="white"
+          textcolor="black"
+          text="Send another letter"
+          onClick={onClickAnotherLetter}
+        ></Button>
       </div>
       {!letterSend && (
         <div id="letter" className="interaction letter-interaction">
@@ -171,7 +178,12 @@ const LetterInteraction = () => {
                     className="interaction--submit__code"
                     type="text"
                   />
-                  <button onClick={onClick}>Send your letter</button>
+                  <button
+                    className="interaction--submit__button"
+                    onClick={onClick}
+                  >
+                    Send your letter
+                  </button>
                 </div>
               </div>
             </div>

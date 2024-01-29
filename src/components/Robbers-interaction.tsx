@@ -81,12 +81,23 @@ const RobbersInteraction = () => {
         </svg>
         <div className="robbers-game drop-shadow-main">
           <div className="robbers-game--text">
-            <h3>12 gangs are potential suspects.</h3>
+            <h3>12 gangs still potential suspects.</h3>
             <p>
               Although the police were not able to apprehend the culprits, they
               were able to collect photographs of 12 potential gangs that might
               be involved. Further investigation should determine which of these
               groups committed the deed.
+            </p>
+            <p>
+              Now it's your turn! Look around for{" "}
+              <span className="font-bold text-teal-dark">clues</span> and choose
+              the 3 gangs that you suspect the most. After that, you will be
+              able to{" "}
+              <span className="p--bold">fill in the code on your ticket</span>{" "}
+              and save your suspects. Once you are in the museum, you can{" "}
+              <span className="p--bold">
+                find the final clue and unmask the robbers!
+              </span>
             </p>
           </div>
           <div className="robbers-game--suspects">
@@ -134,57 +145,74 @@ const RobbersInteraction = () => {
               );
             })}
           </div>
-          {getAmountSelected() === 3 && (
-            <div className="robbers-game--submit">
-              {saved ? (
-                <>
-                  {" "}
-                  <span className="interaction--subtitle">
-                    Your suspects has been recorded!
-                  </span>
-                  <button
-                    onClick={() => {
-                      setSaved(false);
-                      setSelectedCircles([
-                        false,
-                        false,
-                        false,
-                        false,
-                        false,
-                        false,
-                        false,
-                        false,
-                        false,
-                        false,
-                        false,
-                        false,
-                      ]);
-                      localStorage.removeItem("robbers");
-                    }}
-                  >
-                    Clear suspects
-                  </button>
-                </>
-              ) : (
-                <>
-                  <span>These are your three suspects?</span>
-                  <span>Very well</span>
-                  <span className="interaction--subtitle">
-                    Fill in the code on your ticket.
-                  </span>
-                  <input
-                    placeholder="EXAMPLE: 123-456-789"
-                    className="interaction--submit__code"
-                    type="text"
-                  />
-                  <span className="interaction--subtitle">
-                    Save your suspects and find the remaining clue in the museum
-                  </span>
-                  <button onClick={saveSuspects}>Save suspects</button>
-                </>
-              )}
-            </div>
-          )}
+
+          <div className="robbers-game--submit h-[400px]">
+            {getAmountSelected() === 3 && (
+              <>
+                {saved ? (
+                  <>
+                    {" "}
+                    <span className="interaction--subtitle">
+                      Your suspects has been recorded!
+                    </span>
+                    <button
+                      className="interaction--submit__button"
+                      onClick={() => {
+                        setSaved(false);
+                        setSelectedCircles([
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                          false,
+                        ]);
+                        localStorage.removeItem("robbers");
+                      }}
+                    >
+                      Clear suspects
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <span className="italic">
+                      These are your three suspects?
+                    </span>
+                    <div className="w-full flex flex-col items-center gap-[7.5px]">
+                      {" "}
+                      <span className="interaction--subtitle">
+                        Fill in the code on your ticket.
+                      </span>
+                      <input
+                        placeholder="EXAMPLE: 123-456-789"
+                        className="interaction--submit__code"
+                        type="text"
+                      />
+                    </div>
+
+                    <div className="w-full flex flex-col items-center gap-[7.5px]">
+                      <span className="interaction--subtitle">
+                        Save your suspects and find the remaining clue in the
+                        museum
+                      </span>
+                      <button
+                        className="interaction--submit__button"
+                        onClick={saveSuspects}
+                      >
+                        Save suspects
+                      </button>
+                    </div>
+                  </>
+                )}
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>

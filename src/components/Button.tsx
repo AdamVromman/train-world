@@ -4,9 +4,17 @@ interface Props {
   color: string;
   textcolor: string;
   backgroundColor: string;
+  onClick?: () => void;
 }
 
-const Button = ({ text, color, textcolor, backgroundColor, link }: Props) => {
+const Button = ({
+  text,
+  color,
+  textcolor,
+  backgroundColor,
+  link,
+  onClick,
+}: Props) => {
   const content = (
     <>
       <div className="button--ball-container">
@@ -46,6 +54,7 @@ const Button = ({ text, color, textcolor, backgroundColor, link }: Props) => {
     </a>
   ) : (
     <button
+      onClick={onClick}
       className={`button bg-${color} border-${
         backgroundColor === color ? "black" : backgroundColor
       }`}

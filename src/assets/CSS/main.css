@@ -167,13 +167,22 @@ body {
             @apply overflow-x-clip laptop:overflow-x-visible;
 
             &--submit {
-                        @apply flex flex-col gap-15;
+                        @apply flex flex-col items-center gap-15;
 
                         &__code {
                             @apply bg-white-light;
                             @apply border-[1.5px] border-black rounded-full;
                             @apply p-7 px-15;
                             @apply text-center;
+                        }
+
+                        &__button {
+                            @apply p-15;
+                            @apply w-[300px] h-[70px];
+                            background: url('/SVGs/interaction--button.svg') center center;
+                            @apply bg-no-repeat bg-contain;
+
+                            @apply text-22 font-bold;
                         }
                     }
             
@@ -186,6 +195,7 @@ body {
 
             &--subtitle {
                 @apply font-brix text-22 font-700;
+                @apply text-center laptop:text-left;
             }
 
             .robbers-game {
@@ -241,8 +251,9 @@ body {
 
                 &--submit {
                     @apply p-15 laptop:p-30;
-                    @apply flex flex-col gap-15;
+                    @apply flex flex-col items-center gap-15 ;
                     @apply max-w-full laptop:max-w-[50%]
+
                 }
 
                 
@@ -267,7 +278,7 @@ body {
                     &--content, &--back {
                         @apply absolute;
                         @apply flex flex-col justify-center items-start gap-30;
-                         @apply p-30;
+                         @apply p-15 laptop:p-30;
                          @apply w-full h-full;
                          
                          backface-visibility: hidden;
@@ -367,6 +378,9 @@ body {
                             transform: rotateX(-0deg) translateX(35px) skewX(-3deg);
                         }
 
+                        .letter-interaction--part--content {
+                            @apply gap-0;
+                        }
                         
 
                         .letter-interaction--part--content, .letter-interaction--part--back {
