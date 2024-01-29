@@ -92,10 +92,17 @@ const TheTravellingPostMen = ({ viewWidth }: Props) => {
               After 1950, every train station had to have a postbox and after
               1952, a kiosk to sell stamps.
             </p>
-            <img
-              className="block laptop:hidden -my-[100px] blended-image"
-              src="./Images/image-2.png"
-            />
+            <picture>
+              <source
+                media="(min-width:1024px)"
+                srcSet="../Images/travelling-post-men-1600.avif"
+              />
+              <source srcSet="./Images/travelling-post-men-500.avif" />
+              <img
+                className="block laptop:hidden -my-[100px] blended-image"
+                src="./Images/travelling-post-men.avif"
+              />
+            </picture>
             <p>
               The most important job was to{" "}
               <span className="p--bold">
@@ -107,10 +114,17 @@ const TheTravellingPostMen = ({ viewWidth }: Props) => {
             </p>
           </div>
           <div className="text-image--image">
-            <img
-              className="hidden laptop:block blended-image"
-              src="./Images/image-2.png"
-            />
+            <picture>
+              <source
+                media="(min-width:1024px)"
+                srcSet="../Images/travelling-post-men-1600.avif"
+              />
+              <source srcSet="./Images/travelling-post-men-500.avif" />
+              <img
+                className="hidden laptop:block blended-image"
+                src="./Images/travelling-post-men.avif"
+              />
+            </picture>
           </div>
         </div>
       </div>

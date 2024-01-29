@@ -86,10 +86,18 @@ const Origins = ({ viewWidth }: Props) => {
       </Timeline>
       <div className="text text-image">
         <div className="text-image--image">
-          <img
-            className="blended-image laptop:w-[70%] -my-[100px] laptop:translate-x-[100px]"
-            src="./Images/image-4.png"
-          />
+          <picture>
+            <source
+              media="(min-width:1024px)"
+              srcSet="./Images/origins-700.avif"
+            />
+            <source srcSet="./Images/origins-500.avif" />
+
+            <img
+              className="blended-image -my-[100px] laptop:translate-x-[100px]"
+              src="./Images/origins.avif"
+            />
+          </picture>
         </div>
         <div className="text-image--text">
           <p>

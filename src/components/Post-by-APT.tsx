@@ -105,8 +105,8 @@ const PostByAPT = ({ viewWidth }: Props) => {
             into 8 two-cart post trains in the workshop in Mechelen. By having
             two carts, the travelling post men could{" "}
             <span className="p--bold">keep the post in</span> one cart and{" "}
-            <span className="p--bold">sort the post in</span>
-            the other. This made the job much safer.
+            <span className="p--bold">sort the post in</span> the other. This
+            made the job much safer.
           </p>
         </div>
       </div>
@@ -131,7 +131,14 @@ const PostByAPT = ({ viewWidth }: Props) => {
             </p>
           </div>
           <div className="text-image--image pt-30 laptop:pt-0 laptop:-my-150">
-            <img className="blended-image" src="./Images/image-3.png" />
+            <picture>
+              <source
+                media="(min-width:1024px)"
+                srcSet="./Images/post-by-apt-1200.avif"
+              />
+              <source srcSet="../Images/post-by-apt-500.avif" />
+              <img className="blended-image" src="./Images/post-by-apt.avif" />
+            </picture>
           </div>
         </div>
       </div>

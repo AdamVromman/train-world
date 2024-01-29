@@ -167,7 +167,7 @@ body {
             @apply overflow-x-clip laptop:overflow-x-visible;
 
             &--submit {
-                        @apply flex flex-col items-center gap-15;
+                        @apply flex flex-col items-center justify-center gap-15;
 
                         &__code {
                             @apply bg-white-light;
@@ -215,7 +215,7 @@ body {
                     @apply p-15;
 
                     h3 {
-                        @apply font-brix-cond font-black text-28;
+                        @apply font-brix font-black text-28;
                         @apply leading-none;
                         @apply mb-15;
                     }
@@ -252,7 +252,7 @@ body {
                 &--submit {
                     @apply p-15 laptop:p-30;
                     @apply flex flex-col items-center gap-15 ;
-                    @apply max-w-full laptop:max-w-[50%]
+                    @apply max-w-full w-full;
 
                 }
 
