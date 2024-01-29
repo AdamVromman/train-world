@@ -415,7 +415,7 @@ body {
         @apply h-full;
         @apply flex flex-col justify-center text-center;
         @apply font-bold text-28;
-        @apply py-15;
+        @apply py-15 laptop:py-0;
 
         }
 
@@ -465,18 +465,22 @@ body {
     }
 
     &--center {
-        @apply grow w-full;
+        
         @apply flex justify-center items-center;
-        @apply -my-1;
+        @apply -my-[7.5px];
 
         &.left {
             background: url('/SVGs/button--vertical-left.svg') center top;
             @apply bg-no-repeat bg-cover;
+            @apply grow w-full;
+            @apply -my-1;
         }
 
         &.right {
             background: url('/SVGs/button--vertical-right.svg') center top;
             @apply bg-no-repeat bg-cover;
+            @apply grow w-full;
+            @apply -my-1;
         }
     }
 }

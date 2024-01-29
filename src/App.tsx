@@ -68,6 +68,7 @@ function App() {
                   </p>
                 </div>
                 <Button
+                  viewWidth={viewWidth}
                   textcolor="black"
                   text="Discover the museum"
                   color="white"

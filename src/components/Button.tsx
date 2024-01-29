@@ -4,9 +4,10 @@ interface Props {
   text: string;
   color: string;
   textcolor: string;
+  viewWidth: number;
 }
 
-const Button = ({ text, color, textcolor }: Props) => {
+const Button = ({ text, color, textcolor, viewWidth }: Props) => {
   const [randomValue] = useState(Math.random());
   const [height, setHeight] = useState(0);
 
@@ -15,7 +16,7 @@ const Button = ({ text, color, textcolor }: Props) => {
       const button = document.getElementById(`${text}${randomValue}`);
       if (button) setHeight(button.getBoundingClientRect().height);
     }
-  });
+  }, [randomValue, text, viewWidth]);
 
   return (
     <button id={text + randomValue} className={`button bg-${color}`}>
