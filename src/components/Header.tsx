@@ -8,35 +8,39 @@ interface Props {
 
 const Header = ({ viewWidth }: Props) => {
   useGSAP(() => {
-    const tl = gsap.timeline();
-    tl.to("#hero_mountains", {
-      x: -3280,
-      repeat: -1,
-      ease: "none",
-      duration: 45,
-    });
+    const mm = gsap.matchMedia();
 
-    tl.to(
-      "#hero_tracks",
-      {
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+      const tl = gsap.timeline();
+      tl.to("#hero_mountains", {
         x: -3280,
         repeat: -1,
         ease: "none",
-        duration: 15,
-      },
-      "<"
-    );
+        duration: 45,
+      });
 
-    tl.to(
-      "#hero_clouds",
-      {
-        x: -2460,
-        repeat: -1,
-        ease: "none",
-        duration: 60,
-      },
-      "<"
-    );
+      tl.to(
+        "#hero_tracks",
+        {
+          x: -3280,
+          repeat: -1,
+          ease: "none",
+          duration: 15,
+        },
+        "<"
+      );
+
+      tl.to(
+        "#hero_clouds",
+        {
+          x: -2460,
+          repeat: -1,
+          ease: "none",
+          duration: 60,
+        },
+        "<"
+      );
+    });
   });
 
   return (
