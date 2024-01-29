@@ -136,7 +136,7 @@ const PostByAPT = ({ viewWidth }: Props) => {
                 media="(min-width:1024px)"
                 srcSet="./Images/post-by-apt-1200.avif"
               />
-              <source srcSet="../Images/post-by-apt-500.avif" />
+              <source srcSet="./Images/post-by-apt-500.avif" />
               <img className="blended-image" src="./Images/post-by-apt.avif" />
             </picture>
           </div>
