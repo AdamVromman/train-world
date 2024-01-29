@@ -90,7 +90,7 @@ const TheTravellingPostMen = ({ viewWidth }: Props) => {
     <article id="travelling-post-men" className="chapter travelling-post-men">
       <div className="text">
         <h2>The travelling post men.</h2>
-        <div className="text-image">
+        <div className="text-image horizontal">
           <div className="text-image--text">
             <p>
               One of the reasons that the train post kept growing was{" "}
@@ -99,6 +99,10 @@ const TheTravellingPostMen = ({ viewWidth }: Props) => {
               After 1950, every train station had to have a postbox and after
               1952, a kiosk to sell stamps.
             </p>
+            <img
+              className="block laptop:hidden -my-[100px] blended-image"
+              src="./Images/image-2.png"
+            />
             <p>
               The most important job was to{" "}
               <span className="p--bold">
@@ -110,7 +114,10 @@ const TheTravellingPostMen = ({ viewWidth }: Props) => {
             </p>
           </div>
           <div className="text-image--image">
-            <img src="./Images/IMAGE.png" />
+            <img
+              className="hidden laptop:block blended-image"
+              src="./Images/image-2.png"
+            />
           </div>
         </div>
       </div>
@@ -123,7 +130,7 @@ const TheTravellingPostMen = ({ viewWidth }: Props) => {
         {TravellingPostMenTimeline}
       </Timeline>
       <div className="text">
-        <div className="split-paragraph red">
+        <div className="split-paragraph background red">
           <div className="split-paragraph-circle"></div>
           <div className="split-paragraph-circle"></div>
           <div className="split-paragraph-circle"></div>

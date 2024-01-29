@@ -88,6 +88,9 @@ export default {
         main: "0 10px 5px rgba(0, 0, 0, 0.15)",
         noBottom: "0 -5px 5px rgba(0, 0, 0, 0.15)",
       },
+      borderWidth: {
+        5: "5px",
+      },
     },
   },
   plugins: [],

@@ -88,7 +88,7 @@ const PostByAPT = ({ viewWidth }: Props) => {
       </Timeline>
       <div className="text">
         <div className="text-image">
-          <div className="text-image--text">
+          <div className="text-image--text laptop:translate-x-[100px]">
             <p>
               The first APT, between Namen and Libramont, was inaugurated in
               1968. That same year, the route between Ghent and Ostend started
@@ -98,8 +98,8 @@ const PostByAPT = ({ viewWidth }: Props) => {
               around them.
             </p>
           </div>
-          <div className="text-image--image">
-            <img src="./Images/IMAGE.png" />
+          <div className="text-image--image pt-30 laptop:pt-0 laptop:-my-150">
+            <img className="blended-image" src="./Images/image-3.png" />
           </div>
         </div>
       </div>

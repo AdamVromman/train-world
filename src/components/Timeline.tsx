@@ -234,6 +234,22 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
       tl.to(`#${id}--stars`, { alpha: 1 }, 0.5);
       tl.to(`#${id}--stars`, { alpha: 0 }, "-=2");
     }
+
+    tl.to(
+      "#nav",
+      {
+        y: 200,
+      },
+      1
+    );
+
+    tl.to(
+      "#nav",
+      {
+        y: 0,
+      },
+      "-=0.5"
+    );
   });
 
   return (
