@@ -40,7 +40,7 @@ const Header = ({ viewWidth }: Props) => {
   });
 
   return (
-    <header className="hero">
+    <header id="start" className="hero">
       <div className="absolute z-20 m-15">
         <img className="w-[50px] laptop:w-[100px]" src="./Images/logo.png" />
       </div>

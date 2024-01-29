@@ -87,7 +87,7 @@ const STARS = [
 
 const TheTravellingPostMen = ({ viewWidth }: Props) => {
   return (
-    <article className="chapter travelling-post-men">
+    <article id="travelling-post-men" className="chapter travelling-post-men">
       <div className="text">
         <h2>The travelling post men.</h2>
         <div className="text-image">

@@ -11,6 +11,7 @@ body {
     @apply w-screen h-screen overflow-x-hidden overflow-y-auto;
     @apply bg-white;
     @apply font-brix text-black;
+    
 
     & #root {
         @apply w-full max-w-full;
@@ -537,5 +538,43 @@ body {
             @apply -my-1;
         }
     }
+
+
 }
+
+    .nav {
+        @apply fixed z-50 bottom-0 left-0;
+        @apply flex flex-row items-center laptop:gap-15;
+        @apply p-[7.5px] laptop:p-15;
+        @apply w-screen max-w-[1440px] overflow-x-scroll laptop:overflow-x-auto;
+        @apply flex-nowrap laptop:flex-wrap;
+
+        & a {
+            @apply bg-red px-30 laptop:px-15;
+            @apply text-white font-bold;
+            @apply border-black border-y-2 border-r-[1px]; 
+            border-right: dotted 2px;
+            @apply first:border-l-2 first:rounded-l-full;
+            @apply last:border-r-2 last:border-solid last:border-black last:rounded-r-full;
+            @apply laptop:border-solid laptop:border-black laptop:rounded-full laptop:border-2;
+            @apply whitespace-nowrap;
+            @apply opacity-90 laptop:opacity-20 hover:opacity-100;
+
+            &:hover + hr {
+                @apply opacity-100;
+            }
+        }
+        
+        & hr {
+            @apply hidden laptop:block;
+            @apply w-[30px];
+            @apply border-dotted border-t-4 border-black;
+            @apply opacity-20;
+
+            &:has(+ a:hover)
+            {
+            @apply opacity-100;
+            }
+        }
+    }
 

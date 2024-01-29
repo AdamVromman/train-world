@@ -5,7 +5,7 @@ interface Props {
 }
 const Footer = ({ viewWidth }: Props) => {
   return (
-    <footer className="footer">
+    <footer id="end" className="footer">
       <div className="text">
         <h2>Liked what you heard?</h2>
         <div className="split-paragraph">

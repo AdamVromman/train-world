@@ -42,7 +42,7 @@ const POINTS = [
 
 const PostByAPT = ({ viewWidth }: Props) => {
   return (
-    <article className="chapter post-by-APT">
+    <article id="post-by-apt" className="chapter post-by-APT">
       <div className="text">
         <h2>Post by APT.</h2>
         <div className="split-paragraph">

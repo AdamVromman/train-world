@@ -42,7 +42,7 @@ const POINTS = [
 
 const EndOfAnEra = ({ viewWidth }: Props) => {
   return (
-    <article className="chapter end-of-and-era">
+    <article id="end-of-an-era" className="chapter end-of-and-era">
       <div className="text">
         <h2>The end of an era.</h2>
         <div className="text-image">

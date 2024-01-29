@@ -5,6 +5,7 @@ import Loading from "./components/Loading";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "./components/Footer";
+import Nav from "./components/Nav";
 
 function App() {
   const [viewWidth, setViewWidth] = useState(0);
@@ -48,7 +49,7 @@ function App() {
             <Footer viewWidth={viewWidth} />
           </div>
         </main>
-        <nav></nav>
+        <Nav />
       </Suspense>
     </>
   );
