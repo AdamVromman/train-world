@@ -46,21 +46,14 @@ const STARS = [
     yDesktop: 53,
     xPhone: 69,
     yPhone: 50,
-    text: "They lit lamps to be able to work and a big fire to keep warm.",
+    text: "They lit lamps to be able to work in the darkness. In winter, they sometimes had to light a fire to keep warm ..surrounded by paper and wood!",
   },
   {
     xDesktop: 83,
     yDesktop: 55,
     xPhone: 80,
     yPhone: 60,
-    text: "The trains carried the most urgent cargo. But sometimes also the weirdest. Things like instruments, machinery and even live animals.",
-  },
-  {
-    xDesktop: 40.5,
-    yDesktop: 62,
-    xPhone: 35,
-    yPhone: 60,
-    text: "Every station, they received the huge bags with unsorted post.",
+    text: "The trains carried the most urgent cargo. But sometimes also the weirdest. Things like instruments, machinery and even live animals!",
   },
   {
     xDesktop: 53,
@@ -74,23 +67,23 @@ const STARS = [
     yDesktop: 57,
     xPhone: 55,
     yPhone: 56,
-    text: "Using stamps to mark where the letter came from.",
+    text: "The post men had to stamp each letter manually to record where the letter came from.",
   },
   {
     xDesktop: 60.5,
     yDesktop: 52.5,
     xPhone: 28.5,
     yPhone: 50,
-    text: "Putting the post in the little boxes.",
+    text: "The walls of the train were full of little boxes. Each box had the name of a town or city and each letter had to end up in the correct box.",
   },
 ];
 
 const TheTravellingPostMen = ({ viewWidth }: Props) => {
   return (
-    <article className="chapter travelling-post-men">
+    <article id="travelling-post-men" className="chapter travelling-post-men">
       <div className="text">
         <h2>The travelling post men.</h2>
-        <div className="text-image">
+        <div className="text-image horizontal">
           <div className="text-image--text">
             <p>
               One of the reasons that the train post kept growing was{" "}
@@ -99,6 +92,10 @@ const TheTravellingPostMen = ({ viewWidth }: Props) => {
               After 1950, every train station had to have a postbox and after
               1952, a kiosk to sell stamps.
             </p>
+            <img
+              className="block laptop:hidden -my-[100px] blended-image"
+              src="./Images/image-2.png"
+            />
             <p>
               The most important job was to{" "}
               <span className="p--bold">
@@ -110,7 +107,10 @@ const TheTravellingPostMen = ({ viewWidth }: Props) => {
             </p>
           </div>
           <div className="text-image--image">
-            <img src="./Images/IMAGE.png" />
+            <img
+              className="hidden laptop:block blended-image"
+              src="./Images/image-2.png"
+            />
           </div>
         </div>
       </div>
@@ -123,7 +123,11 @@ const TheTravellingPostMen = ({ viewWidth }: Props) => {
         {TravellingPostMenTimeline}
       </Timeline>
       <div className="text">
-        <div className="split-paragraph">
+        <div className="split-paragraph background red">
+          <div className="split-paragraph-circle"></div>
+          <div className="split-paragraph-circle"></div>
+          <div className="split-paragraph-circle"></div>
+          <div className="split-paragraph-circle"></div>
           <p>
             It wasn’t easy to be a travelling postman. During the day, the post
             trains stood still. But once the sun set and the train arrived at
@@ -140,7 +144,6 @@ const TheTravellingPostMen = ({ viewWidth }: Props) => {
           >
             <path
               d="M1 1.47754V2.9913M1 166.478V117M1 10V3M1 15V112"
-              stroke="#272727"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"

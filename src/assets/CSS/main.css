@@ -11,6 +11,7 @@ body {
     @apply w-screen h-screen overflow-x-hidden overflow-y-auto;
     @apply bg-white;
     @apply font-brix text-black;
+    
 
     & #root {
         @apply w-full max-w-full;
@@ -64,6 +65,7 @@ body {
         
         .hero {
             @apply w-full relative;
+            @apply mb-120 laptop:mb-0;
 
             &--text {
                 @apply relative left-0 top-0  z-20;
@@ -110,6 +112,7 @@ body {
                 @apply p-30 laptop:px-60;
                 @apply text-white text-18 font-bold italic;
                 @apply -translate-y-[50%] laptop:-translate-y-[0];
+                @apply drop-shadow-main;
             }
 
             &--dates {
@@ -119,6 +122,7 @@ body {
                 &--single {
                     @apply absolute left-[50%] bottom-0;
                     transform: translateX(-50%);
+                    @apply drop-shadow-main;
 
                     @apply flex flex-col justify-start items-center px-30 py-15 laptop:py-30;
                     @apply gap-15;
@@ -163,13 +167,22 @@ body {
             @apply overflow-x-clip laptop:overflow-x-visible;
 
             &--submit {
-                        @apply flex flex-col gap-15;
+                        @apply flex flex-col items-center gap-15;
 
                         &__code {
                             @apply bg-white-light;
                             @apply border-[1.5px] border-black rounded-full;
                             @apply p-7 px-15;
                             @apply text-center;
+                        }
+
+                        &__button {
+                            @apply p-15;
+                            @apply w-[300px] h-[70px];
+                            background: url('/SVGs/interaction--button.svg') center center;
+                            @apply bg-no-repeat bg-contain;
+
+                            @apply text-22 font-bold;
                         }
                     }
             
@@ -182,6 +195,7 @@ body {
 
             &--subtitle {
                 @apply font-brix text-22 font-700;
+                @apply text-center laptop:text-left;
             }
 
             .robbers-game {
@@ -237,8 +251,9 @@ body {
 
                 &--submit {
                     @apply p-15 laptop:p-30;
-                    @apply flex flex-col gap-15;
+                    @apply flex flex-col items-center gap-15 ;
                     @apply max-w-full laptop:max-w-[50%]
+
                 }
 
                 
@@ -247,17 +262,23 @@ body {
             .letter-interaction {
 
                 @apply relative;
+                
 
                 &--part {
                     @apply w-full;
                     @apply h-[500px] tablet:h-[350px] laptop:h-[450px];
                     perspective: 40px;
                     @apply relative;
+                    
+
+                    &-content {
+                        @apply drop-shadow-main;
+                    }
 
                     &--content, &--back {
                         @apply absolute;
                         @apply flex flex-col justify-center items-start gap-30;
-                         @apply p-30;
+                         @apply p-15 laptop:p-30;
                          @apply w-full h-full;
                          
                          backface-visibility: hidden;
@@ -307,6 +328,7 @@ body {
                         @apply items-center;
                         transform-style: preserve-3d;
                         transform-origin: 0px 100%;
+                        
 
                         transform: rotateX(-0deg) translateX(-13px) skewX(-3deg);
 
@@ -315,6 +337,11 @@ body {
                             transform: rotateX(-0deg) translateX(-10px) skewX(-3deg);
 
                         }
+
+                        .letter-interaction--part--content {
+                            @apply drop-shadow-noBottom;
+                        }
+                        
 
                         .letter-interaction--part--content, .letter-interaction--part--back {
                             background: url('/SVGs/letter-background-1.svg') center center;
@@ -330,6 +357,7 @@ body {
                         
 
                         .letter-interaction--part--content {
+                            @apply drop-shadow-noBottom;
                             @apply phone:p-60;
                              background: url('/SVGs/letter-background-2.svg') center center;
                             @apply bg-no-repeat bg-cover;
@@ -350,6 +378,9 @@ body {
                             transform: rotateX(-0deg) translateX(35px) skewX(-3deg);
                         }
 
+                        .letter-interaction--part--content {
+                            @apply gap-0;
+                        }
                         
 
                         .letter-interaction--part--content, .letter-interaction--part--back {
@@ -362,31 +393,19 @@ body {
             }
         }
 
-        .split-paragraph {
-            @apply flex flex-col justify-between gap-60;
-
-            @apply laptop:flex-row laptop:gap-0;
-
-            &--divider {
-                @apply hidden laptop:block;
-            }
-        }
-
-        .text-image {
-            @apply w-full;
-            @apply flex flex-col;
-            @apply laptop:flex-row laptop:justify-between;
-        }
+        
     }
+
+
 
     .footer
     {
-        @apply bg-red w-full pt-[650px];
+        @apply bg-red w-full pt-[650px] pb-120;
         background: url('/SVGs/footer--background.svg') center top;
         @apply bg-no-repeat bg-cover;
         @apply text-white;
         @apply max-w-[1640px];
-        @apply flex flex-col items-center
+        @apply flex flex-col items-center;
     }
 }
 
@@ -400,4 +419,195 @@ body {
 
 
 }
+
+.text-image {
+            @apply w-full;
+            @apply flex flex-col;
+            @apply laptop:flex-row laptop:justify-between;
+
+
+            &.horizontal {
+
+                @apply laptop:flex-col;
+
+                .text-image--text 
+                {
+                    @apply flex flex-col laptop:flex-row;
+                    @apply gap-60;
+                }
+
+                .text-image--image {
+                    @apply flex flex-col justify-end;
+                    @apply -mt-[25%];
+                }
+            }
+           
+
+        }
+
+.split-paragraph {
+            @apply flex flex-col justify-between gap-60;
+
+            @apply laptop:flex-row laptop:gap-0;
+
+            &--divider {
+                @apply hidden laptop:block;
+            }
+
+
+
+        &.background {
+            @apply p-15 laptop:p-30;
+            @apply border-white border-double border-5 relative;
+            @apply drop-shadow-main;
+
+            &.red {
+            @apply bg-red;
+            }
+
+            &.black {
+                @apply bg-black;
+            }
+
+            &.white {
+                @apply bg-white border-black;
+                p {
+                    @apply text-black;
+                }
+
+                & .split-paragraph-circle {
+                    @apply bg-black;
+                }
+
+                & .split-paragraph--divider {
+                @apply stroke-black;
+            }
+            }
+
+            p {
+               @apply text-white;
+            }
+
+            & .split-paragraph--divider {
+                @apply stroke-white;
+            }
+
+            & .split-paragraph-circle {
+                @apply w-[15px] h-[15px];
+                @apply laptop:w-[20px] laptop:h-[20px];
+                @apply bg-white;
+                @apply absolute;
+                &:nth-child(1)
+                {
+                    @apply left-0 top-0;
+                    @apply rounded-br-full;
+                }
+                &:nth-child(2)
+                {
+                    @apply right-0 top-0;
+                    @apply rounded-bl-full;
+                }
+                &:nth-child(3)
+                {
+                    @apply right-0 bottom-0;
+                    @apply rounded-tl-full;
+                }
+                &:nth-child(4)
+                {
+                    @apply left-0 bottom-0;
+                    @apply rounded-tr-full;
+                }
+
+            }
+        }
+
+        }
+
+.button {
+
+    @apply rounded-full;
+    @apply flex flex-row items-center;
+    @apply py-7;
+    @apply border-double border-5;
+    @apply hover:scale-90;
+
+    &--ball-container {
+        @apply flex justify-center items-center;
+        @apply mx-7;
+    }
+
+    &--ball {
+        @apply w-[12px] h-[12px] max-w-[12px] max-h-[12px];
+        @apply rounded-full;
+        @apply flex justify-center items-center;
+    }
+
+
+    &--text {
+        @apply text-22 font-bold italic;
+        @apply pb-[4px];
+    }
+
+
+}
+
+    .nav {
+        @apply fixed z-50 bottom-0 left-0;
+        
+        @apply py-[7.5px];
+        @apply w-screen;
+        @apply bg-white border-solid border-t-[1px] border-black;
+        @apply laptop:flex laptop:flex-row laptop:justify-center;
+
+        &--timeline {
+        @apply flex flex-row items-center laptop:gap-15;
+        @apply flex-nowrap laptop:flex-wrap;
+        @apply mx-15;
+
+        & a {
+            @apply bg-red px-30 laptop:px-15;
+            @apply text-white font-bold;
+            @apply border-black border-y-2; 
+            border-right: dotted 2px;
+            @apply first-of-type:border-l-2 first-of-type:rounded-l-full;
+            @apply last-of-type:border-r-2 last-of-type:border-r-black last-of-type:border-solid  last-of-type:rounded-r-full;
+            @apply last-of-type:laptop:border-5 last-of-type:laptop:border-double last-of-type:laptop:border-white;
+            @apply laptop:first-of-type:border-l-5;
+            @apply laptop:border-double laptop:border-white laptop:rounded-full laptop:border-5;
+            @apply whitespace-nowrap;
+            @apply laptop:opacity-30 hover:opacity-100;
+
+            &:hover + hr {
+                @apply opacity-100;
+            }
+        }
+        
+        & hr {
+            @apply hidden laptop:block;
+            @apply w-[30px];
+            @apply border-dotted border-t-4 border-black;
+            @apply opacity-30;
+
+            &:has(+ a:hover)
+            {
+            @apply opacity-100;
+            }
+        }
+        }
+
+        
+
+        &--language {
+            @apply opacity-90 laptop:opacity-30 hover:opacity-100;
+            @apply bg-black;
+            @apply border-double border-5 border-white;
+            @apply rounded-full min-w-[50px] min-h-[50px];
+            @apply text-white font-bold text-22;
+            @apply ml-15;
+        }
+    }
+
+    .blended-image {
+            @apply mix-blend-overlay opacity-40;
+        }
 

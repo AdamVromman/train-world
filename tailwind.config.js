@@ -1,6 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{html,tsx}"],
+  safelist: [
+    {
+      pattern: /bg(-[a-z]+-?[a-z]*)*/,
+    },
+    {
+      pattern: /text(-[a-z]+-?[a-z]*)*/,
+    },
+    {
+      pattern: /border(-[a-z]+-?[a-z]*)*/,
+    },
+  ],
   theme: {
     extend: {
       padding: {
@@ -13,6 +24,7 @@ export default {
         210: "210px",
       },
       margin: {
+        7: "7.5px",
         15: "15px",
         30: "30px",
         60: "60px",
@@ -75,6 +87,13 @@ export default {
       },
       lineHeight: {
         33: "33px",
+      },
+      dropShadow: {
+        main: "0 10px 5px rgba(0, 0, 0, 0.15)",
+        noBottom: "0 -5px 5px rgba(0, 0, 0, 0.15)",
+      },
+      borderWidth: {
+        5: "5px",
       },
     },
   },

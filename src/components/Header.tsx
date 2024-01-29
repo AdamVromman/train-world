@@ -40,7 +40,7 @@ const Header = ({ viewWidth }: Props) => {
   });
 
   return (
-    <header className="hero">
+    <header id="start" className="hero">
       <div className="absolute z-20 m-15">
         <img className="w-[50px] laptop:w-[100px]" src="./Images/logo.png" />
       </div>
@@ -55,11 +55,11 @@ const Header = ({ viewWidth }: Props) => {
         </svg>
       </div>
       <div className=" hero--text text">
-        <h1 className="mb-120 laptop:mb-30 text-red">To my dearest...</h1>
+        <h1 className="mb-120 laptop:mb-30 text-red">To my dearest..</h1>
         <h2 className="mb-30 laptop:mb-120">
-          A love-letter to our postal trains
+          A love-letter to our postal trains.
         </h2>
-        <p className="laptop:text-right font-nitti-cameo text-28 leading-normal max-w-[600px]">
+        <p className="font-brix text-18 laptop:text-right laptop:font-nitti-cameo laptop:text-28 leading-normal max-w-[600px]">
           Discover the magic of the travelling post men and the postal trains of
           Belgium. Their history is written down and illustrated just for you.
         </p>

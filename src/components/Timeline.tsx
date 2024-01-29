@@ -215,6 +215,7 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
         duration: 5 / points.length,
         ease: "sine.in",
         snap: { x: { values: [0], radius: 50 } },
+        filter: "drop-shadow(75px 10px 5px rgba(0, 0, 0, 0.15))",
       },
       1
     ).to(
@@ -225,6 +226,7 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
         duration: 5 / points.length,
         ease: "sine.out",
         snap: { x: { values: [0], radius: 50 } },
+        filter: "drop-shadow(-75px 10px 5px rgba(0, 0, 0, 0.15))",
       },
       2
     );
@@ -232,6 +234,22 @@ const Timeline = ({ children, id, viewWidth, points, stars }: Props) => {
       tl.to(`#${id}--stars`, { alpha: 1 }, 0.5);
       tl.to(`#${id}--stars`, { alpha: 0 }, "-=2");
     }
+
+    tl.to(
+      "#nav",
+      {
+        y: 200,
+      },
+      1
+    );
+
+    tl.to(
+      "#nav",
+      {
+        y: 0,
+      },
+      "-=0.5"
+    );
   });
 
   return (

@@ -39,10 +39,13 @@ const POINTS = [
 
 const Origins = ({ viewWidth }: Props) => {
   return (
-    <article className="chapter origins">
+    <article id="origins" className="chapter origins">
       <div className="text">
-        <h2>Origins.</h2>
-        <div className="split-paragraph">
+        <div className="split-paragraph background black">
+          <div className="split-paragraph-circle"></div>
+          <div className="split-paragraph-circle"></div>
+          <div className="split-paragraph-circle"></div>
+          <div className="split-paragraph-circle"></div>
           <p>
             It didn't take long for Belgium to start using its rail network to
             transport mail. Two years after the first trains started riding
@@ -62,7 +65,6 @@ const Origins = ({ viewWidth }: Props) => {
           >
             <path
               d="M1 2L1 1M0.999991 219L1 20M1 15L1 7M1 224L1 226"
-              stroke="#272727"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -84,7 +86,10 @@ const Origins = ({ viewWidth }: Props) => {
       </Timeline>
       <div className="text text-image">
         <div className="text-image--image">
-          <img src="./Images/IMAGE.png" />
+          <img
+            className="blended-image laptop:w-[70%] -my-[100px] laptop:translate-x-[100px]"
+            src="./Images/image-4.png"
+          />
         </div>
         <div className="text-image--text">
           <p>
