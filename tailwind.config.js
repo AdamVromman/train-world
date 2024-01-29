@@ -8,6 +8,9 @@ export default {
     {
       pattern: /text(-[a-z]+-?[a-z]*)*/,
     },
+    {
+      pattern: /border(-[a-z]+-?[a-z]*)*/,
+    },
   ],
   theme: {
     extend: {
@@ -21,6 +24,7 @@ export default {
         210: "210px",
       },
       margin: {
+        7: "7.5px",
         15: "15px",
         30: "30px",
         60: "60px",

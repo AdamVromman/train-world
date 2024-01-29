@@ -46,21 +46,14 @@ const STARS = [
     yDesktop: 53,
     xPhone: 69,
     yPhone: 50,
-    text: "They lit lamps to be able to work and a big fire to keep warm.",
+    text: "They lit lamps to be able to work in the darkness. In winter, they sometimes had to light a fire to keep warm ..surrounded by paper and wood!",
   },
   {
     xDesktop: 83,
     yDesktop: 55,
     xPhone: 80,
     yPhone: 60,
-    text: "The trains carried the most urgent cargo. But sometimes also the weirdest. Things like instruments, machinery and even live animals.",
-  },
-  {
-    xDesktop: 40.5,
-    yDesktop: 62,
-    xPhone: 35,
-    yPhone: 60,
-    text: "Every station, they received the huge bags with unsorted post.",
+    text: "The trains carried the most urgent cargo. But sometimes also the weirdest. Things like instruments, machinery and even live animals!",
   },
   {
     xDesktop: 53,
@@ -74,14 +67,14 @@ const STARS = [
     yDesktop: 57,
     xPhone: 55,
     yPhone: 56,
-    text: "Using stamps to mark where the letter came from.",
+    text: "The post men had to stamp each letter manually to record where the letter came from.",
   },
   {
     xDesktop: 60.5,
     yDesktop: 52.5,
     xPhone: 28.5,
     yPhone: 50,
-    text: "Putting the post in the little boxes.",
+    text: "The walls of the train were full of little boxes. Each box had the name of a town or city and each letter had to end up in the correct box.",
   },
 ];
 

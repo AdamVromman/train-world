@@ -1,13 +1,10 @@
 import Button from "./Button";
 
-interface Props {
-  viewWidth: number;
-}
-const Footer = ({ viewWidth }: Props) => {
+const Footer = () => {
   return (
     <footer id="end" className="footer">
       <div className="text">
-        <h2>Liked what you heard?</h2>
+        <h2>Did you like what you read?</h2>
         <div className="split-paragraph">
           <p className="text-white">
             The Postal Trains is just one of the many stories of Train world!
@@ -36,12 +33,36 @@ const Footer = ({ viewWidth }: Props) => {
             more, awaits you in Train World!
           </p>
         </div>
-        <Button
-          viewWidth={viewWidth}
-          textcolor="black"
-          text="Discover the museum"
-          color="white"
-        ></Button>
+        <div className="flex flex-col gap-15 laptop:flex-row w-full justify-center items-center my-60">
+          <Button
+            link="https://www.trainworld.be/en/the-museum"
+            textcolor="black"
+            text="Discover the museum"
+            color="white"
+            backgroundColor="red"
+          ></Button>
+          <Button
+            link="https://www.trainworld.be/en/practical-information"
+            textcolor="black"
+            text="Plan your trip"
+            color="white"
+            backgroundColor="red"
+          ></Button>
+          <Button
+            link="https://webshoptrainworld.recreatex.be/Exhibitions/Overview?language=en"
+            textcolor="white"
+            text="Buy Tickets"
+            color="black"
+            backgroundColor="red"
+          ></Button>
+          <Button
+            link="https://www.trainworld.be/en/collections/stories/in-the-beginning"
+            textcolor="black"
+            text="Read last months story"
+            color="white"
+            backgroundColor="red"
+          ></Button>
+        </div>
       </div>
     </footer>
   );

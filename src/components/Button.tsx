@@ -1,60 +1,56 @@
-import { useEffect, useState } from "react";
-
 interface Props {
+  link?: string;
   text: string;
   color: string;
   textcolor: string;
-  viewWidth: number;
+  backgroundColor: string;
 }
 
-const Button = ({ text, color, textcolor, viewWidth }: Props) => {
-  const [randomValue] = useState(Math.random());
-  const [height, setHeight] = useState(0);
-
-  useEffect(() => {
-    if (document) {
-      const button = document.getElementById(`${text}${randomValue}`);
-      if (button) setHeight(button.getBoundingClientRect().height);
-    }
-  }, [randomValue, text, viewWidth]);
-
-  return (
-    <button id={text + randomValue} className={`button bg-${color}`}>
-      <div className="button--content">
-        <div
-          style={{ height: `${height}px` }}
-          className="button--background left"
-        >
-          <div className="button--corner left-top"></div>
-
-          <div className={`button--center ${height > 60 ? "left" : ""} pr-3`}>
-            <div
-              className={`bg-${textcolor} w-[15px] h-[15px] rounded-full`}
-            ></div>
-          </div>
-          <div className="button--corner left-bottom"></div>
-        </div>
-        <div className="button--content--center">
-          <div className="button--content--center__border button--center__top"></div>
-          <span className={`button--content--text text-${textcolor}`}>
-            {text}
-          </span>
-          <div className="button--content--center__border button--center__bottom"></div>
-        </div>
-
-        <div
-          style={{ height: `${height}px` }}
-          className="button--background right"
-        >
-          <div className="button--corner right-top"></div>
-          <div className={`button--center ${height > 60 ? "right" : ""} pl-3`}>
-            <div
-              className={`bg-${textcolor} w-[15px] h-[15px] rounded-full`}
-            ></div>
-          </div>
-          <div className="button--corner right-bottom"></div>
+const Button = ({ text, color, textcolor, backgroundColor, link }: Props) => {
+  const content = (
+    <>
+      <div className="button--ball-container">
+        <div className={`button--ball bg-${textcolor}`}>
+          <hr
+            style={{
+              transform: `rotate(${15 - Math.random() * 30}deg) scale(1.1)`,
+            }}
+            className={`w-full border-solid border-${color} border-t-[1px]`}
+          />
         </div>
       </div>
+
+      <span className={`button--text text-${textcolor}`}>{text}</span>
+      <div className="button--ball-container">
+        <div className={`button--ball bg-${textcolor}`}>
+          <hr
+            style={{
+              transform: `rotate(${15 - Math.random() * 30}deg) scale(1.1)`,
+            }}
+            className={`w-full border-solid border-${color} border-t-[1px]`}
+          />
+        </div>
+      </div>
+    </>
+  );
+
+  return link ? (
+    <a
+      href={link}
+      target="_blank"
+      className={`button bg-${color} border-${
+        backgroundColor === color ? "black" : backgroundColor
+      }`}
+    >
+      {content}
+    </a>
+  ) : (
+    <button
+      className={`button bg-${color} border-${
+        backgroundColor === color ? "black" : backgroundColor
+      }`}
+    >
+      {content}
     </button>
   );
 };

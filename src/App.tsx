@@ -46,7 +46,7 @@ function App() {
               <EndOfAnEra viewWidth={viewWidth} />
               <LetterInteraction />
             </section>
-            <Footer viewWidth={viewWidth} />
+            <Footer />
           </div>
         </main>
         <Nav />

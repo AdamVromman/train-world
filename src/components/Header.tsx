@@ -59,7 +59,7 @@ const Header = ({ viewWidth }: Props) => {
         <h2 className="mb-30 laptop:mb-120">
           A love-letter to our postal trains.
         </h2>
-        <p className=" laptop:text-right font-brix laptop:font-nitti-cameo text-22 font-bold laptop:font-normal laptop:text-28 leading-normal max-w-[600px]">
+        <p className="font-brix text-18 laptop:text-right laptop:font-nitti-cameo laptop:text-28 leading-normal max-w-[600px]">
           Discover the magic of the travelling post men and the postal trains of
           Belgium. Their history is written down and illustrated just for you.
         </p>

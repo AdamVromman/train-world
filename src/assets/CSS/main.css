@@ -511,85 +511,27 @@ body {
 
 .button {
 
-    @apply rounded-[30px];
-    @apply min-h-[57px];
+    @apply rounded-full;
+    @apply flex flex-row items-center;
+    @apply py-7;
+    @apply border-double border-5;
+    @apply hover:scale-90;
 
-    &--content {
-        @apply flex flex-row justify-center items-center;
-        @apply min-h-[57px] h-full;
-
-
-        &--text {
-        @apply h-full;
-        @apply flex flex-col justify-center text-center;
-        @apply font-bold text-28;
-        @apply py-15 laptop:py-0;
-
-        }
-
-        &--center {
-            @apply h-full;
-            @apply flex flex-col justify-between;
-            @apply -mx-1;
-            @apply min-h-[57px];
-
-            &__border {
-                @apply w-full h-[4.4px];
-                 background: url('/SVGs/button--horizontal.svg') center top;
-                @apply bg-no-repeat bg-cover;
-            }
-        }
-    }
-
-    &--background {
-        @apply h-full;
-        @apply min-h-full;
-        @apply flex flex-col items-center;
-    }
-
-    &--corner {
-        @apply w-[75px] h-[28.5px] min-h-[28.5px] bg-yellow;
-        
-
-        &.left-top {
-            background: url('/SVGs/button--left-top.svg') center top;
-            @apply bg-no-repeat bg-cover;
-        }
-
-        &.right-top {
-            background: url('/SVGs/button--right-top.svg') center top;
-            @apply bg-no-repeat bg-cover;
-        }
-
-        &.right-bottom {
-            background: url('/SVGs/button--right-bottom.svg') center top;
-            @apply bg-no-repeat bg-cover;
-        }
-
-        &.left-bottom {
-            background: url('/SVGs/button--left-bottom.svg') center top;
-            @apply bg-no-repeat bg-cover;
-        }
-    }
-
-    &--center {
-        
+    &--ball-container {
         @apply flex justify-center items-center;
-        @apply -my-[7.5px];
+        @apply mx-7;
+    }
 
-        &.left {
-            background: url('/SVGs/button--vertical-left.svg') center top;
-            @apply bg-no-repeat bg-cover;
-            @apply grow w-full;
-            @apply -my-1;
-        }
+    &--ball {
+        @apply w-[12px] h-[12px] max-w-[12px] max-h-[12px];
+        @apply rounded-full;
+        @apply flex justify-center items-center;
+    }
 
-        &.right {
-            background: url('/SVGs/button--vertical-right.svg') center top;
-            @apply bg-no-repeat bg-cover;
-            @apply grow w-full;
-            @apply -my-1;
-        }
+
+    &--text {
+        @apply text-22 font-bold italic;
+        @apply pb-[4px];
     }
 
 

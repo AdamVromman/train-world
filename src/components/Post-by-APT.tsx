@@ -40,6 +40,37 @@ const POINTS = [
   },
 ];
 
+const STARS = [
+  {
+    xDesktop: 7,
+    yDesktop: 49,
+    xPhone: 2,
+    yPhone: 52,
+    text: "By having two carts, the travelling post men could keep the post in one cart and sort the post in the other. Much safer!",
+  },
+  {
+    xDesktop: 86,
+    yDesktop: 55,
+    xPhone: 80,
+    yPhone: 56,
+    text: "The postmen were so good at their job that they always knew how much time was left to the next station, so they knew how fast they had to work!",
+  },
+  {
+    xDesktop: 25,
+    yDesktop: 65,
+    xPhone: 20,
+    yPhone: 61,
+    text: "The red bags contained the valuable cargo like money, diamonds and jewelry. Maybe that was what the robbers were after..",
+  },
+  {
+    xDesktop: 54,
+    yDesktop: 56,
+    xPhone: 58,
+    yPhone: 58,
+    text: "Every time they stopped, they received the huge bags with unsorted post that had to be sorted by the next station.",
+  },
+];
+
 const PostByAPT = ({ viewWidth }: Props) => {
   return (
     <article id="post-by-apt" className="chapter post-by-APT">
@@ -80,6 +111,7 @@ const PostByAPT = ({ viewWidth }: Props) => {
         </div>
       </div>
       <Timeline
+        stars={STARS}
         points={POINTS}
         viewWidth={viewWidth}
         id="mail-by-APT--timeline"
